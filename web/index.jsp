@@ -117,8 +117,7 @@ $.extend({
 				} else {
 					try {
 						el.hide();
-					} catch (e) {
-					}
+					} catch (e) {}
 					li.removeClass('TabOn');
 					li.addClass('TabOff');
 				}
@@ -139,6 +138,11 @@ $.extend({
 				var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
 				prefs.setCharPref('browser.startup.homepage', "/");
 			}
+		},
+		fnRegist: function(){
+			$("#Row1Area").hide();
+			$("#Row2Area").hide();
+			$("#Row3Area").show();
 		}
 });
 </script>
@@ -154,74 +158,42 @@ $.extend({
 					<div id="MenuSpaceNav">
 						<ul id="nav">
 							<li class="mainlevel">
-								<a href="http://www.yicjx.com/">首页</a>
+								<a href="index">首页</a>
 							</li>
 							<li class="mainlevel">
-								<a href="http://www.yicjx.com/contents/14/4.html">走进贵峰</a>
-								<ul>
-									<li>
-										<a href="http://www.yicjx.com/contents/14/4.html" target="_blank">驾校简介</a>
-									</li>
-									<li>
-										<a href="http://new.yicjx.com/_flash/TourViewer_YNYCJX.html" target="_blank">三维全景</a>
-									</li>
-									<li>
-										<a href="http://www.yicjx.com/contents/18/212.html"
-										target="_blank">联系我们</a>
-									</li>
-									<li>
-										<a href="http://www.yicjx.com/channels/52.html"
-										target="_blank">招贤纳士</a>
-									</li>
-								</ul>
+								<a href="idx/list.html">走进贵峰</a>
 							</li>
 							<li class="mainlevel">
-								<a href="http://www.yicjx.com/channels/94.html">贵峰动态</a>
+								<a href="">贵峰动态</a>
 								<ul>
 									<li>
-										<a href="http://www.yicjx.com/channels/94.html" target="_blank">贵峰新闻</a>
+										<a href="javascript:void(0)" target="_blank">贵峰新闻</a>
 									</li>
 									<li>
-										<a href="http://www.yicjx.com/channels/38.html" target="_blank">贵峰专稿</a>
+										<a href="javascript:void(0)" target="_blank">贵峰专稿</a>
 									</li>
-									<li>
-										<a href="http://www.yicjx.com/channels/59.html" target="_blank">贵峰视觉</a>
-									</li>
-									<li>
-										<a href="http://www.yicjx.com/channels/174.html" target="_blank">活动公告</a>
-									</li>
-									<li>
-										<a href="http://www.yicjx.com/channels/227.html" target="_blank">学员读物</a>
-									</li>
-									<li>
-										<a href="http://www.yicjx.com/contents/60/384.html" target="_blank">期刊投稿</a>
-									</li>
-									<li>
-										<a href="http://www.yicjx.com/channels/39.html" target="_blank">行业资讯</a>
-									</li>
-
 								</ul>
 							</li>
 							<li class="mainlevel" style="display: none;">
-								<a href="http://www.yicjx.com/contents/25/257.html">学车报名</a>
+								<a href="javascript:void(0)">学车报名</a>
 								<ul>
 									<li>
 										<a target="_blank">在线注册</a>
 									</li>
 									<li>
-										<a href="#" target="_blank">场地预约</a>
+										<a href="javascript:void(0)" target="_blank">场地预约</a>
 									</li>
 									<li>
-										<a href="#" target="_blank">教练介绍</a>
+										<a href="javascript:void(0)" target="_blank">教练介绍</a>
 									</li>
 									<li>
-										<a href="#" target="_blank">场地介绍</a>
+										<a href="javascript:void(0)" target="_blank">场地介绍</a>
 									</li>
 									<li>
-										<a href="#" target="_blank">车型介绍</a>
+										<a href="javascript:void(0)" target="_blank">车型介绍</a>
 									</li>
 									<li>
-										<a href="#" target="_blank">在线报名新版</a>
+										<a href="javascript:void(0)" target="_blank">在线报名新版</a>
 									</li>
 								</ul>
 							</li>
@@ -242,7 +214,7 @@ $.extend({
 				<div id="Nav2LinkText">
 					<ul>
 						<li>
-							<a href="#">
+							<a href="#" onclick="$.fnRegist();">
 								<img src="idx/images/nav2-user.png">
 								<br>
 								<font style="color: #ec008c;">注册会员</font>
@@ -450,148 +422,6 @@ $.extend({
 						</li>
 					</ul>
 				</div>
-				<!-- 
-				<div class="TabOnDiv" style="display: none" id="vehicle_type_tabContent_2">
-					<ul>
-						<li>
-							<div class="ClassImage">
-								<a href="http://www.yicjx.com/contents/24/4.html"><img src="picture/vehicle/1171559684.JPG"></a>
-							</div>
-							<div class="ClassTitle">
-								<a href="http://www.yicjx.com/contents/24/4.html">一级VIP班</a>
-							</div>
-							<div class="ClassPrice">价格：8800 元</div>
-							<div class="ClassVehicle">车型：捷达/宝来</div>
-							<div class="ClassFeature">训练时间：全周7:00--21:00</div>
-							<div class="ClassButton">
-								<div class="ClassButton1">
-									<a href="http://www.yicjx.com/contents/25/257.html">&nbsp;
-									</a>
-								</div>
-							</div>
-							<div class="ClassButton">
-								<div class="ClassButton2">
-									<a href="http://www.yicjx.com/contents/194/829.html" target="_blank"></a>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="ClassImage">
-								<a href="http://www.yicjx.com/contents/24/5.html"><img src="picture/vehicle/1171618654.JPG"></a>
-							</div>
-							<div class="ClassTitle">
-								<a href="http://www.yicjx.com/contents/24/5.html">二级VIP班</a>
-							</div>
-							<div class="ClassPrice">价格：12800 元</div>
-							<div class="ClassVehicle">车型：捷达/宝来</div>
-							<div class="ClassFeature">训练时间：全周7:00--21:00</div>
-							<div class="ClassButton">
-								<div class="ClassButton1">
-									<a href="http://www.yicjx.com/contents/25/257.html">&nbsp;
-									</a>
-								</div>
-							</div>
-							<div class="ClassButton">
-								<div class="ClassButton2">
-									<a href="http://www.yicjx.com/contents/194/829.html" target="_blank"></a>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="ClassImage">
-								<a href="http://www.yicjx.com/contents/24/6.html"><img src="picture/vehicle/1171638403.JPG"></a>
-							</div>
-							<div class="ClassTitle">
-								<a href="http://www.yicjx.com/contents/24/6.html">三级VIP班</a>
-							</div>
-							<div class="ClassPrice">价格：16800 元</div>
-							<div class="ClassVehicle">车型：丰田</div>
-							<div class="ClassFeature">训练时间：全周7:00--21:00</div>
-							<div class="ClassButton">
-								<div class="ClassButton1">
-									<a href="http://www.yicjx.com/contents/25/257.html">&nbsp;
-									</a>
-								</div>
-							</div>
-							<div class="ClassButton">
-								<div class="ClassButton2">
-									<a href="http://www.yicjx.com/contents/194/829.html" target="_blank"></a>
-								</div>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="TabOnDiv" style="display: none" id="vehicle_type_tabContent_3">
-					<ul>
-						<li>
-							<div class="ClassImage">
-								<a href="http://www.yicjx.com/contents/24/7.html"><img src="picture/vehicle/117175735.JPG"></a>
-							</div>
-							<div class="ClassTitle">
-								<a href="http://www.yicjx.com/contents/24/7.html">中型客车B1</a>
-							</div>
-							<div class="ClassPrice">价格：6970 元</div>
-							<div class="ClassVehicle">车型：金龙</div>
-							<div class="ClassFeature">训练时间：全周7:00--21:00</div> 
-							<div class="ClassButton">
-								<div class="ClassButton1">
-									<a href="http://www.yicjx.com/contents/25/257.html">&nbsp;
-									</a>
-								</div>
-							</div>
-							<div class="ClassButton">
-								<div class="ClassButton2">
-									<a href="http://www.yicjx.com/contents/194/829.html" target="_blank"></a>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="ClassImage">
-								<a href="http://www.yicjx.com/contents/24/8.html"><img src="picture/vehicle/1171723862.JPG"></a>
-							</div>
-							<div class="ClassTitle">
-								<a href="http://www.yicjx.com/contents/24/8.html">大型货车B2</a>
-							</div>
-							<div class="ClassPrice">价格：9900 元</div>
-							<div class="ClassVehicle">车型：东风</div>
-							<div class="ClassFeature">训练时间：全周7:00--21:00</div> 
-							<div class="ClassButton">
-								<div class="ClassButton1">
-									<a href="http://www.yicjx.com/contents/25/257.html">&nbsp;
-									</a>
-								</div>
-							</div>
-							<div class="ClassButton">
-								<div class="ClassButton2">
-									<a href="http://www.yicjx.com/contents/194/829.html" target="_blank"></a>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="ClassImage">
-								<a href="http://www.yicjx.com/contents/24/9.html"><img src="picture/vehicle/1171741272.JPG"></a>
-							</div>
-							<div class="ClassTitle">
-								<a href="http://www.yicjx.com/contents/24/9.html">大型客车A1</a>
-							</div>
-							<div class="ClassPrice">价格：8900 元</div>
-							<div class="ClassVehicle">车型：金龙</div>
-							<div class="ClassFeature">训练时间：全周7:00--21:00</div>
-							<div class="ClassButton">
-								<div class="ClassButton1">
-									<a href="http://www.yicjx.com/contents/25/257.html">&nbsp;
-									</a>
-								</div>
-							</div>
-							<div class="ClassButton">
-								<div class="ClassButton2">
-									<a href="http://www.yicjx.com/contents/194/829.html" target="_blank"></a>
-								</div>
-							</div>
-						</li>
-				</ul>
-				</div>
-				 -->
 			</div>
 			<div class="AreaBreak"></div>
 			<div id="Row1Col2">
@@ -606,15 +436,15 @@ $.extend({
 					<ul>
 						<li>
 							<div class="ClassTitle">
-								<a href="http://www.yicjx.com/contents/27/42.html">一乘驾校(丽苑店)</a>
+								<a href="javascript:void(0)">驾校地址</a>
 							</div>
 							<div class="ClassContent">
-								西山区兴苑路154号<br>营业：周一至周日 9:30-21:00 缴费方式：刷卡 
+								丽江市古城区金山乡贵峰村委会
 							</div>
 						</li>
 						<li style="display: none;">
 							<div class="ClassTitle">
-								<a href="http://www.yicjx.com/contents/27/28.html">一乘驾校(白塔路店)</a>
+								<a href="javascript:void(0);">一乘驾校(白塔路店)</a>
 							</div>
 							<div class="ClassContent">
 								昆明市白塔路152号附1号（昆十中斜对面）<br>营业：周一至周日 9:30-21:00 缴费方式：刷卡 
@@ -632,31 +462,31 @@ $.extend({
 				<div class="Tab">
 					<ul>
 						<li class="TabOff" id="资讯公告_tabHeader_1" onmouseover="$.stlTab6('资讯公告', 1);">
-							<a href="http://www.yicjx.com/channels/94.html">贵峰新闻</a>
+							<a href="javascript:void(0);">贵峰新闻</a>
 						</li>
 						<li class="TabOff" id="资讯公告_tabHeader_2" onmouseover="$.stlTab6('资讯公告', 2);">
-							<a href="http://www.yicjx.com/channels/38.html">一乘专稿</a>
+							<a href="javascript:void(0);">一乘专稿</a>
 						</li>
 					</ul>
 				</div>
 				<div class="TabOnDiv" style="" id="资讯公告_tabContent_1">
-					<a href="http://www.yicjx.com/contents/94/6416.html">
+					<a href="javascript:void(0);">
 						<img src="idx/20155749866.jpg">
 					</a>
 					<ul>
-						<li>&gt; <a href="http://www.yicjx.com/contents/94/6416.html">一乘，敢于担当社会责任的企业</a></li>
-						<li>&gt; <a href="http://www.yicjx.com/contents/94/2030.html">一乘“学员卡”全面升级</a></li>
-						<li>&gt; <a href="http://www.yicjx.com/contents/94/1832.html">省发改委贺晓龙处长领导一行莅临公司调研指导</a></li>
+						<li>&gt; <a href="javascript:void(0);">一乘，敢于担当社会责任的企业</a></li>
+						<li>&gt; <a href="javascript:void(0);">一乘“学员卡”全面升级</a></li>
+						<li>&gt; <a href="javascript:void(0);">省发改委贺晓龙处长领导一行莅临公司调研指导</a></li>
 					</ul>
 				</div>
 				<div class="TabOnDiv" style="display: none" id="资讯公告_tabContent_2">
-					<a href="http://www.yicjx.com/contents/38/9171.html">
+					<a href="javascript:void(0);">
 						<img src="idx/2919421913.jpg">
 					</a>
 					<ul>
-						<li>&gt; <a href="http://www.yicjx.com/contents/38/9171.html">一乘开启驾培“新模式”引领驾培行业转型发展</a></li>
-						<li>&gt; <a href="http://www.yicjx.com/contents/38/3905.html">一乘驾校上市啦！一乘驾校上市啦！一乘驾校上市啦！</a></li>
-						<li>&gt; <a href="http://www.yicjx.com/contents/38/397.html">【特稿】驾驶培训行业的改革之痛（地）</a></li>
+						<li>&gt; <a href="javascript:void(0);">一乘开启驾培“新模式”引领驾培行业转型发展</a></li>
+						<li>&gt; <a href="javascript:void(0);">一乘驾校上市啦！一乘驾校上市啦！一乘驾校上市啦！</a></li>
+						<li>&gt; <a href="javascript:void(0);">【特稿】驾驶培训行业的改革之痛（地）</a></li>
 					</ul>
 				</div>
 			</div>
@@ -665,23 +495,22 @@ $.extend({
 				<div class="Tab">
 					<ul>
 						<li class="TabOn" id="互动版块_tabHeader_1" onmouseover="$.stlTab8('互动版块', 1);">
-							<a href="http://www.yicjx.com/channels/227.html">学员读物</a>
+							<a href="javascript:void(0);">通知公告</a>
 						</li>
-						<!-- 
-						<li class="TabOff" id="互动版块_tabHeader_2" onmouseover="$.stlTab8('互动版块', 2);">
-							<a target="_blank" href="http://weibo.com/ycjx4000125111">微博</a>
-						</li>
-						<li class="TabOff" id="互动版块_tabHeader_3" onmouseover="$.stlTab8('互动版块', 3);">
-							<a target="_blank" href="#">贴吧</a>
-						</li>
-						 -->
 					</ul>
 				</div>
 				<div class="TabOnDiv" style="" id="互动版块_tabContent_1">
-					<iframe scrolling="no" src="idx/list.html" frameborder="0"  height="348" width="341"></iframe>
+					<iframe scrolling="no" src="" frameborder="0"  height="348" width="341"></iframe>
 				</div>
 			</div>
 		</div>
+		<!-- 注册区 -->
+		<div id="Row3Area" style="display: none; ">
+			<iframe scrolling="no" src="idx/regist.jsp" frameborder="0"  height="590px" width="990px">
+			</iframe>
+		</div>
+		
+		
 		<div class="SpaceBar">
 			<img src="idx/spacer.html" height="0" border="0" width="0">
 		</div>
@@ -697,7 +526,7 @@ $.extend({
 				<div class="Link">
 					<a href="http://www.yicjx.com/" onclick="$.SetHomepage();">设为首页</a>
 					<a href="javascript:;" onclick="$.AddFavorite();">加入收藏</a>
-					<a href="http://www.yicjx.com/contents/18/212.html">联系我们</a>
+					<a href="javascript:void(0);">联系我们</a>
 				</div>
 				<div class="CopyRight">
 					Copyright © 2012- 2043 All Rights Reserved. 丽江贵峰机动车驾驶人科目二训练考试服务有限公司
