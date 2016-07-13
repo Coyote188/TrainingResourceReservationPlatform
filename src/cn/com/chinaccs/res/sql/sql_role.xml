@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "//mapsql/EN" "mapsql.dtd">
+<sqlMap>
+
+    <sqlUnit name="common_role_list">
+        <sql>
+			select t.id,t.role_name,t.role_des from T_N_ROLE t where t.role_type=:roleType
+        </sql>
+    </sqlUnit>
+    <sqlUnit name="role_list">
+        <sql>
+            select t.id,t.role_name,(select o.org_seq_name from t_n_org o where o.id = t.org_id) org_name,t.role_des from T_N_ROLE t where t.role_type=:roleType  and  t.org_id in (select t.id from t_n_org t where t.org_seq like :likeOrgId or t.id =:orgId)   
+        </sql>
+    </sqlUnit>
+    
+    
+    
+</sqlMap>

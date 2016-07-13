@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE crud PUBLIC "//mapsql/EN" "crud.dtd">
+<crud>
+	<bean name="userList" url="cn.com.chinaccs.bean.entity.TNUser" busi="cn.com.chinaccs.webstart.admin.UserBusi">
+		<param name="orgId" type="termEqual"></param>
+		<param name="flag" type="termEqual"></param>
+		<querySQL>
+		</querySQL>
+	</bean>
+	
+	<bean name="roleUserList" url="cn.com.chinaccs.bean.entity.TNRoleUser" busi="cn.com.chinaccs.webstart.admin.RoleUserOIListBusi">
+		<param name="flag" type="termEqual"></param>
+		<param name="oi" type="termEqual"></param>
+		<param name="roleId" type="termEqual"></param>
+		<param name="orgId" type="termEqual"></param>
+		<param name="saveIds" type="termEqual"></param>
+		<deleteIds name="id"></deleteIds>
+	</bean>
+	
+	<bean name="orgList" url="cn.com.chinaccs.bean.entity.TNOrg" busi="cn.com.chinaccs.webstart.admin.OrgBusi">
+		<querySQL>
+			select t.id,t.PARENT_ID,t.seq_num,
+			t.id as orgId,t.ORG_NAME,
+			(select tmp.busi_name from t_n_dict tmp where 
+					    tmp.busi_value=t.type and tmp.parent_id=(select id from t_n_dict where busi_value='ORG_TYPE')) as type,t.org_seq_name
+			,t.ORG_CODE,t.ORG_CONTACT,t.ORG_TEL,t.org_level,t.parent_id as parentId 
+			from t_n_org as t
+		    order by t.type, t.seq_num 
+		</querySQL>
+	</bean>
+	<bean name="menuList" url="cn.com.chinaccs.bean.entity.TNMenu" busi="cn.com.chinaccs.webstart.admin.MenuBusi">
+		<param name="flag" type="termEqual"></param>
+		<deleteIds name="id" />
+		<querySQL>
+		   
+		</querySQL>
+	</bean>
+	<bean name="dictList" url="cn.com.chinaccs.bean.entity.TNDict" busi="cn.com.chinaccs.webstart.admin.DictBusi">
+		<deleteIds name="id" />
+		<querySQL>
+			select t.id,t.parent_id,t.seq_num,
+			t.id as hiddenId,t.busi_name,t.busi_value,
+			(select tmp.busi_name from t_n_dict tmp where 
+		    tmp.busi_value=t.state and tmp.parent_id=(select id from t_n_dict where busi_value='DATA_STATE')) as state,
+			t.seq_num as seqNum,t.busi_level,t.parent_id as parentId from t_n_dict t 
+			order by t.seq_num asc 
+		</querySQL>
+	</bean>
+	
+	<bean name="roleList" url="cn.com.chinaccs.bean.entity.TNRole" busi="cn.com.chinaccs.webstart.admin.RoleBusi">
+		<param name="flag" type="termEqual"></param>
+		<param name="orgId" type="termEqual"></param>
+		<deleteIds name="id"></deleteIds>
+		<querySQL>
+			select t.id,t.role_name,t.role_des from T_N_ROLE t
+		</querySQL>
+		<deleteSQL>
+			delete from T_N_ROLE t where t.role_id=:id
+		</deleteSQL>
+	</bean>
+	
+	<bean name="vehicleList" url="cn.com.chinaccs.bean.VehicleBean" busi="cn.com.chinaccs.webstart.VehicleBusi">
+		<querySQL>
+		</querySQL>
+	</bean>
+	<bean name="maintenanceList" url="cn.com.chinaccs.bean.VehicleMaintenanceInfo" busi="cn.com.chinaccs.webstart.MaintanenceBusi">
+		<param name="orgId" type="termEqual"></param>
+		<param name="con" type="termEqual"></param>
+		<param name="l" type="termEqual"></param>
+		<param name="p" type="termEqual"></param>
+		<param name="m" type="termEqual"></param>
+		<querySQL>
+		</querySQL>
+	</bean>
+	<bean name="maintainQr" url="cn.com.chinaccs.bean.VehicleMaintenanceInfo" busi="cn.com.chinaccs.webstart.Maintain4CardBusi">
+		<param name="orgId" type="termEqual"></param>
+		<param name="vCardId" type="termEqual"></param>
+		<querySQL>
+		</querySQL>
+	</bean>
+	
+	<bean name="repairPersonList" url="cn.com.chinaccs.bean.entity.TVRepairPerson" busi="cn.com.chinaccs.webstart.RepairPersonBusi">
+		<param name="orgId" type="termEqual"></param>
+		<param name="flag" type="termEqual"></param>
+		<querySQL>
+		</querySQL>
+	</bean>
+</crud>

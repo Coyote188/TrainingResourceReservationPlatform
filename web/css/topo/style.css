@@ -1,0 +1,1237 @@
+
+.btn {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+    color: inherit;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 15px 30px;
+    outline: medium none;
+    padding: 25px 80px;
+    position: relative;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+}
+.btn::after {
+    content: "";
+    position: absolute;
+    transition: all 0.3s ease 0s;
+    z-index: -1;
+}
+.btn::before, .icon-heart::after, .icon-star::after, .icon-plus::after, .icon-file::before {
+    font-family: "icomoon";
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    position: relative;
+    text-transform: none;
+}
+.icon-envelope::before {
+    content: "";
+}
+.icon-cart::before {
+    content: "";
+}
+.icon-cart-2::before {
+    content: "";
+}
+.icon-heart::before {
+    content: "";
+}
+.icon-heart::after, .icon-heart-2::before {
+    content: "";
+}
+.icon-star::before {
+    content: "";
+}
+.icon-star::after, .icon-star-2::before {
+    content: "";
+}
+.icon-arrow-right::before {
+    content: "";
+}
+.icon-arrow-left::before {
+    content: "";
+}
+.icon-truck::before {
+    content: "";
+}
+.icon-remove::before {
+    content: "";
+}
+.icon-cog::before {
+    content: "";
+}
+.icon-plus::before, .icon-plus::after {
+    content: "";
+}
+.icon-minus::before {
+    content: "";
+}
+.bh-icon-smiley::before {
+    content: "";
+}
+.bh-icon-sad::before {
+    content: "";
+}
+.icon-file::before {
+    content: "";
+}
+.icon-remove-2::before {
+    content: "";
+}
+.btn-1 {
+    border: 3px solid #fff;
+    color: #fff;
+}
+.btn-1a:hover, .btn-1a:active {
+    background: #fff none repeat scroll 0 0;
+    color: #0e83cd;
+}
+.btn-1b::after {
+    background: #fff none repeat scroll 0 0;
+    height: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+.btn-1b:hover, .btn-1b:active {
+    color: #0e83cd;
+}
+.btn-1b:hover::after, .btn-1b:active::after {
+    height: 100%;
+}
+.btn-1c::after {
+    background: #fff none repeat scroll 0 0;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 0;
+}
+.btn-1c:hover, .btn-1c:active {
+    color: #0e83cd;
+}
+.btn-1c:hover::after, .btn-1c:active::after {
+    width: 100%;
+}
+.btn-1d {
+    overflow: hidden;
+}
+.btn-1d::after {
+    background: #fff none repeat scroll 0 0;
+    height: 103%;
+    left: 50%;
+    opacity: 0;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 0;
+}
+.btn-1d:hover, .btn-1d:active {
+    color: #0e83cd;
+}
+.btn-1d:hover::after {
+    opacity: 1;
+    width: 90%;
+}
+.btn-1d:active::after {
+    opacity: 1;
+    width: 101%;
+}
+.btn-1e {
+    overflow: hidden;
+}
+.btn-1e::after {
+    background: #fff none repeat scroll 0 0;
+    height: 0;
+    left: 50%;
+    opacity: 0;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    width: 100%;
+}
+.btn-1e:hover, .btn-1e:active {
+    color: #0e83cd;
+}
+.btn-1e:hover::after {
+    height: 260%;
+    opacity: 1;
+}
+.btn-1e:active::after {
+    height: 400%;
+    opacity: 1;
+}
+.btn-1f {
+    overflow: hidden;
+}
+.btn-1f::after {
+    background: #fff none repeat scroll 0 0;
+    height: 0;
+    left: 50%;
+    opacity: 0;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 101%;
+}
+.btn-1f:hover, .btn-1f:active {
+    color: #0e83cd;
+}
+.btn-1f:hover::after {
+    height: 75%;
+    opacity: 1;
+}
+.btn-1f:active::after {
+    height: 130%;
+    opacity: 1;
+}
+.btn-2 {
+    background: #cb4e4e none repeat scroll 0 0;
+    box-shadow: 0 6px #ab3c3c;
+    color: #fff;
+    transition: none 0s ease 0s ;
+}
+.btn-2a {
+    border-radius: 0 0 5px 5px;
+}
+.btn-2a:hover {
+    box-shadow: 0 4px #ab3c3c;
+    top: 2px;
+}
+.btn-2a:active {
+    box-shadow: 0 0 #ab3c3c;
+    top: 6px;
+}
+.btn-2b {
+    border-radius: 0 0 5px 5px;
+}
+.btn-2b:hover {
+    box-shadow: 0 8px #ab3c3c;
+    top: -2px;
+}
+.btn-2b:active {
+    box-shadow: 0 0 #ab3c3c;
+    top: 6px;
+}
+.btn-2c {
+    border-radius: 5px;
+}
+.btn-2c:hover {
+    box-shadow: 0 4px #ab3c3c;
+    top: 2px;
+}
+.btn-2c:active {
+    box-shadow: 0 0 #ab3c3c;
+    top: 6px;
+}
+.btn-2d {
+    border-radius: 5px;
+}
+.btn-2d:hover {
+    box-shadow: 0 8px #ab3c3c;
+    top: -2px;
+}
+.btn-2d:active {
+    box-shadow: 0 0 #ab3c3c;
+    top: 6px;
+}
+.btn-2e {
+    border-radius: 5px;
+    box-shadow: -6px 0 #ab3c3c;
+}
+.btn-2e:hover {
+    box-shadow: -4px 0 #ab3c3c;
+    left: -2px;
+}
+.btn-2e:active {
+    box-shadow: 0 0 #ab3c3c;
+    left: -6px;
+}
+.btn-2f {
+    border-radius: 5px;
+    box-shadow: 6px 0 #ab3c3c;
+}
+.btn-2f:hover {
+    box-shadow: 4px 0 #ab3c3c;
+    left: 2px;
+}
+.btn-2f:active {
+    box-shadow: 0 0 #ab3c3c;
+    left: 6px;
+}
+.btn-2g {
+    border-radius: 40px;
+}
+.btn-2g:hover {
+    box-shadow: 0 4px #ab3c3c;
+    top: 2px;
+}
+.btn-2g:active {
+    box-shadow: 0 0 #ab3c3c;
+    top: 6px;
+}
+.btn-2h {
+    border-radius: 20px;
+}
+.btn-2h:hover {
+    box-shadow: 0 4px #ab3c3c;
+    top: 2px;
+}
+.btn-2h:active {
+    box-shadow: 0 0 #ab3c3c;
+    top: 6px;
+}
+.btn-2i {
+    border-radius: 50%;
+    height: 90px;
+    padding: 0;
+    width: 90px;
+}
+.btn-2i:hover {
+    box-shadow: 0 4px #ab3c3c;
+    top: 2px;
+}
+.btn-2i:active {
+    box-shadow: 0 0 #ab3c3c;
+    top: 6px;
+}
+.btn-2j {
+    border-radius: 50%;
+    height: 90px;
+    padding: 0;
+    width: 90px;
+}
+.btn-2j:hover {
+    box-shadow: 0 8px #ab3c3c;
+    top: -2px;
+}
+.btn-2j:active {
+    box-shadow: 0 0 #ab3c3c;
+    top: 6px;
+}
+.btn-3 {
+    background: #fcad26 none repeat scroll 0 0;
+    color: #fff;
+}
+.btn-3:hover {
+    background: #f29e0d none repeat scroll 0 0;
+}
+.btn-3:active {
+    background: #f58500 none repeat scroll 0 0;
+    top: 2px;
+}
+.btn-3::before {
+    font-size: 140%;
+    height: 100%;
+    left: 0;
+    line-height: 3;
+    position: absolute;
+    top: 0;
+    width: 60px;
+}
+.btn-3a {
+    padding: 25px 60px 25px 120px;
+}
+.btn-3a::before {
+    background: rgba(0, 0, 0, 0.05) none repeat scroll 0 0;
+}
+.btn-3b {
+    border-radius: 10px;
+    padding: 25px 60px 25px 120px;
+}
+.btn-3b::before {
+    border-right: 2px solid rgba(255, 255, 255, 0.5);
+}
+.btn-3c {
+    border-radius: 10px;
+    box-shadow: 0 3px #da9622;
+    padding: 80px 20px 20px;
+}
+.btn-3c:active {
+    box-shadow: 0 3px #dc7801;
+}
+.btn-3c::before {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 10px 10px 0 0;
+    color: #f29e0d;
+    height: 60px;
+    line-height: 60px;
+    width: 100%;
+}
+.btn-3c:active::before {
+    color: #f58500;
+}
+.btn-3d {
+    border-radius: 10px;
+    padding: 25px 60px 25px 120px;
+}
+.btn-3d::before {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 10px 0 0 10px;
+    color: #fcad26;
+    z-index: 2;
+}
+.btn-3d::after {
+    background: #fff none repeat scroll 0 0;
+    height: 20px;
+    left: 55px;
+    margin: -10px 0 0 -10px;
+    top: 50%;
+    transform: rotate(45deg);
+    width: 20px;
+    z-index: 1;
+}
+.btn-3d:active::before {
+    color: #f58500;
+}
+.btn-3d:active {
+    top: 0;
+}
+.btn-3d:active::after {
+    left: 60px;
+}
+.btn-3e {
+    overflow: hidden;
+    padding: 25px 120px 25px 60px;
+}
+.btn-3e::before {
+    left: auto;
+    right: 10px;
+    z-index: 2;
+}
+.btn-3e::after {
+    background: rgba(255, 255, 255, 0.1) none repeat scroll 0 0;
+    height: 200%;
+    margin: -5px 0 0 -5px;
+    right: 0;
+    top: 0;
+    transform: rotate(-20deg);
+    transform-origin: 0 0 0;
+    width: 30%;
+    z-index: 1;
+}
+.btn-3e:hover::after {
+    width: 40%;
+}
+.btn-4 {
+    border: 3px solid #fff;
+    border-radius: 50px;
+    color: #fff;
+    overflow: hidden;
+}
+.btn-4:active {
+    border-color: #17954c;
+    color: #17954c;
+}
+.btn-4:hover {
+    background: #24b662 none repeat scroll 0 0;
+}
+.btn-4::before {
+    color: #fff;
+    font-size: 125%;
+    height: 100%;
+    line-height: 3.5;
+    position: absolute;
+    transition: all 0.3s ease 0s;
+}
+.btn-4:active::before {
+    color: #17954c;
+}
+.btn-4a::before {
+    left: 130%;
+    top: 0;
+}
+.btn-4a:hover::before {
+    left: 80%;
+}
+.btn-4b::before {
+    left: -50%;
+    top: 0;
+}
+.btn-4b:hover::before {
+    left: 10%;
+}
+.btn-4c::before {
+    left: 70%;
+    opacity: 0;
+    top: 0;
+}
+.btn-4c:hover::before {
+    left: 80%;
+    opacity: 1;
+}
+.btn-4d::before {
+    left: 30%;
+    opacity: 0;
+    top: 0;
+}
+.btn-4d:hover::before {
+    left: 10%;
+    opacity: 1;
+}
+.btn-5 {
+    backface-visibility: hidden;
+    background: #823aa0 none repeat scroll 0 0;
+    color: #fff;
+    font-size: 16px;
+    height: 70px;
+    line-height: 24px;
+    min-width: 260px;
+    overflow: hidden;
+}
+.btn-5:active {
+    background: #9053a9 none repeat scroll 0 0;
+    top: 2px;
+}
+.btn-5 span {
+    backface-visibility: hidden;
+    display: inline-block;
+    height: 100%;
+    transition: all 0.3s ease 0s;
+    width: 100%;
+}
+.btn-5::before {
+    font-size: 180%;
+    height: 100%;
+    line-height: 2.5;
+    position: absolute;
+    transition: all 0.3s ease 0s;
+    width: 100%;
+}
+.btn-5:active::before {
+    color: #703b87;
+}
+.btn-5a:hover span {
+    transform: translateY(300%);
+}
+.btn-5a::before {
+    left: 0;
+    top: -100%;
+}
+.btn-5a:hover::before {
+    top: 0;
+}
+.btn-5b:hover span {
+    transform: translateX(200%);
+}
+.btn-5b::before {
+    left: -100%;
+    top: 0;
+}
+.btn-5b:hover::before {
+    left: 0;
+}
+.btn-6 {
+    background: #226fbe none repeat scroll 0 0;
+    color: #fff;
+    transition: none 0s ease 0s ;
+}
+.btn-6:active {
+    top: 2px;
+}
+.btn-6a {
+    border: 4px solid #226fbe;
+}
+.btn-6a:hover {
+    background: transparent none repeat scroll 0 0;
+    color: #226fbe;
+}
+.btn-6b {
+    border: 4px solid #226fbe;
+    border-radius: 15px;
+}
+.btn-6b:hover {
+    background: transparent none repeat scroll 0 0;
+    color: #226fbe;
+}
+.btn-6c {
+    border: 4px solid #226fbe;
+    border-radius: 60px;
+}
+.btn-6c:hover {
+    background: transparent none repeat scroll 0 0;
+    color: #226fbe;
+}
+.btn-6d {
+    border: 2px dashed #226fbe;
+}
+.btn-6d:hover {
+    background: transparent none repeat scroll 0 0;
+    color: #226fbe;
+}
+.btn-6e {
+    border: 2px dashed #226fbe;
+    border-radius: 15px;
+}
+.btn-6e:hover {
+    background: transparent none repeat scroll 0 0;
+    color: #226fbe;
+}
+.btn-6f {
+    border: 2px dashed #226fbe;
+    border-radius: 60px;
+}
+.btn-6f:hover {
+    background: transparent none repeat scroll 0 0;
+    color: #226fbe;
+}
+.btn-6g {
+    border: 2px dotted #226fbe;
+}
+.btn-6g:hover {
+    background: transparent none repeat scroll 0 0;
+    color: #226fbe;
+}
+.btn-6h {
+    border: 2px dotted #226fbe;
+    border-radius: 15px;
+}
+.btn-6h:hover {
+    background: transparent none repeat scroll 0 0;
+    color: #226fbe;
+}
+.btn-6i {
+    border: 2px dotted #226fbe;
+    border-radius: 60px;
+}
+.btn-6i:hover {
+    background: transparent none repeat scroll 0 0;
+    color: #226fbe;
+}
+.btn-6j {
+    border: 4px double #226fbe;
+}
+.btn-6j:hover {
+    background: transparent none repeat scroll 0 0;
+    color: #226fbe;
+}
+.btn-6k {
+    border: 4px double #226fbe;
+    border-radius: 15px;
+}
+.btn-6k:hover {
+    background: transparent none repeat scroll 0 0;
+    color: #226fbe;
+}
+.btn-6l {
+    border: 4px double #226fbe;
+    border-radius: 60px;
+}
+.btn-6l:hover {
+    background: transparent none repeat scroll 0 0;
+    color: #226fbe;
+}
+.btn-7 {
+    background: #17aa56 none repeat scroll 0 0;
+    border-radius: 7px;
+    box-shadow: 0 5px #119e4d;
+    color: #fff;
+    padding: 25px 60px 25px 90px;
+}
+.btn-7a {
+    overflow: hidden;
+}
+.btn-7a::before {
+    color: #0a833d;
+    font-size: 160%;
+    left: 0;
+    line-height: 0.8;
+    position: absolute;
+    width: 40%;
+}
+.btn-7a.btn-activated {
+    animation: 0.5s ease 0s normal none 1 running fadeOutText;
+}
+.btn-7a.btn-activated::before {
+    animation: 0.5s ease 0s normal none 1 running moveToRight;
+}
+@keyframes fadeOutText {
+0% {
+    color: transparent;
+}
+80% {
+    color: transparent;
+}
+100% {
+    color: #fff;
+}
+}
+@keyframes fadeOutText {
+0% {
+    color: transparent;
+}
+80% {
+    color: transparent;
+}
+100% {
+    color: #fff;
+}
+}
+@keyframes moveToRight {
+80% {
+    transform: translateX(250%);
+}
+81% {
+    opacity: 1;
+    transform: translateX(250%);
+}
+82% {
+    opacity: 0;
+    transform: translateX(250%);
+}
+83% {
+    opacity: 0;
+    transform: translateX(-50%);
+}
+84% {
+    opacity: 1;
+    transform: translateX(-50%);
+}
+100% {
+    transform: translateX(0%);
+}
+}
+@keyframes moveToRight {
+80% {
+    transform: translateX(250%);
+}
+81% {
+    opacity: 1;
+    transform: translateX(250%);
+}
+82% {
+    opacity: 0;
+    transform: translateX(250%);
+}
+83% {
+    opacity: 0;
+    transform: translateX(-50%);
+}
+84% {
+    opacity: 1;
+    transform: translateX(-50%);
+}
+100% {
+    transform: translateX(0%);
+}
+}
+.btn-7b {
+    overflow: hidden;
+}
+.btn-7b::before {
+    color: #0a833d;
+    font-size: 160%;
+    left: 0;
+    line-height: 0.8;
+    position: absolute;
+    width: 40%;
+}
+.btn-7b.btn-activated::before {
+    animation: 0.5s ease 0s normal none 1 running scaleUp;
+}
+@keyframes scaleUp {
+80% {
+    opacity: 0;
+    transform: scale(2);
+}
+100% {
+    opacity: 0;
+    transform: scale(2);
+}
+}
+@keyframes scaleUp {
+80% {
+    opacity: 0;
+    transform: scale(2);
+}
+100% {
+    opacity: 0;
+    transform: scale(2);
+}
+}
+.btn-icon-only {
+    font-size: 0;
+    padding: 25px 30px;
+}
+.btn-icon-only::before {
+    backface-visibility: hidden;
+    font-size: 26px;
+    height: 100%;
+    left: 0;
+    line-height: 54px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.btn-7c {
+    overflow: hidden;
+}
+.btn-7c::before {
+    color: #fff;
+    z-index: 1;
+}
+.btn-7c::after {
+    background: #0a833d none repeat scroll 0 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: none 0s ease 0s ;
+    width: 0;
+    z-index: 0;
+}
+.btn-7c.btn-activated::after {
+    animation: 0.7s ease 0s normal forwards 1 running fillToRight;
+}
+@keyframes fillToRight {
+100% {
+    width: 100%;
+}
+}
+@keyframes fillToRight {
+100% {
+    width: 100%;
+}
+}
+.btn-7d {
+    overflow: hidden;
+}
+.btn-7d::before {
+    color: #fff;
+    z-index: 1;
+}
+.btn-7d::after {
+    background: #21bb63 none repeat scroll 0 0;
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: none 0s ease 0s ;
+    width: 100%;
+    z-index: 0;
+}
+.btn-7d.btn-activated::after {
+    animation: 0.7s ease 0s normal forwards 1 running emptyBottom;
+}
+@keyframes emptyBottom {
+100% {
+    height: 100%;
+}
+}
+@keyframes emptyBottom {
+100% {
+    height: 100%;
+}
+}
+.btn-7e::after {
+    color: #ea515e;
+    font-size: 26px;
+    height: 100%;
+    left: 0;
+    line-height: 54px;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transform: scale(0);
+    transition: none 0s ease 0s ;
+    width: 100%;
+    z-index: 1;
+}
+.btn-7e.btn-activated::after {
+    animation: 0.5s ease 0s normal forwards 1 running scaleFade;
+}
+@keyframes scaleFade {
+50% {
+    opacity: 1;
+    transform: scale(1);
+}
+100% {
+    opacity: 0;
+    transform: scale(2.5);
+}
+}
+@keyframes scaleFade {
+50% {
+    opacity: 1;
+    transform: scale(1);
+}
+100% {
+    opacity: 0;
+    transform: scale(2.5);
+}
+}
+.btn-7f::before {
+}
+.btn-7f::after {
+    color: #ffe44d;
+    font-size: 26px;
+    height: 100%;
+    left: 0;
+    line-height: 54px;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transform: scale(4);
+    transition: none 0s ease 0s ;
+    visibility: hidden;
+    width: 100%;
+    z-index: 1;
+}
+.btn-7f.btn-activated::after {
+    animation: 0.3s ease 0s normal forwards 1 running dropDown;
+    visibility: visible;
+}
+@keyframes dropDown {
+100% {
+    opacity: 1;
+    transform: scale(1);
+}
+}
+@keyframes dropDown {
+100% {
+    opacity: 1;
+    transform: scale(1);
+}
+}
+.btn-7g::after {
+    color: #0a833d;
+    font-size: 26px;
+    height: 100%;
+    left: 0;
+    line-height: 54px;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transform: scale(2);
+    transition: none 0s ease 0s ;
+    visibility: hidden;
+    width: 100%;
+    z-index: 1;
+}
+.btn-7g.btn-activated::after {
+    animation: 0.5s ease 0s normal forwards 1 running dropDownFade;
+    visibility: visible;
+}
+@keyframes dropDownFade {
+50% {
+    opacity: 1;
+    transform: scale(1);
+}
+100% {
+    opacity: 0;
+    transform: scale(1.5);
+}
+}
+@keyframes dropDownFade {
+50% {
+    opacity: 1;
+    transform: scale(1);
+}
+100% {
+    opacity: 0;
+    transform: scale(1.5);
+}
+}
+.btn-7h {
+    overflow: hidden;
+}
+.btn-7h span {
+    display: inline-block;
+    width: 100%;
+}
+.btn-7h::before {
+    color: #0a833d;
+    font-size: 160%;
+    left: 0;
+    line-height: 0.8;
+    position: absolute;
+    width: 40%;
+}
+.btn-success, .btn-error {
+    color: transparent;
+}
+.btn-success::after, .btn-error::after {
+    color: #fff;
+    left: 40%;
+    z-index: 1;
+}
+.btn-success::before {
+    content: "";
+}
+.btn-success::after {
+    animation: 0.5s ease 0s normal none 1 running moveUp;
+    content: "Success!";
+}
+@keyframes moveUp {
+0% {
+    opacity: 0;
+    transform: translateY(50%);
+}
+100% {
+    opacity: 1;
+    transform: translateY(0px);
+}
+}
+@keyframes moveUp {
+0% {
+    opacity: 0;
+    transform: translateY(50%);
+}
+100% {
+    opacity: 1;
+    transform: translateY(0px);
+}
+}
+.btn-error {
+    animation: 0.5s ease 0s normal none 1 running shake;
+}
+@keyframes shake {
+0%, 100% {
+    transform: translateX(0px);
+}
+10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
+}
+20%, 40%, 60%, 80% {
+    transform: translateX(10px);
+}
+}
+@keyframes shake {
+0%, 100% {
+    transform: translateX(0px);
+}
+10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
+}
+20%, 40%, 60%, 80% {
+    transform: translateX(10px);
+}
+}
+.btn-error::before {
+    content: "";
+}
+.btn-error::after {
+    animation: 0.5s ease 0s normal none 1 running scaleFromUp;
+    content: "Error!";
+}
+@keyframes scaleFromUp {
+0% {
+    opacity: 0;
+    transform: scale(0);
+}
+100% {
+    opacity: 1;
+    transform: scale(1);
+}
+}
+@keyframes scaleFromUp {
+0% {
+    opacity: 0;
+    transform: scale(0);
+}
+100% {
+    opacity: 1;
+    transform: scale(1);
+}
+}
+.trash-effect {
+    margin: 60px auto 0;
+    max-width: 320px;
+    position: relative;
+}
+.trash-effect .icon-file {
+    font-size: 30px;
+    height: 50px;
+    left: 50%;
+    margin: -45px 0 0 -25px;
+    position: absolute;
+    top: 50%;
+    transform: translateX(90px) translateY(20px) scale(1);
+    transition: all 0.3s ease-out 0s;
+    width: 50px;
+}
+.trash-effect .icon-file:nth-child(2) {
+    transform: translateX(140px) translateY(-10px) scale(1);
+    transition-delay: 0.1s;
+}
+.trash-effect .icon-file:nth-child(3) {
+    transform: translateX(140px) translateY(50px) scale(1);
+    transition-delay: 0.2s;
+}
+.trash-effect.trash-effect-active .icon-file {
+    transform: translateX(-100px) translateY(-10px) scale(0);
+}
+.btn-7i {
+    border-radius: 0 0 7px 7px;
+    box-shadow: none;
+    padding: 27px 33px;
+    transform: translateX(-100px);
+}
+.btn-7i::before {
+    line-height: 45px;
+}
+.btn-7i::after {
+    background: #17aa56 none repeat scroll 0 0;
+    border-radius: 7px 7px 0 0;
+    height: 10px;
+    left: 0;
+    top: -10px;
+    transform-origin: 0 100% 0;
+    width: 100%;
+    z-index: 1;
+}
+.trash-effect-active .btn-7i::after {
+    animation: 0.5s ease 0s normal none 1 running openTrash;
+}
+@keyframes openTrash {
+50% {
+    transform: rotate(-35deg);
+}
+100% {
+    transform: rotate(0deg);
+}
+}
+@keyframes openTrash {
+50% {
+    transform: rotate(-35deg);
+}
+100% {
+    transform: rotate(0deg);
+}
+}
+.perspective {
+    display: inline-block;
+    perspective: 800px;
+}
+.btn-8 {
+    background: #5cbcf6 none repeat scroll 0 0;
+    display: block;
+    transform-style: preserve-3d;
+}
+.btn-8:active {
+    background: #55b7f3 none repeat scroll 0 0;
+}
+.btn-8a::after {
+    background: #49a7df none repeat scroll 0 0;
+    height: 40%;
+    left: 0;
+    top: -40%;
+    transform: rotateX(90deg);
+    transform-origin: 0 100% 0;
+    width: 100%;
+}
+.btn-8a:hover {
+    transform: rotateX(-15deg);
+}
+.btn-8b::after {
+    background: #49a7df none repeat scroll 0 0;
+    height: 40%;
+    left: 0;
+    top: 100%;
+    transform: rotateX(-90deg);
+    transform-origin: 0 0 0;
+    width: 100%;
+}
+.btn-8b:hover {
+    transform: rotateX(15deg);
+}
+.btn-8c::after {
+    background: #49a7df none repeat scroll 0 0;
+    height: 100%;
+    left: -20%;
+    top: 0;
+    transform: rotateY(-90deg);
+    transform-origin: 100% 0 0;
+    width: 20%;
+}
+.btn-8c:hover {
+    transform: rotateY(15deg);
+}
+.btn-8d::after {
+    background: #49a7df none repeat scroll 0 0;
+    height: 100%;
+    left: 100%;
+    top: 0;
+    transform: rotateY(90deg);
+    transform-origin: 0 0 0;
+    width: 20%;
+}
+.btn-8d:hover {
+    transform: rotateY(-15deg);
+}
+.btn-8e {
+    transform: rotateX(-15deg);
+}
+.btn-8e::after {
+    background: #49a7df none repeat scroll 0 0;
+    height: 40%;
+    left: 0;
+    top: -40%;
+    transform: rotateX(90deg);
+    transform-origin: 0 100% 0;
+    width: 100%;
+}
+.btn-8e:active {
+    transform: rotateX(0deg);
+}
+.btn-8f {
+    transform: rotateX(15deg);
+}
+.btn-8f::after {
+    background: #49a7df none repeat scroll 0 0;
+    height: 40%;
+    left: 0;
+    top: 100%;
+    transform: rotateX(-90deg);
+    transform-origin: 0 0 0;
+    width: 100%;
+}
+.btn-8f:active {
+    transform: rotateX(0deg);
+}
+.btn-8g {
+    background: #fff none repeat scroll 0 0;
+    color: #999;
+}
+.btn-8g:active {
+    background: #fff none repeat scroll 0 0;
+}
+.btn-8g::after, .btn-8g::before {
+    height: 100%;
+    left: 0;
+    line-height: 70px;
+    position: absolute;
+    text-transform: uppercase;
+    width: 100%;
+}
+.btn-8g::after {
+    background: #7aca7c none repeat scroll 0 0;
+    color: #358337;
+    content: "It worked!";
+    top: -100%;
+    transform: rotateX(90deg);
+    transform-origin: 0 100% 0;
+}
+.btn-8g::before {
+    background: #e96a6a none repeat scroll 0 0;
+    color: #a33a3a;
+    content: "Error!";
+    font-family: "Lato",Calibri,Arial,sans-serif;
+    font-weight: 700;
+    top: 100%;
+    transform: rotateX(-90deg);
+    transform-origin: 0 0 0;
+}
+.btn-8g.btn-success3d {
+    background: #aaa none repeat scroll 0 0;
+    transform: rotateX(-90deg) translateY(100%);
+    transform-origin: 50% 100% 0;
+}
+.btn-8g.btn-error3d {
+    background: #aaa none repeat scroll 0 0;
+    transform: rotateX(90deg) translateY(-100%);
+    transform-origin: 50% 0 0;
+}

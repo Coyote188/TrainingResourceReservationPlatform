@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="default" namespace="/" extends="json-default">
+        
+        <interceptors>
+            <interceptor name="aclInterceptor" class="cn.com.chinaccs.action.interceptor.ACLInterceptor" />
+            <interceptor name="crud" class="cn.com.chinaccs.webstart.crud.CrudInterceptor" />
+            <interceptor-stack name="acl">
+		       <interceptor-ref name="aclInterceptor" />
+		       <interceptor-ref name="defaultStack" />
+		   </interceptor-stack>
+        </interceptors>
+        
+       <global-results> 
+           <result name="login" type="redirect">login</result>
+           <result name="index" type="redirect">navBarV2</result>
+           <result name="json" type="json">
+		        <!-- 表示是否忽略等级，也就是继承关系 -->
+                <param name="ignoreHierarchy">false</param>
+				<param name="includeProperties">
+					output
+				</param>
+            </result>
+       </global-results>
+       <action name="include/*" class="cn.com.chinaccs.action.IncludeAction" method="{1}">
+            <result name="success">/WEB-INF/content/include/{1}.jsp</result>
+       </action>
+       
+       <!-- 操作  -->
+        <action name="op" class="cn.com.chinaccs.action.OperateAction">
+            <interceptor-ref name="acl" />
+            <result name="success">/WEB-INF/content/op/index.jsp</result>
+       </action>
+       <action name="op/*" class="cn.com.chinaccs.action.OperateAction" method="{1}">
+            <interceptor-ref name="acl" />
+            <result name="success">/WEB-INF/content/op/{1}.jsp</result>
+       </action>
+       
+       <action name="showPage/*" class="cn.com.chinaccs.action.ShowPageAction">
+             <interceptor-ref name="acl" />
+            <param name="pagePath">{1}</param>
+            <result name="success">/WEB-INF/${dir}/${jspPage}.jsp</result>
+       </action>
+       
+       <!-- 登录 -->
+       <action name="login" class="cn.com.chinaccs.action.LoginAction">
+             <result name="fail">/WEB-INF/content/loginV2/login.jsp</result>
+       </action>
+       <action name="systemstart">
+             <result>/progress-bar/system_loading.html</result>
+       </action>
+       <action name="logout" class="cn.com.chinaccs.action.LoginAction" method="logout" />
+       <action name="islogin" class="cn.com.chinaccs.action.LoginAction" method="isLogin" />
+       
+       <!-- 验证码 -->
+        <action name="captcha" class="cn.com.chinaccs.action.CaptchaAction">
+             <result name="success" type="stream">
+                <param name="contentType">image/jpeg</param>
+				<param name="inputName">inputStream</param>
+             </result>
+        </action>
+        
+        <!-- 首页 -->
+       <action name="index" class="cn.com.chinaccs.action.IndexAction">
+            <interceptor-ref name="acl" />
+            <result name="success">/WEB-INF/content/index.jsp</result>
+       </action>
+       <action name="navBar">
+            <result type="redirect">nav/nav.jsp</result>
+       </action>
+       <action name="navBarV2" >
+            <result type="redirect">navV2/nav.jsp</result>
+       </action>
+       <action name="index/*" class="cn.com.chinaccs.action.IndexAction">
+            <interceptor-ref name="acl" />
+            <result name="success">/WEB-INF/content/index.jsp</result>
+       </action>
+       
+        <!-- 系统设置 -->
+       <action name="system" class="cn.com.chinaccs.action.SystemAction">
+            <interceptor-ref name="acl" />
+            <result name="success">/WEB-INF/content/system/index.jsp</result>
+       </action>
+       <action name="system/*" class="cn.com.chinaccs.action.SystemAction" method="{1}">
+            <interceptor-ref name="acl" />
+            <result name="success">/WEB-INF/content/system/{1}.jsp</result>
+       </action>
+       
+       <!-- 用户 -->
+       <action name="user" class="cn.com.chinaccs.action.UserAction">
+            <interceptor-ref name="acl" />
+            <result name="success">/WEB-INF/content/user/index.jsp</result>
+       </action>
+       <action name="user/*" class="cn.com.chinaccs.action.UserAction" method="{1}">
+            <interceptor-ref name="acl" />
+            <result name="success">/WEB-INF/content/user/{1}.jsp</result>
+       </action>
+       
+       <!-- 菜单 -->
+       <action name="menu/*" class="cn.com.chinaccs.action.MenuAction" method="{1}">
+            <interceptor-ref name="acl" />
+            <result name="success">/WEB-INF/content/menu/{1}.jsp</result>
+       </action>
+       
+       <!-- 角色 -->
+       <action name="role/*" class="cn.com.chinaccs.action.RoleAction" method="{1}">
+            <interceptor-ref name="acl" />
+            <result name="success">/WEB-INF/content/role/{1}.jsp</result>
+       </action>
+       
+       <!-- 数据字典 -->
+       <action name="dict/*" class="cn.com.chinaccs.action.DictAction" method="{1}">
+            <interceptor-ref name="acl" />
+            <result name="success">/WEB-INF/content/dict/{1}.jsp</result>
+       </action>
+       
+       <!--  -->
+       <action name="admin" class="cn.com.chinaccs.webstart.admin.AdminAction">
+			<interceptor-ref name="acl" />
+			<interceptor-ref name="defaultStack" />
+			<result name="success" type="json">
+				<param name="includeProperties">
+					output
+				</param>
+			</result>
+		</action>
+		<action name="admin/*" class="cn.com.chinaccs.webstart.admin.AdminAction" method="{1}">
+			<interceptor-ref name="acl" />
+			<interceptor-ref name="defaultStack" />
+			<result name="success" type="json">
+				<param name="includeProperties">
+					output
+				</param>
+			</result>
+		</action>
+       
+       <action name="crud" class="cn.com.chinaccs.webstart.crud.CrudAction">
+		     <interceptor-ref name="acl" />
+			 <interceptor-ref name="crud" />
+		    <interceptor-ref name="defaultStack" />
+			<result name="jqGridQuery" type="json" />
+			<result name="success" type="json">
+				<param name="includeProperties">
+					output
+				</param>
+			</result>
+		</action>
+		<action name="crud/*" class="cn.com.chinaccs.webstart.crud.CrudAction" method="{1}">
+		    <interceptor-ref name="acl" />
+		    <interceptor-ref name="crud" />
+		     <interceptor-ref name="defaultStack" />
+			<result name="jqGridQuery" type="json" />
+			<result name="success" type="json">
+				<param name="includeProperties">
+					output
+				</param>
+			</result>
+		</action>
+		
+    
+
+       
+        <!-- 组织机构-->
+       <action name = "org/*" class="cn.com.chinaccs.action.orgAction" method="{1}"> 
+       <interceptor-ref name="acl" />
+			<interceptor-ref name="defaultStack" />
+			<result name="success" type="json">
+				<param name="includeProperties">
+					output
+				</param>
+			</result>
+		</action>
+		
+		 <!-- 组织机构-->
+       <action name = "roleUser/*" class="cn.com.chinaccs.action.RoleUserAction" method="{1}"> 
+       <interceptor-ref name="acl" />
+			<interceptor-ref name="defaultStack" />
+			<result name="success" type="json">
+				<param name="includeProperties">
+					output
+				</param>
+			</result>
+		</action>
+       
+       <action name="home">
+            <result type="redirect">idx.jsp</result>
+       </action>
+       
+    </package>
+</struts>

@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+.carouselBox {position:relative; background:rgba(235,235,235,0.7);}
+.carouselBox .carouselPics li {float:left; text-align:center;}
+.carouselBox .carouselPics li img {width:100%; vertical-align:middle;}
+.carouselBox .carouselBtns {width:100%; left:0; bottom:0; display:table; z-index:5; text-align:center;}
+.carouselBox .carouselBtns li {display:inline-block; width:8px; height:8px; margin:0 0 2px 0.5%; border-radius:4px; background:rgba(235,235,235,0.7);}
+.carouselBox .carouselBtns li.current {background:rgba(235,235,235,1);}
+.carouselBox .carouselBtns li:first-child {margin-left:0;}
+.carouselBox .carouselBtnsBg {width:27.7%; height:1.1em; left:50%; margin-left:-13.8%; bottom:0; background:url(../images/carouselBtnsBg.png) no-repeat center top; background-size:7em 1.5em;}

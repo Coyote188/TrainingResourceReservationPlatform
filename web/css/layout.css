@@ -1,0 +1,294 @@
+.clear {
+	clear: both;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.block {
+	display: block;
+}
+
+.hidden {
+	display: none;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+.relative {
+	position: relative;
+}
+
+.absolute {
+	position: absolute;
+}
+
+.fixed {
+	position: fixed;
+}
+
+.label200 {
+	display: block;
+	width: 200px;
+}
+
+.input20 {
+	border: 1px solid #0081DD;
+	color: #454545;
+	font-size: 1em;
+	font-weight: bold;
+	height: 28px;
+	line-height: 28px;
+	padding: 2px 3px;
+	width: 120px;
+	background: url(../images/bg_input_normal20.png) left top repeat-x;
+	border-radius: 4px;
+	margin: 2px;
+}
+
+.input30 {
+	border: 1px solid #0081DD;
+	color: #454545;
+	font-size: 1em;
+	font-weight: bold;
+	line-height: 28px;
+	height: 28px;
+	padding: 2px 3px;
+	width: 200px;
+	background: url(../images/bg_input_normal30.png) left top repeat-x;
+	border-radius: 4px;
+	margin: 2px;
+}
+.input_mnt {
+	border: 1px solid #0081DD;
+	font-size: 1em;
+	font-weight: bold;
+	line-height: 28px;
+	height: 28px;
+	padding: 2px 3px;
+	width: 200px;
+	border-radius: 4px;
+	margin: 2px;
+}
+
+.textarea200 {
+	background: none repeat scroll 0 0 #F5F5F5;
+	border: 1px solid #0081DD;
+	border-radius: 6px 6px 6px 6px;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2) inset;
+	display: inline-block;
+	font-size: 1em;
+	height: 150px;
+	margin: 2px;
+	padding: 2px;
+	text-align: left;
+	width: 180px;
+}
+
+.select20 {
+	border: 1px solid #0081DD;
+	color: #454545;
+	font-size: 1em;
+	font-weight: bold;
+	height: 28px;
+	padding: 2px;
+	width: 120px;
+	border-radius: 2px;
+	margin: 2px;
+	line-height: 28px;
+}
+
+.select30 {
+	border: 1px solid #0081DD;
+	color: #454545;
+	font-size: 1em;
+	font-weight: bold;
+	height: 28px;
+	line-height: 28px;
+	width: 200px;
+	border-radius: 4px;
+	margin: 2px;
+}
+
+input:disabled {
+	border: 1px solid #ddd;
+	color: #888888;
+	background: #f2f2f2;
+}
+
+.bg_position_bottom {
+	background-position: bottom left;
+}
+
+.cu-layout-shadow {
+	box-shadow: 0 2px 10px rgba(50, 50, 50, 0.5);
+}
+
+.cu-icon-load {
+	width: 16px;
+	height: 16px;
+	background: url(../images/loading.gif) no-repeat center;
+}
+
+.shade {
+	z-index: 9998;
+	width: 100%;
+	height: 100%;
+	background: #ccc;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.8;
+	z-index: 9;
+}
+
+#toast-shade {
+	z-index: 9;
+}
+
+div.cu-toast {
+	display: none;
+	min-height: 16px;
+	box-shadow: 0 2px 10px rgba(50, 50, 50, 0.4);
+	padding: 0.8em;
+	z-index: 9999;
+}
+
+div.cu-toast span {
+	display: block;
+	float: left;
+	margin-right: 0.2em;
+}
+
+div.cu-toast h4 {
+	line-height: 17px;
+	min-height: 17px;
+	margin-bottom: 0.2em;
+	display: block;
+}
+
+table.cu-table {
+	color: #333;
+}
+
+table.cu-table th {
+	border: 1px solid #AED0EA;
+	color: #2779AA;
+	font-size: 1em;
+	padding: 6px 10px;
+	text-align: center;
+	background: #E5F0F8;
+	padding: 4px;
+}
+
+table.cu-table td {
+	border: 1px solid #AED0EA;
+	color: #333;
+	font-size: 1em;
+	padding: 6px 10px;
+	text-align: center;
+	background: #fff;
+	padding: 4px;
+}
+
+.border1-red {
+	border: 1px solid #F87230;
+}
+
+.margin5 {
+	margin: 5px;
+	width: auto;
+	height: auto;
+}
+
+.margin-top5 {
+	margin-top: 5px;
+}
+
+.margin-left5 {
+	margin-left: 5px;
+}
+
+.margin-right5 {
+	margin-right: 5px;
+}
+
+.margin-bottom5 {
+	margin-bottom: 5px;
+}
+
+.margin10 {
+	margin: 10px;
+	width: auto;
+	height: auto;
+}
+
+.margin-top10 {
+	margin-top: 10px;
+}
+
+.margin-left10 {
+	margin-left: 10px;
+}
+
+.margin-right10 {
+	margin-right: 10px;
+}
+
+.margin-bottom10 {
+	margin-bottom: 10px;
+}
+
+.red {
+	color: #E87D03;
+}
+
+.yellow {
+	color: #FFF1A0;
+}
+
+.hover-underline:hover {
+	text-decoration: underline;
+}
+
+.bg_red {
+	background: #E87D03;
+}
+
+a.in-table {
+	color: #096DD1;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+a.in-table:hover {
+	text-decoration: underline;
+}
+
+.page-content {
+	background: none repeat scroll 0 0 #FFFFFF;
+	margin: 0 auto;
+	padding: 5px;
+	width: 900px;
+}
+
+.area_title {
+	height: 30px;
+	line-height: 30px;
+	padding: 0 5px;
+}
+
+.border-dashed-bottom {
+	border-bottom: 1px dashed #888;
+}
+
+.padding5 {
+	padding: 5px;
+}

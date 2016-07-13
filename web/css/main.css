@@ -1,0 +1,140 @@
+@CHARSET "UTF-8";
+
+#cu_header {
+	width: 100%;
+	height: 60px;
+	background: url("../images/bg_head.gif") repeat-x #f2f2f2;
+	position: relative;
+}
+
+#cu_header .logo {
+	margin-left: 20px;
+	width: 156px;
+	height: 100%;
+	background: url("../images/bg_logo.gif") no-repeat #f2f2f2;
+	text-align: center;
+}
+
+#cu_header .logo img {
+	margin-top: 20px;
+}
+
+#cu_header h4.title {
+	position: absolute;
+	top: 10px;
+	left: 180px;
+	color: #fff;
+}
+
+#cu_header .nav {
+	position: absolute;
+	left: 180px;
+	top: 36px;
+}
+
+.top_right {
+	position: absolute;
+	right: 5px;
+	top: 36px;
+	height: 32px;
+	line-height: 32px;
+}
+
+#cu_header .action {
+	position: absolute;
+	top: 10px;
+	right: 5px;
+	height: 18px;
+	line-height: 18px;
+}
+
+#cu_header .action a {
+	margin: 0px 2px;
+	float: left;
+	display: block;
+	height: 18px;
+	color: #ffffff;
+	font-weight: bold;
+	background-position: 0 50%;
+	background-repeat: no-repeat;
+	padding: 0 0 0 18px;
+	font-size: 12px;
+}
+
+.ic_download {
+	background-image: url("../images/ic_download.png");
+}
+
+.ic_home {
+	background-image: url("../images/ic_home.png");
+}
+
+.ic_edit {
+	background-image: url("../images/ic_edit.png");
+}
+
+.ic_signout {
+	background-image: url("../images/ic_signout.png");
+}
+
+#cu_nav .nav_title {
+	height: 30px;
+	line-height: 30px;
+}
+
+#cu_nav .nav_title h3 {
+	/* background: url("../images/ic_nav.png") no-repeat 0 50%; */
+	background: #62BBE8;
+	padding: 0 0 0 20px;
+	font-size: 14px; 
+	margin:5px 0 0 0; 
+	font-weight: 700;
+}
+
+.license {
+	text-align: center;
+	line-height: 18px;
+}
+
+/*功能菜单样式*/
+#tree_menu span {
+	font-size: 13px;
+	line-height: 16px;
+	color: #0e3e7c;
+}
+
+#tree_menu a {
+	font-size: 12px;
+	padding: 2px;
+	color: #016481;
+}
+
+#tree_menu a:hover {
+	color: #FFA615;
+	text-decoration: none;
+}
+
+#tree_menu a.active {
+	background: #FFA615;
+	color: #fff;
+}
+
+.login_botton {
+	background: url("../images/button_login.gif") no-repeat scroll 0 0
+		transparent;
+	border: 0 none;
+	clear: both;
+	height: 31px;
+	width: 90px;
+	color: #000;
+	text-align: center;
+	line-height: 31px;
+}
+
+.bg_change {
+	background-position: bottom left;
+}
+
+#nav_top label {
+	min-width: 80px;
+}

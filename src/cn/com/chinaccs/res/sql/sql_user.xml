@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "//mapsql/EN" "mapsql.dtd">
+<sqlMap>
+
+    <!-- 根菜单 -->
+    <sqlUnit name="user_login">
+        <sql>
+            from TNUser t where t.userName=:username and t.state='1' 
+        </sql>
+    </sqlUnit>
+    
+    <sqlUnit name="user_role">
+        <sql>
+            select distinct(ru.ROLE_ID) from t_n_role_user ru where ru.user_id=:userId
+        </sql>
+    </sqlUnit>
+    <sqlUnit name="user_com_role">
+        <sql>
+           select distinct(t.parent_role_id) from t_n_role_link t where t.role_id in (select ru.ROLE_ID from t_n_role_user ru where ru.user_id=:userId)
+        </sql>
+    </sqlUnit>
+    
+    <sqlUnit name="user_role_org">
+        <sql>
+            select distinct(t.org_id) from t_n_role t where t.id in (select distinct(ru.ROLE_ID) from t_n_role_user ru where ru.user_id=:userId)
+        </sql>
+    </sqlUnit>
+    <!-- 部门涵盖式查询用户list -->
+    <sqlUnit name="all_userList">
+        <sql>
+            select t.id,t.user_name,t.call_name,o.org_seq_name,t.mobile_no,t.email,t.post_name,
+			(select tmp.busi_name from t_n_dict tmp where 
+			tmp.busi_value=t.state and tmp.parent_id=(select id from t_n_dict where busi_value='DATA_STATE' )) as state
+			 from t_n_user t,t_n_org o where t.state = 1 and t.org_id in (select t.id from t_n_org t where t.org_seq like :likeOrgId or t.id =:orgId)  and t.org_id=o.id order by t.org_id,t.seq_num asc
+        </sql>
+    </sqlUnit>
+    <!-- 当前部门查询用户list -->
+    <sqlUnit name="userList">
+        <sql>
+            select t.id,t.user_name,t.call_name,o.org_seq_name,t.mobile_no,t.email,t.post_name,
+			 (select tmp.busi_name from t_n_dict tmp where 
+			 tmp.busi_value=t.state and tmp.parent_id=(select id from t_n_dict where busi_value='DATA_STATE' )) as state
+			 from t_n_user t,t_n_org o where t.state = 1 and t.org_id =:orgId and t.org_id=o.id order by t.seq_num asc
+        </sql>
+    </sqlUnit>
+    
+     <!-- 部门涵盖式查询 未配置当前角色的用户list -->
+    <sqlUnit name="all_not_role_user">
+        <sql>
+        select  u.id,u.call_name,o.org_seq_name 
+		from t_n_user u,t_n_org o  where u.state = 1 and  u.org_id=o.id and 
+		u.id not in (select t.user_id from t_n_role_user t where t.role_id=:roleId) and  
+		u.org_id in(select c.id from t_n_org c where  c.org_code like :likeOrgCode or  c.org_code =:orgCode )  order  by u.org_id,u.seq_num asc
+        </sql>
+    </sqlUnit>
+    
+     <!-- 当前部门查询  未配置当前角色的用户list -->
+    <sqlUnit name="not_role_user">
+        <sql>
+           select  u.id,u.call_name,o.org_seq_name 
+			from t_n_user u,t_n_org o  where u.state = 1 and  u.org_id=o.id and 
+			u.id not in (select t.user_id from t_n_role_user t where t.role_id=:roleId) and  
+			o.id =:orgId  order  by u.org_id,u.seq_num asc
+        </sql>
+    </sqlUnit>
+    
+     <!-- 角色的用户list -->
+    <sqlUnit name="select_role_user">
+        <sql>
+            select  u.id,u.call_name,o.org_seq_name 
+			from t_n_user u,t_n_org o  where u.org_id=o.id and 
+			u.id  in (select t.user_id from t_n_role_user t where t.role_id=:roleId )  order  by u.org_id,u.seq_num asc
+        </sql>
+    </sqlUnit>
+    
+   
+</sqlMap>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "//mapsql/EN" "mapsql.dtd">
+<sqlMap>
+
+    <!-- 查询车辆List -->
+    <sqlUnit name="vehicleList">
+        <sql>
+            select t.card_id,t.license_place,t.frame_number,t.owner,t.contacts,t.contact_number,(select tmp.busi_name from t_n_dict tmp where 
+			tmp.busi_value=t.vehicle_company and tmp.parent_id=(select id from t_n_dict where busi_value='CAR_BELONG' )) as statevehicle_company from t_v_vehicle_basicinfo t
+        </sql>
+    </sqlUnit>
+   
+   <sqlUnit name="maintenanceList">
+        <sql>
+	select a.m_id, a.vehicle_id, b.license_place, b.frame_number, b.owner, b.contacts, b.contact_number, 
+	b.vehicle_company, (select org_name from t_n_org where id = a.org_id), a.maintenance, a.inspector, a.mtn_time, 
+	a.org_id from 
+	t_v_vehicle_maintenance a, 
+	t_v_vehicle_basicinfo b 
+	where card_id = a.vehicle_id and
+	a.org_id in (select id from t_n_org where org_seq like :likeOrgId or id = :orgId)
+        </sql>
+    </sqlUnit>
+    
+    <sqlUnit name="maintenanceListQr">
+        <sql>
+	select a.m_id, a.vehicle_id, b.license_place, b.frame_number, b.owner, b.contacts, b.contact_number, 
+	b.vehicle_company, (select org_name from t_n_org where id = a.org_id), a.maintenance, a.inspector, a.mtn_time, 
+	a.org_id from 
+	t_v_vehicle_maintenance a, 
+	t_v_vehicle_basicinfo b 
+	where card_id = a.vehicle_id and 
+	a.org_id in (select id from t_n_org where org_seq like :likeOrgId or id = :orgId)
+        </sql>
+    </sqlUnit>
+    
+    <sqlUnit name="maintain4Card">
+        <sql>
+	select a.m_id, a.maintenance, a.inspector, a.mtn_time, a.org_id from 
+	t_v_vehicle_maintenance a where
+	a.org_id in (select id from t_n_org where org_seq like :likeOrgId or id = :orgId) and a.vehicle_id =:vCardId
+        </sql>
+    </sqlUnit>
+</sqlMap>

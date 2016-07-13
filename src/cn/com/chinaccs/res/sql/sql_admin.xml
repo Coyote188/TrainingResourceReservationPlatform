@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "//mapsql/EN" "mapsql.dtd">
+<sqlMap>
+	<sqlUnit name="selectMenu">
+		<sql>
+		    select o.id,o.menu_name,o.parent_id from t_n_menu o
+			order by o.level, o.seq_num 
+		</sql>
+	</sqlUnit>
+	<sqlUnit name="selectOrg">
+		<sql>
+		    select t.id,t.org_name,t.parent_id
+			from t_n_org t order by t.org_level,
+			t.seq_num
+		</sql>
+	</sqlUnit>
+	<sqlUnit name="selectDict">
+		<sql>select t.id,t.busi_name,t.parent_id
+			from t_n_dict t where t.state='1'  
+			order by t.busi_level,t.seq_num 
+		</sql>
+	</sqlUnit>
+	<sqlUnit name="roleUserOutList">
+		<sql>
+			select u.id,u.user_name,
+			(select tmp.busi_name from t_n_dict tmp where 
+		        tmp.busi_value=u.user_type and tmp.parent_id=(select id from t_n_dict where busi_value='user_type')) as user_type
+			,o.org_name from t_n_user u,t_n_org o
+			where u.org_id=o.id and u.id not in (
+			select t.user_id from t_n_role_user t where t.role_id=:roleId) and u.org_id=:orgId 
+			order by
+			u.create_time asc
+		</sql>
+	</sqlUnit>
+	<sqlUnit name="roleUserInList">
+		<sql>
+			select u.id,u.user_name,
+			(select tmp.busi_name from t_n_dict tmp where 
+		        tmp.busi_value=u.user_type and tmp.parent_id=(select id from t_n_dict where busi_value='user_type')) as user_type
+			,o.org_name from t_n_user u, t_n_org o,t_n_role_user ru 
+			where u.org_id=o.id and ru.role_id=:roleId 
+			and u.id=ru.user_id order by
+			u.create_time asc 
+		</sql>
+	</sqlUnit>
+	
+	<sqlUnit name="orgCodeMax">
+	   <sql>
+	       SELECT max(t.ORG_CODE) FROM t_n_org t 
+	       union 
+	       select max(t.seq_num) from t_n_org t where t.parent_id=:parentId
+	   </sql>
+	</sqlUnit>
+</sqlMap>

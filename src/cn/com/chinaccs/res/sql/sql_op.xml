@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "//mapsql/EN" "mapsql.dtd">
+<sqlMap>
+
+    <!-- 这里面只支持SQL语句，不支持HQL语句的执行-->
+    
+    <!-- SQL语句-->
+    <sqlUnit name="abc">
+        <sql>
+           
+        </sql>
+    </sqlUnit>
+</sqlMap>

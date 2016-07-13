@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "//mapsql/EN" "mapsql.dtd">
+<sqlMap>
+
+    <!-- 部门涵盖式查询用户list -->
+    <sqlUnit name="allList">
+        <sql>
+            select t.id,t.user_name,t.mobile_no,case when t.state='0' then '无效' else '有效' end state,t.org_id,t.create_time from t_n_user t where t.org_id in (select id from t_n_org where org_seq like :likeOrgId or id = :orgId)
+        </sql>
+    </sqlUnit>
+    <!-- 当前部门查询用户list -->
+    <sqlUnit name="list">
+        <sql>
+            select t.id,t.user_name,t.mobile_no,case when t.state='0' then '无效' else '有效' end state,t.org_id,t.create_time from t_n_user t where t.org_id=:orgId
+        </sql>
+    </sqlUnit>
+</sqlMap>

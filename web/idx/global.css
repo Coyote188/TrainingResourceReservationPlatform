@@ -1,0 +1,1969 @@
+@charset "utf-8";
+/*一乘驾校 CSS Document */
+html {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	list-style-type: none;
+}
+
+body {
+	color: #434343;
+	background: #fff;
+	font: 14px/1.2 "微软雅黑", "\5FAE\8F6F\96C5\9ED1", Arial, "\5B8B\4F53";
+	border-top: 0px solid #03004c;
+	text-align: center;
+}
+
+input, select {
+	font-family: "微软雅黑", "\5FAE\8F6F\96C5\9ED1", Arial, "\5B8B\4F53";
+}
+
+#Header, #page, #content, #footer {
+	width: 100%;
+	min-width: 999px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+#CMS {
+	display: none;
+}
+
+h1 {
+	color: #000;
+	position: absolute;
+	top: -80px;
+	z-index: -20;
+}
+
+h2 {
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 18px;
+}
+
+h3 {
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 16px;
+}
+
+a {
+	color: #434343;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #fbb040;
+	text-decoration: none;
+}
+
+/* 公共-Start */
+.DivListDate {
+	float: right;
+	color: #CCC;
+}
+
+.DivRight {
+	float: right;
+}
+
+.SpanGray {
+	color: #999;
+	font-size: 12px;
+	line-height: 1em;
+}
+
+.SpanGray a {
+	color: #999;
+	font-size: 12px;
+}
+
+.SpanGray a:hover {
+	color: #ccc;
+	font-size: 12px;
+}
+
+.Content ul {
+	list-style: disc inside;
+	padding: 0;
+	margin: 0;
+}
+
+.Content li {
+	line-height: 24px;
+	padding: 0 0 0 4px;
+	margin: 0;
+	border-bottom: dotted 1px #ccc;
+}
+
+.Title a:hover {
+	color: #2b3990;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.MorePos {
+	float: left;
+	width: 40%;
+	background-color: #e6f1f9;
+	line-height: 30px;
+}
+
+.More {
+	color: #999;
+	font: 12px/30px;
+	text-align: right;
+	padding: 0 12px 0 0;
+}
+
+.More a:hover {
+	color: #2b3990;
+	text-decoration: underline;
+}
+
+.FileDownload {
+	margin-right: 4px;
+	padding: 4px;
+}
+
+.FileDownload a {
+	padding: 2px;
+	border: 1px solid #ccc;
+	background-color: #fff;
+}
+
+.lineH20 {
+	line-height: 20px;
+}
+
+.lineH30 {
+	line-height: 30px;
+}
+
+.cb {
+	clear: both;
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+.mb20, .marB20 {
+	margin-bottom: 20px;
+}
+
+.tc {
+	text-align: center;
+}
+
+.tl {
+	text-align: left;
+}
+
+.tr {
+	text-align: right;
+}
+
+#allmap {
+	float: left;
+	margin: 12px 0 12px 0;
+	width: 630px;
+	height: 500px;
+	text-indent: 0em;
+	font-size: 12px;
+}
+
+#r-result {
+	float: left;
+	width: 200px;
+	margin-left: 4px;
+}
+
+#demo {
+	overflow: hidden;
+	width: 234px;
+}
+
+#demo img {
+	height: 80px;
+}
+
+#demo ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#demo li {
+	float: left;
+	padding: 6px;
+	margin: 6px 6px 0 0;
+	line-height: 24px;
+	text-align: center;
+	background-color: #fff;
+	border: 1px solid #ccc;
+}
+
+#indemo {
+	float: left;
+	width: 800%;
+}
+
+#demo1 {
+	float: left;
+}
+
+#demo2 {
+	float: left;
+}
+
+.SiteSearch {
+	float: right;
+	position: relative;
+	top: 6px;
+	right: 12px;
+}
+
+.SiteSearch input {
+	height: 16px;
+	color: #b7bede;
+	background-color: #03004c;
+	border: 1px solid #1b4506;
+}
+
+.BreakLine {
+	float: left;
+	width: 8px;
+	height: 100%;
+	border-left: 1px dashed #f2f7fa;
+}
+
+.AreaBreak {
+	float: left;
+	width: 24px;
+	min-height: 80px;
+	max-height: 100%;
+}
+
+.SpaceBar {
+	width: 100%;
+	height: 20px;
+	padding: 0 auto;
+	margin: 0 auto;
+}
+/* 菜单相关-Start */
+#MenuSpace {
+	width: 999px;
+	height: 50px;
+	padding: 0 auto;
+	margin: 0 auto;
+}
+
+#MenuSpaceLogo {
+	float: left;
+	width: 140px;
+	height: 50px;
+	background: url(images/logo.png) no-repeat;
+}
+
+#MenuSpaceCenter {
+	float: left;
+	width: 569px;
+	height: 50px;
+	margin: 0 20px 0 20px;
+}
+
+#MenuSpaceRight {
+	float: left;
+	width: 250px;
+	height: 50px;
+	background-color: #efefef;
+}
+
+.SearchOutput ul {
+	margin: 0;
+	padding: 0;
+}
+
+.SearchOutput ul li {
+	list-style: square inside;
+	margin-bottom: 20px;
+	border-bottom: 1px dashed #b7bede;
+}
+
+.SearchOutput ul li a {
+	font-weight: 700;
+	text-indent: 0;
+}
+
+#MenuSpaceFans {
+	height: 33px;
+	line-height: 33px;
+	margin: 0 0 16px 0;
+	background: url(images/bg-fans.png) no-repeat;
+}
+
+#FansNumLayout {
+	float: left;
+	position: relative;
+	left: 160px;
+	text-align: left;
+	color: #434343;
+	font-weight: bold;
+}
+
+#FansNameLayout {
+	float: left;
+	position: relative;
+	left: 288px;
+	text-align: left;
+	color: #ccc;
+}
+
+#StudentName {
+	width: 234px;
+}
+
+#MenuSpaceNav {
+	height: 60px;
+	border-top: 1px solid #434343;
+}
+
+#nav {
+	margin: 0 auto 0 auto;
+	z-index: 1000;
+}
+
+#nav .mainlevel {
+	background: #fff;
+	float: left;
+	width: 80px;
+	z-index: 1000; /*IE6 only*/
+}
+
+#nav .mainlevel a {
+	display: block;
+	width: 80px;
+	height: 60px;
+	line-height: 60px;
+	padding: 0;
+	color: #434343;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#nav .mainlevel a:hover, #nav .mainlevel a.cur {
+	color: #fff;
+	text-decoration: none;
+	background: #03004c;
+}
+
+#nav .mainlevel ul {
+	clear: both;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	display: none;
+	position: absolute;
+}
+
+#nav .mainlevel ul li {
+	display: block;
+	border-top: 1px solid #03004c;
+	background: #f0f0f0;
+	width: 120px;
+	opacity: 0.9; /*IE6 only*/
+}
+
+#nav .mainlevel ul li a {
+	color: #434343;
+	height: 28px;
+	line-height: 28px;
+	width: 120px;
+	font-weight: normal; /*IE6 only*/
+}
+
+#nav .sublevel a {
+	display: block;
+	position: relative;
+	left: 80px;
+	width: 80px;
+	height: 60px;
+	line-height: 60px;
+	padding: 0;
+	color: #434343;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#RightIcon {
+	float: left;
+	width: 90px;
+	height: 150px;
+	background: url("images/icon-menu.png") no-repeat;
+}
+
+#RightLink {
+	float: left;
+	margin: 10px 10px 0 0;
+	color: #434343;
+	text-align: left;
+}
+
+#RightLink .HotLine {
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px dotted #434343;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+#RightLink .GPS {
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px dotted #434343;
+}
+
+#RightLink .EMail {
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px dotted #434343;
+}
+/* 菜单相关-End */
+#ADArea {
+	width: 100%;
+}
+
+#ADFocusImages {
+	width: 999px;
+	height: 300px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+#Nav2Area {
+	width: 999px;
+	height: 100px;
+	margin: 0 auto;
+	border-bottom: 1px solid #696969;
+}
+
+#Nav2Title {
+	float: left;
+	width: 140px;
+	height: 100px;
+	background: url(images/nav2title.png) no-repeat;
+}
+
+#Nav2Link {
+	float: left;
+	width: 859px;
+	height: 100px;
+}
+
+#Nav2LinkText {
+	width: 859px;
+	height: 32px;
+	font-weight: bold;
+	text-align: center;
+}
+
+#Nav2LinkText img {
+	width: 32px;
+	margin: 24px 0 0 0;
+}
+
+#Nav2LinkText ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	color: #696969;
+}
+
+#Nav2LinkText ul li {
+	float: left;
+	position: relative;
+	text-align: center;
+	display: block;
+	width: 122px;
+	height: 32px;
+	line-height: 32px;
+}
+
+#Nav2LinkText ul li a {
+	display: block;
+	color: #434343;
+}
+
+#Nav2LinkText ul li a:hover {
+	display: block;
+	background-color: #fbb040;
+}
+
+#MainArea {
+	width: 999px;
+	min-height: 480px;
+	max-height: 100%;
+	background-color: #fff;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#MainAreaLeft {
+	float: left;
+	width: 140px;
+	min-height: 480px;
+	max-height: 100%;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+}
+
+#MainAreaLeft a:hover {
+	text-decoration: none;
+}
+
+#NavTitle {
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	color: #fff;
+	background-color: #03004c;
+}
+
+#NavTitle a {
+	color: #fff;
+}
+
+#NavTitle a:hover {
+	color: #e9e9e9;
+}
+
+#NavLink ul {
+	padding: 0;
+	margin: 0;
+}
+
+#NavLink li {
+	width: 100%;
+	text-align: center;
+	background-color: #ccc;
+}
+
+#NavLink .level1 a {
+	display: block;
+	color: #535353;
+	height: 50px;
+	line-height: 50px;
+	background-color: #e9e9e9;
+	border-bottom: 1px dashed #535353;
+}
+
+#NavLink .level1 a:hover {
+	display: block;
+	color: #e9e9e9;
+	background-color: #03004c;
+}
+
+#NavLink .level2 a {
+	display: block;
+	color: #535353;
+	border-bottom: 1px dashed #535353;
+	margin: 0 0 0 20px;
+	width: 120px;
+}
+
+#NavLink .level2 li a:hover {
+	display: block;
+	color: #e9e9e9;
+	background-color: #03004c;
+}
+
+#MainAreaBreak {
+	float: left;
+	width: 24px;
+	min-height: 480px;
+	max-height: 100%;
+}
+
+#MainAreaRight {
+	float: left;
+	width: 835px;
+	min-height: 480px;
+	max-height: 100%;
+	text-align: center;
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
+}
+
+#MainAreaRight .Location {
+	text-align: left;
+	font-weight: bold;
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px solid #434343;
+}
+
+#BottomAd {
+	margin: 0 auto;
+	clear: both;
+	width: 999px;
+	height: 200px;
+	color: #fff;
+	background-color: #03004c;;
+	background-image: url(images/bottom-left.png);
+	background-repeat: no-repeat;
+}
+
+#BottomAd .Image {
+	padding: 18px 24px 0 320px;
+	text-align: left;
+}
+
+#BottomAd .Text {
+	line-height: 18px;
+	padding: 8px 24px 12px 320px;
+	text-align: left;
+	text-indent: 2em;
+}
+
+#BottomArea {
+	margin: 0 auto;
+	clear: both;
+	width: 999px;
+	color: #434343;
+	background-color: #e9e9e9;
+	text-align: center;
+}
+
+#BottomArea a {
+	color: #434343;
+}
+
+#BottomArea a:hover {
+	color: #696969;
+	text-decoration: underline;
+}
+
+#BottomArea .Link {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	font-weight: bold;
+}
+
+#BottomArea .Contact {
+	width: 100%;
+	margin: 0;
+	font-size: 12px;
+	line-height: 24px;
+}
+
+#BottomArea .CopyRight {
+	width: 100%;
+	margin: 0;
+	font-size: 12px;
+	line-height: 24px;
+}
+
+#PoweredBy {
+	height: 34px;
+	line-height: 34px;
+	font-size: 12px;
+}
+
+#PoweredBy, #PoweredBy a {
+	color: #999;
+}
+
+#PoweredBy img {
+	vertical-align: middle !important;
+}
+/* 公共-End */
+
+/* 首页相关-Start */
+#ProcessArea {
+	width: 999px;
+	height: 40px;
+	margin: 0 auto;
+	border: 1px solid #696969;
+}
+
+#ProcessTitle {
+	float: left;
+	width: 100px;
+	height: 32px;
+	margin: 4px 19px 4px 18px;
+	background: url(images/icon-process.png) no-repeat;
+}
+
+#ProcessLink {
+	float: left;
+	width: 859px;
+	height: 40px;
+	border-left: 1px solid #696969;
+}
+
+#ProcessLinkText {
+	width: 859px;
+	height: 32px;
+	text-align: center;
+}
+
+#ProcessLinkText ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 0 20px;
+	color: #696969;
+}
+
+#ProcessLinkText ul li {
+	float: left;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+#ProcessLinkText ul li a {
+	color: #696969;
+}
+
+.Tab {
+	height: 50px;
+	font-weight: bold;
+	border-bottom: 1px solid #434343;
+}
+
+.Tab ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.Tab li {
+	float: left;
+	width: 120px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.TabOn a {
+	color: #fff;
+	display: block;
+	background-color: #03004c;
+}
+
+.TabOff a {
+	color: #434343;
+}
+
+.TabOn a:hover {
+	color: #efefef;
+	text-decoration: none;
+}
+
+.TabOff a:hover {
+	color: #434343;
+	text-decoration: none;
+}
+
+#Row1Area {
+	width: 999px;
+	height: 400px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+#Row1Col1 {
+	float: left;
+	width: 771px;
+	height: 398px;
+	margin: 0 auto;
+	text-align: left;
+	overflow: hidden;
+	border: 1px solid #434343;
+}
+
+#Row1Col1 .TabOnDiv {
+	width: 740px;
+	height: 317px;
+	text-align: left;
+	margin: 15px;
+}
+
+#Row1Col1 .TabOnDiv ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#Row1Col1 .TabOnDiv li {
+	float: left;
+	width: 170px;
+	text-align: left;
+	margin: 0 5px 0 0;
+}
+
+#Row1Col1 .ClassImage {
+	width: 100%;
+	height: 155px;
+}
+
+#Row1Col1 .ClassImage img {
+	width: 170px;
+	height: 155px; /*160px*/
+}
+
+#Row1Col1 .ClassTitle {
+	width: 100%;
+	height: 32px;
+	border-bottom: 1px dashed #434343;
+	line-height: 32px;
+	overflow: hidden;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+#Row1Col1 .ClassPrice {
+	width: 100%;
+	height: 24px;
+	line-height: 24px;
+	font-weight: bold;
+	margin-top: 8px;
+}
+
+#Row1Col1 .ClassVehicle {
+	width: 100%;
+	height: 24px;
+	line-height: 24px;
+	font-size: 12px;
+}
+
+#Row1Col1 .ClassFeature {
+	width: 100%;
+	height: 24px;
+	line-height: 24px;
+	font-size: 12px;
+}
+
+#Row1Col1 .ClassButton {
+	float: left;
+}
+
+.ClassButton .ClassButton1 a {
+	display: block;
+	width: 80px;
+	height: 30px;
+	margin: 5px 5px 0 0;
+	overflow: hidden;
+	background-image: url("images/button-signup1.png");
+}
+
+.ClassButton .ClassButton1 a:hover {
+	background-image: url("images/button-signup1-hover.png");
+}
+
+.ClassButton .ClassButton2 a {
+	display: block;
+	width: 80px;
+	height: 30px;
+	margin: 5px 5px 0 0;
+	overflow: hidden;
+	background-image: url("images/button-signup2.png");
+}
+
+.ClassButton .ClassButton2 a:hover {
+	background-image: url("images/button-signup2-hover.png");
+}
+
+#Row1Col2 {
+	float: left;
+	width: 200px;
+	height: 398px;
+	margin: 0 auto;
+	overflow: hidden;
+	text-align: left;
+	color: #707070;
+	border: 1px solid #434343;
+}
+
+#Row1Col2 .TabOnDiv {
+	width: 160px;
+	height: 317px;
+	text-align: left;
+	margin: 15px;
+}
+
+#Row1Col2 .TabOnDiv ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+#Row1Col2 .TabOnDiv li {
+	width: 100%;
+	text-align: left;
+	border-bottom: 1px dashed #434343;
+	margin: 0 0 10px 0;
+	padding: 0 0 10px 0;
+}
+
+#Row1Col2 .ClassImage {
+	width: 100%;
+	height: 120px;
+}
+
+#Row1Col2 .ClassImage img {
+	width: 75px;
+	height: 50px;
+}
+
+#Row1Col2 .ClassTitle {
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+	font-weight: bold;
+}
+
+#Row1Col2 .ClassContent {
+	width: 100%;
+	height: 32px;
+	font-size: 12px;
+	line-height: 16px;
+	margin-top: 0px;
+	text-indent: 0em;
+	overflow: hidden;
+}
+
+#Row1Col2 .ClassDetail {
+	float: right;
+	margin: 6px 0 0 0;
+	font-weight: bold;
+}
+
+#Row2Area {
+	width: 999px;
+	height: 430px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+#Row2Col1 {
+	float: left;
+	width: 600px;
+	height: 428px;
+	margin: 0 auto;
+	text-align: left;
+	overflow: hidden;
+	border: 1px solid #434343;
+}
+
+#Row2Col1 .TabOnDiv {
+	width: 570px;
+	height: 378px;
+	text-align: left;
+	margin: 15px;
+}
+
+#Row2Col1 img {
+	width: 570px;
+	height: 270px;
+}
+
+#Row2Col1 .TabOnDiv ul {
+	list-style: none;
+	padding: 0;
+	margin: 8px 10px 0 0;
+}
+
+#Row2Col1 .TabOnDiv li {
+	width: 100%;
+	height: 24px;
+	line-height: 24px;
+	text-align: left;
+}
+
+#Row2Col2 {
+	float: left;
+	width: 371px;
+	height: 428px;
+	margin: 0 auto;
+	overflow: hidden;
+	text-align: left;
+	border: 1px solid #434343;
+}
+/* 暂用 */
+#Row2Col2 .MediaTitle li {
+	float: left;
+	width: 120px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	background-color: #03004c;
+}
+
+#Row2Col2 .TabOnDiv {
+	width: 341px;
+	height: 428px;
+	text-align: left;
+	margin: 15px;
+}
+
+#Row2Col2 .TabOnDiv ul {
+	list-style: none;
+}
+
+#Row2Col2 .TabOnDiv li {
+	width: 150px;
+	margin: 0 10px 4px 0;
+	padding: 8px;
+	background-color: #f0f0f0;
+	overflow: none;
+	border-radius: 3px;
+	-webkit-box-shadow: 2px 2px 3px rgba(100, 100, 100, 0.5);
+	-moz-box-shadow: 2px 2px 3px rgba(100, 100, 100, 0.5);
+	box-shadow: 2px 2px 3px rgba(100, 100, 100, 0.5);
+}
+
+#Row2Col2 .eBook img {
+	max-width: 75px;
+}
+
+#Row2Col2 .TieBa img {
+	max-width: 341px;
+}
+/* 暂未启用
+#Row2Col2Book {
+	width:521px;
+	height:220px;
+	margin:0 auto;
+	overflow:hidden;
+	text-align:left;
+	border:1px solid #434343;
+}
+#Row2Col2Book .Tab li {float:left; width:80px; height:50px; line-height:50px; text-align:center; cursor:pointer;}
+#Row2Col2Book .BookTitle li {float:left; width:120px; height:50px; line-height:50px; text-align:center; background-color:#03004c;}
+#Row2Col2Book .TabOnDiv {width:491px; height:167px; text-align:left; margin:15px;}
+#Row2Col2Book img {width:110px; height:165px;}
+#Row2Col2Book .TabOnDiv ul {list-style:none; padding:0; margin:8px 10px 0 0;}
+#Row2Col2Book .TabOnDiv li {width:100%; height:24px; line-height:24px; text-align:left;}
+
+#Row2Col2Space {width:100%; height:10px;}
+#Row2Col2Media {
+	width:521px;
+	height:194px;
+	margin:0 auto;
+	overflow:hidden;
+	text-align:left;
+	border:1px solid #434343;
+}
+#Row2Col2Media .MediaTitle li {float:left; width:120px; height:50px; line-height:50px; text-align:center; background-color:#03004c;}
+#Row2Col2Media .TabOnDiv {width:491px; height:141px; text-align:left; margin:15px;}
+#Row2Col2Media img {width:125px; height:125px;}
+#Row2Col2Media .TabOnDiv ul {list-style:none; padding:0; margin:8px 10px 0 0;}
+#Row2Col2Media .TabOnDiv li {width:100%; height:24px; line-height:24px; text-align:left;}
+ */
+#Ad1 {
+	width: 999px;
+	height: 100px;
+	padding: 5px 0px 5px 0px;
+	text-align: center;
+	background-color: #fff;
+}
+
+#Row3Area {
+	width: 999px;
+	height: 160px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+#Row3Col1, #Row3Col2 {
+	float: left;
+	width: 241px;
+	height: 158px;
+	margin: 0 auto;
+	text-align: center;
+	overflow: hidden;
+	border: 1px solid #434343;
+	background-color: #f2f2f2;
+}
+
+#Row3Area .LayOut {
+	margin: 15px;
+}
+
+#Row3Area .ClassTitle {
+	width: 100%;
+	height: 24px;
+	line-height: 24px;
+	overflow: hidden;
+	font-size: 12px;
+	font-weight: bold;
+	border-bottom: 1px dashed #434343;
+}
+
+#Row3Area .ClassImage {
+	width: 100%;
+	height: 45px;
+	margin: 15px 0 15px 0;
+}
+
+#Row3Area .ClassContent {
+	width: 100%;
+	overflow: hidden;
+	font-weight: bold;
+}
+
+#Row3Col3, #Row3Col4 {
+	float: left;
+	width: 241px;
+	height: 158px;
+	margin: 0 auto;
+	text-align: left;
+	overflow: hidden;
+	border: 1px solid #434343;
+}
+
+#Row3Col3 .ClassContribute {
+	margin: 0;
+	width: 160px;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #434343;
+	border-radius: 10px;
+	overflow: hidden;
+	font-weight: bold;
+	text-align: center;
+}
+
+#Row3Col3 .ClassContribute a {
+	display: block;
+	color: #fff;
+	background: #03004c;
+}
+
+#Row3Col3 .ClassContribute a:hover {
+	display: block;
+	color: #434343;
+	background: #fff100;
+}
+
+#Row3Col3 .ClassTitle {
+	width: 100%;
+	margin: 5px 0 10px 0;
+	height: 30px;
+	line-height: 30px;
+	overflow: hidden;
+	font-weight: bold;
+	border-bottom: 1px dashed #434343;
+}
+
+#Row3Col3 .ClassContent {
+	line-height: 20px;
+	font-weight: bold;
+}
+
+#Row3Col3 .ClassText {
+	line-height: 20px;
+	font-size: 12px;
+}
+
+#Row3Col4 .ClassImage {
+	width: 100%;
+	height: 100px;
+	margin: 0;
+	text-align: center;
+}
+
+#Row3Col4 .ClassContent {
+	line-height: 20px;
+	font-weight: bold;
+	text-align: center;
+}
+
+/* 首页相关-End */
+
+/* 栏目相关-Start */
+#RightList {
+	width: 835px;
+	text-align: left;
+}
+
+#RightList ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#RightList li {
+	display: block;
+	margin: 8px 0 8px 0;
+	padding: 0 0 0 8px;
+	height: 50px;
+	line-height: 50px;
+	vertical-align: middle;
+	border: 1px solid #434343;
+}
+
+#RightList .SpanImage {
+	height: 50px;
+	line-height: 50px;
+}
+
+#RightList .SpanDate {
+	color: #03004c;
+}
+
+#RightList .Pager {
+	margin: 15px 0 0 0;
+}
+
+#RightList .Select, select {
+	color: #666;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+}
+/* 栏目相关-End */
+
+/* 网点栏目相关-Start */
+#RightList {
+	width: 835px;
+	text-align: left;
+}
+
+#RightMap ul {
+	list-style: square inside url("images/baidu-marker.png");
+	padding: 12px 0 0 0;
+	margin: 0;
+	text-align: left;
+}
+
+#RightMap li {
+	padding: 0;
+	margin: 0;
+	height: 22px;
+	line-height: 22px;
+	border: 0;
+}
+
+#RightMap a {
+	display: block;
+}
+
+#RightMap a:hover {
+	display: block;
+	color: #fff;
+	background-color: #fbb040;
+}
+/* 网点栏目相关-End */
+
+/* 线路栏目相关-Start */
+#RightLine {
+	width: 835px;
+	text-align: left;
+}
+
+#RightLine p {
+	line-height: 14px;
+	margin-bottom: 6px;
+	text-indent: 0em;
+}
+
+#RightLine .Lines a {
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	border: 1px solid #ccc;
+	margin: 6px;
+	text-align: center;
+}
+
+#RightLine .Lines a:hover {
+	display: block;
+	color: #fff;
+	background-color: #fbb040;
+}
+
+#RightLine .Select, select {
+	color: #666;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+}
+/* 线路栏目相关-End */
+
+/* 投票栏目相关-Start */
+#RightVote {
+	width: 835px;
+	text-align: left;
+}
+
+#RightVote p {
+	line-height: 14px;
+	margin-bottom: 6px;
+	text-indent: 0em;
+}
+
+#RightVote .Channel {
+	padding: 0;
+	margin: 30px auto;
+	background: rgb(237, 238, 240);
+	text-align: center;
+}
+
+#RightVote .Channel img {
+	margin: 0 auto;
+	border: 0 solid #000;
+}
+
+#RightVote .Channel p {
+	text-indent: 0;
+	line-height: 30px;
+}
+
+#RightVote .ImageArea {
+	padding: 10px;
+}
+
+#RightVote .ImageArea img {
+	border: 1px dotted #ccc;
+}
+
+#RightVote .VoteImage {
+	width: 200px;
+}
+
+#RightVote .VoteTitle {
+	line-height: 30px;
+}
+
+#RightVote .VoteForm {
+	display: none;
+}
+
+#RightVote .VoteButton {
+	padding: 6px;
+	height: 30px;
+	margin: 8px auto;
+}
+
+.ImageCol {
+	float: left;
+	width: 220px;
+	padding: 10px;
+}
+
+#Container {
+	width: 999px;
+	margin: 0px auto;
+	padding: 30px;
+	background: #f0f0f0;
+}
+
+#Container a {
+	width: 100px;
+	display: block;
+	background: #ff8000;
+	padding: 6px;
+	margin: 30px auto;
+}
+
+#ShowTips {
+	font-size: 48px;
+	color: #ff8000;
+	font-weight: bold;
+	line-height: 60px;
+}
+
+#ShowVote {
+	font-size: 18px;
+}
+/* 投票栏目相关-End */
+
+/* 班型栏目相关-Start */
+#RightList2 {
+	width: 835px;
+	margin: 12px 0 0 0;
+	text-align: left;
+}
+
+#RightList2 .GroupTitle {
+	width: 100%;
+	margin: 12px 0 12px 0;
+	border-bottom: 1px dashed #ccc;
+	line-height: 30px;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: left;
+}
+
+#RightList2 .GroupContent {
+	width: 100%;
+}
+
+#RightList2 .GroupContent table {
+	width: 100%;
+}
+
+#RightList2 .GroupContent td {
+	border-bottom: 1px dotted #cccccc;
+	padding: 12px 0 12px 0;
+}
+
+#RightList2 .GroupContent .Image {
+	float: left;
+	width: 183px;
+	text-align: left;
+	margin: 0 12px 0 0;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+#RightList2 .GroupContent .Image img {
+	width: 171px;
+	height: 143px;
+	margin: 0 12px 0 0;
+	border: 1px solid #fbb040;
+}
+
+#RightList2 .GroupContent .Content {
+	float: left;
+	width: 530px;
+	text-align: left;
+	margin: 0;
+	line-height: 24px;
+}
+
+#RightList2 .GroupContent .ClassTitle {
+	color: #fbb040;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+#RightList2 .GroupContent .SubTitle {
+	text-align: left;
+}
+
+#RightList2 .GroupContent .Rigister {
+	float: left;
+}
+
+#RightList2 .GroupContent .ClassButton {
+	margin: 0;
+}
+/* 班型栏目相关-End */
+
+/* 图片栏目相关-Start */
+#RightList3 {
+	width: 835px;
+	margin: 12px 0 0 0;
+	text-align: center;
+}
+
+#RightList3 ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#RightList3 ul li {
+	float: left;
+	width: 181px;
+	text-align: center;
+	margin: 0 20px 10px 0;
+	padding: 10px;
+	background-color: #eee;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	-webkit-box-shadow: 2px 2px 3px rgba(100, 100, 100, 0.5);
+	-moz-box-shadow: 2px 2px 3px rgba(100, 100, 100, 0.5);
+	box-shadow: 2px 2px 3px rgba(100, 100, 100, 0.5);
+}
+
+#RightList3 ul li a {
+	color: #333;
+}
+
+#RightList3 .Images {
+	text-align: center;
+	margin: 0;
+	overflow: hidden;
+}
+
+#RightList3 .SubTitle {
+	text-align: center;
+}
+
+#RightList3 .Pager {
+	margin: 0;
+}
+
+#RightList3 .eBook img {
+	max-width: 161px;
+	border: 1px solid #999;
+}
+
+.Materiel img {
+	max-width: 161px;
+	height: 250px;
+	border: 1px solid #999;
+}
+/* 图片栏目相关-End */
+
+/* 正文相关-Start */
+#MapContent {
+	height: 100%;
+}
+
+#MainAreaRight .ShareTo {
+	color: #000;
+	padding: 0px 0px 12px 0;
+}
+
+#MainAreaRight select {
+	margin: 12px 0 12px 0;
+	background: #f0f0f0;
+	border: #ccc solid 1px;
+}
+
+#MainAreaRight .Title {
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 36px;
+	text-align: center;
+}
+
+#MainAreaRight .Info {
+	color: #999;
+	line-height: 36px;
+	text-align: center;
+}
+
+#MainAreaRight .Content {
+	text-align: left;
+	padding: 0;
+}
+
+#MainAreaRight .Content p {
+	text-indent: 2em;
+	line-height: 24px;
+}
+
+#MainAreaRight .Content img {
+	text-indent: 0;
+	max-width: 800px;
+	margin: 8px;
+	border: 1px dotted #999;
+}
+
+#MainAreaRight .PhotoContent img {
+	max-width: 600px;
+	margin: 0 0 6px 0;
+	border: 1px dotted #999;
+}
+
+#MainAreaRight .Parameter {
+	width: 100%;
+	text-align: center;
+	padding: 0;
+	margin: 0 auto;
+}
+
+#MainAreaRight .Parameter ul {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+}
+
+#MainAreaRight .Parameter li {
+	overflow: hidden;
+	width: 300px;
+	margin: 2px auto 2px auto;
+	padding: 10px;
+	text-align: left;
+	background-color: #eee;
+}
+
+#MainAreaRight .Parameter li:nth-child(odd) {
+	background-color: #ccc
+}
+
+#MainAreaRight .Parameter li:nth-child(even) {
+	background-color: #eee;
+}
+
+#ClassFeature {
+	display: block;
+	width: 100%;
+	height: 240px;
+	max-height: 280px;
+	text-align: center;
+	padding: 0;
+	margin: 10px;
+}
+
+#ClassFeatureLeft {
+	float: left;
+	width: 400px;
+	text-align: center;
+	padding: 0;
+	margin: 0 auto;
+}
+
+#ClassFeatureLeft .ClassParameter {
+	padding: 0;
+	margin: 0 auto;
+}
+
+#ClassFeatureLeft .ClassParameter ul {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+}
+
+#ClassFeatureLeft .ClassParameter li {
+	overflow: hidden;
+	width: 360px;
+	margin: 2px auto 2px auto;
+	padding: 10px;
+	text-align: left;
+	background-color: #eee;
+}
+
+#ClassFeatureLeft .ClassParameter li:nth-child(odd) {
+	background-color: #ccc
+}
+
+#ClassFeatureLeft .ClassParameter li:nth-child(even) {
+	background-color: #eee;
+}
+
+#ClassFeatureRight {
+	float: left;
+	width: 435px;
+	text-align: left;
+	padding: 0;
+	margin: 0 auto;
+}
+
+#ClassFeatureRight .ClassImage {
+	padding: 0;
+	margin: 2px;
+}
+
+#ClassFeatureRight .ClassButton {
+	float: left;
+	padding: 0;
+	margin: 15px 8px 0 0;
+}
+
+#MainAreaRight .SignUpTitle {
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 36px;
+	text-align: center;
+}
+
+#MainAreaRight .SignUpContent {
+	width: 600px;
+	margin: 10px auto;
+	padding: 10px;
+	text-align: left;
+	border: 1px dashed #999;
+}
+
+#MainAreaRight .SignUpContent p {
+	text-indent: 2em;
+	line-height: 24px;
+}
+
+#MainAreaRight .SignUpContent td {
+	line-height: 24px;
+}
+
+#MainAreaRight .SignUpContent select, input {
+	font-family: "微软雅黑";
+	color: #535353;
+	height: 24px;
+	border: 1px solid #999;
+	background: #f0f0f0;
+}
+
+#MainAreaRight .SignUpContent textarea {
+	color: #535353;
+	border: 1px solid #999;
+	background: #f0f0f0;
+}
+
+#Related {
+	border-top: 1px solid #434343;
+	padding: 0;
+	text-align: left;
+}
+
+#RelatedTitle {
+	font-size: 16px;
+	line-height: 30px;
+	font-weight: bold;
+}
+
+#Related ul {
+	margin: 12px 0 12px 0;
+	padding: 0;
+	list-style: disc inside;
+}
+
+#Related li {
+	height: 24px;
+	padding: 0px;
+	line-height: 20px;
+}
+
+#InputComment {
+	padding: 0;
+	margin: 0px 0px 12px 0px;
+	visibility: hidden;
+}
+
+#InputCommentTitle {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#InputComment td {
+	font-size: 14px;
+}
+
+#eBookLogo {
+	position: absolute;
+	left: 30px;
+	top: 20px;
+}
+
+#eBookCover {
+	position: absolute;
+	left: 30px;
+	top: 180px;
+	border-radius: 3px;
+	-webkit-box-shadow: 2px 2px 3px rgba(100, 100, 100, 0.5);
+	-moz-box-shadow: 2px 2px 3px rgba(100, 100, 100, 0.5);
+	box-shadow: 2px 2px 3px rgba(100, 100, 100, 0.5);
+}
+
+#eBookCover img {
+	width: 144px;
+}
+
+#eBookNote {
+	position: absolute;
+	width: 144px;
+	left: 30px;
+	top: 400px;
+	padding: 8px;
+	color: #fff;
+	background: #ff0000;
+}
+
+#eBookNote a {
+	color: #fff;
+}
+
+/* 正文相关-End */
+/* 单页相关-Start */
+#SPageContent {
+	font-size: 14px;
+	line-height: 30px;
+	font-weight: bold;
+	text-align: left;
+}
+
+#SPageContent ul {
+	margin: 12px 0 12px 0;
+	padding: 0;
+	list-style: disc inside;
+}
+
+#SPageContent li {
+	height: 24px;
+	padding: 0px;
+	line-height: 20px;
+}
+
+#TraineeSearch {
+	width: 370px;
+	margin: 0 auto;
+	padding: 20px 0 10px 0;
+	font-size: 14px;
+	text-align: center;
+}
+
+#TraineeSearch .idInput {
+	width: 240px;
+	height: 30px;
+	line-height: 30px;
+}
+
+#TraineeSearch .idButton {
+	width: 120px;
+	height: 30px;
+	line-height: 30px;
+}
+
+#Trainee {
+	width: 360px;
+	margin: 0 auto;
+	padding: 8px;
+	line-height: 24px;
+	text-align: left;
+}
+/* 单页相关-End */
+
+/* 翻页相关-Start */
+.page_wrap {
+	clear: both;
+	margin-bottom: 10px;
+	overflow: hidden;
+	zoom: 1;
+}
+
+.paginator {
+	height: 25px;
+	overflow: hidden;
+}
+
+.paginator, .paginator input, .paginator button {
+	font-size: 12px;
+}
+
+.paginator a, .paginator span {
+	float: left;
+	height: 23px;
+	margin: 0 5px 0 0;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	line-height: 23px;
+	background: #fff;
+}
+
+.paginator a {
+	color: #535353;
+}
+
+.paginator b {
+	margin: 3px;
+	font-weight: 300;
+}
+
+.paginator a:link, .paginator a:visited, .paginator a:hover, .paginator a:active
+	{
+	text-decoration: none;
+}
+
+.paginator .page-start, .paginator a, .paginator .page-end {
+	padding: 0 8px;
+	border: 1px solid #D3D3D3;
+	background: #fff;
+}
+
+.paginator .page-start {
+	border-color: #d9d9d9;
+	color: #d9d9d9;
+}
+
+.paginator .page-end {
+	border-color: #d9d9d9;
+	color: #d9d9d9;
+}
+
+.paginator .page-this, .paginator .page-break {
+	padding: 0 3px;
+}
+
+.paginator .page-break {
+	border: 1px solid #fff;
+}
+
+.paginator .page-this {
+	border: 1px solid #03004c;
+	background-color: #d9d9d9;
+	color: #03004c;
+	padding: 0px 8px;
+	font-weight: bold;
+}
+
+.paginator .page-skip {
+	height: 22px;
+	line-height: 22px;
+	padding: 0 3px;
+	margin: 0;
+	background: none;
+}
+
+.paginator .page-skip input {
+	width: 26px;
+	*width: 23px;
+	height: 19px;
+	line-height: 19px;
+	border: 1px #D3D3D3 solid;
+	font-size: 12px;
+	margin: -1px 6px 0px 6px; #
+	margin-top: 1px;
+	_margin-top: 0px;
+	padding: 0px 0px 0px 2px;
+	vertical-align: middle;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.paginator .page-skip button {
+	font-size: 12px;
+	padding: 0 5px 5px 5px;
+	_padding: 0 5px 0 5px;
+	width: auto;
+	_width: 0;
+	height: 22px;
+	*height: 23px;
+	*line-height: 20px;
+	_height: 16px;
+	_line-height: 16px;
+	margin-left: 10px;
+	*margin-top: -1px;
+	overflow: visible;
+	vertical-align: top;
+}
+
+.paginator a:hover {
+	border: 1px solid #03004c;
+	color: #fff;
+	background-color: #03004c;
+}
+/* 翻页相关-End */

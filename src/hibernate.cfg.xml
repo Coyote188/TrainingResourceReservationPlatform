@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+
+		<!-- Database connection settings -->
+
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://127.0.0.1:3306/trrp</property>
+		<property name="connection.username">trrp</property>
+		<property name="connection.password">trrp</property>
+
+		<!-- JDBC connection pool (use the built-in) -->
+		<property name="connection.pool_size">10</property>
+		<!-- 批量最大提取数 -->
+		<property name="hibernate.jdbc.batch_size">25</property>
+		<!-- 每次读取数据的记录条数 -->
+		<property name="hibernate.jdbc.fetch_size">50</property>
+		<!-- 最大连接数 -->
+		<property name="hibernate.c3p0.max_size">25</property>
+		<!-- 最小连接数 -->
+		<property name="hibernate.c3p0.min_size">5</property>
+		<!-- 获得连接的超时时间,如果超过这个时间,会抛出异常，单位毫秒 -->
+		<property name="hibernate.c3p0.timeout">5000</property>
+		<!-- 最大的PreparedStatement的数量 -->
+		<property name="hibernate.c3p0.max_statements">100</property>
+		<!-- 每隔120秒检查连接池里的空闲连接 ，单位是秒 -->
+		<property name="hibernate.c3p0.idle_test_period">120</property>
+		<!-- 当连接池里面的连接用完的时候，C3P0一下获取的新的连接数 -->
+		<property name="hibernate.c3p0.acquire_increment">2</property>
+		<!-- 每次都验证连接是否可用 -->
+		<property name="hibernate.c3p0.validate">true</property>
+
+		<property name="javax.persistence.validation.mode">none</property>
+		<property name="current_session_context_class">thread</property>
+		<!-- 显示sql语句 -->
+		<property name="show_sql">true</property>
+		<!--自动生成数据库表 <property name="hibernate.hbm2ddl.auto">update</property> -->
+		<property name="format_sql">true</property>
+		<property name="connection.useUnicode">true</property>
+		<property name="connection.characterEncoding">UTF-8</property>
+
+
+
+		<mapping class="cn.com.chinaccs.bean.entity.TNDict" />
+		<mapping class="cn.com.chinaccs.bean.entity.TNLoginLog" />
+		<mapping class="cn.com.chinaccs.bean.entity.TNMenu" />
+		<mapping class="cn.com.chinaccs.bean.entity.TNOrg" />
+		<mapping class="cn.com.chinaccs.bean.entity.TNRole" />
+		<mapping class="cn.com.chinaccs.bean.entity.TNRoleMenu" />
+		<mapping class="cn.com.chinaccs.bean.entity.TNRoleUser" />
+		<mapping class="cn.com.chinaccs.bean.entity.TNUser" />
+		<mapping class="cn.com.chinaccs.bean.entity.TNRoleMenuPermit" />
+		<mapping class="cn.com.chinaccs.bean.entity.TNRoleLink" />
+		
+		<!-- 新增 -->
+		<mapping class="cn.com.chinaccs.bean.driver.DriverLicenseLevel" />
+		<mapping class="cn.com.chinaccs.bean.driver.InstructionVehicle" />
+		<mapping class="cn.com.chinaccs.bean.driver.Order" />
+		<mapping class="cn.com.chinaccs.bean.driver.OrderDetail" />
+		<mapping class="cn.com.chinaccs.bean.driver.OrderPayment" />
+		<mapping class="cn.com.chinaccs.bean.driver.Personnel" />
+		<mapping class="cn.com.chinaccs.bean.driver.TrainingField" />
+		<mapping class="cn.com.chinaccs.bean.driver.TraningSourceLock" />
+		
+	</session-factory>
+</hibernate-configuration>

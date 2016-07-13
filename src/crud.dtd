@@ -1,0 +1,22 @@
+<!ELEMENT crud (bean|include)*>
+<!ELEMENT bean (param*,deleteIds*,querySQL*,deleteSQL*)>
+<!ATTLIST bean 
+name ID #REQUIRED
+url CDATA #IMPLIED
+busi CDATA	#IMPLIED
+>
+<!ELEMENT param (#PCDATA)>
+<!ATTLIST param
+name CDATA #REQUIRED
+type (termLike|termLeftLike|termRightLike|termEqual) "termEqual"
+>
+<!ELEMENT deleteIds  (#PCDATA)>
+<!ATTLIST deleteIds
+name CDATA #FIXED "id"
+>
+<!ELEMENT querySQL    (#PCDATA)>
+<!ELEMENT deleteSQL    (#PCDATA)>
+<!ELEMENT include (#PCDATA)>
+<!ATTLIST include
+    file CDATA #REQUIRED
+>

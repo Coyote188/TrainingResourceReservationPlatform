@@ -1,0 +1,1 @@
+var userCache = new Object();

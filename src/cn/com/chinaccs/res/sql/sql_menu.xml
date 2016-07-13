@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "//mapsql/EN" "mapsql.dtd">
+<sqlMap>
+	<sqlUnit name="b_menu_list">
+        <sql>
+			 select t.id,t.parent_id,t.seq_num,
+		    t.id as menuId,t.menu_name,t.uri,
+		    (select tmp.busi_name from t_n_dict tmp where 
+		    tmp.busi_value=t.state and tmp.parent_id=(select id from t_n_dict where busi_value='DATA_STATE')) as state,
+		    t.seq_num as seqNum,t.level,t.parent_id as parentId from T_N_MENU t where t.menu_type = 'b_menu' 
+		    order by t.seq_num asc 
+		 </sql>
+    </sqlUnit>
+    
+    <sqlUnit name="f_menu_list">
+        <sql>
+			 select t.id,t.parent_id,t.seq_num,
+		    t.id as menuId,t.menu_name,t.menu_type,t.uri,
+		    (select tmp.busi_name from t_n_dict tmp where 
+		    tmp.busi_value=t.state and tmp.parent_id=(select id from t_n_dict where busi_value='DATA_STATE')) as state,
+		    t.seq_num as seqNum,t.level,t.parent_id as parentId from T_N_MENU t where t.menu_type = 'f_menu' or t.id in (select m.parent_id from t_n_menu m where m.menu_type = 'f_menu')
+		    order by t.seq_num asc 
+		 </sql>
+    </sqlUnit>
+
+    <!-- 根菜单 -->
+    <sqlUnit name="root_menu">
+        <sql>
+            from TNMenu t where t.parentId='0' and t.state='1' 
+        </sql>
+    </sqlUnit>
+    
+    <!-- 获取所有有效的菜单 -->
+    <sqlUnit name="valid_menu">
+        <sql>
+            from TNMenu t where t.state='1' order by t.seqNum asc
+        </sql>
+    </sqlUnit>
+    
+    <!-- action菜单 -->
+    <sqlUnit name="action_menu">
+        <sql>
+            from TNMenu t where t.parentId=(select id from TNMenu where uri=:action) and t.state='1' 
+        </sql>
+    </sqlUnit>
+    
+    <!-- 当前用户菜单 -->
+    <sqlUnit name="user_menu">
+        <sql>
+	    select   m.* from  t_n_menu m 
+			where m.id in 
+			(
+				select rm.menu_id from t_n_role_menu rm where rm.role_id in 
+				(
+				 	select distinct(tm.role_id) from
+		  				(select ru.role_Id from t_n_role_user ru where ru.user_id=:userId ) tm 
+		  				union
+		  			select rl.parent_role_id from t_n_role_link rl where rl.role_id in(	select distinct(tm.role_id) from
+		  				(select ru.role_Id from t_n_role_user ru where ru.user_id=:userId ) tm )
+				 ) 
+			) 
+			and m.state='1' order by m.level, m.seq_num asc 
+        </sql>
+    </sqlUnit>
+</sqlMap>

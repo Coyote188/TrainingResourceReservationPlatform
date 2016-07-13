@@ -1,0 +1,4 @@
+  <!ELEMENT sqlMap (sqlUnit)*>
+  <!ELEMENT sqlUnit (sql)>
+  <!ATTLIST sqlUnit name ID #IMPLIED>
+  <!ELEMENT sql    (#PCDATA)>
