@@ -1,1 +1,0 @@
-var openIndex={tabCutover:function(a,b){$(a).parents("ul").find("a").removeClass("ddf-tabnav_h").addClass("ddf-tabnav");$(a).addClass("ddf-tabnav_h");$(".tab_content").hide();$("#tab_content_"+b).show()}};function examInitExamList(){$('table[_pagetabledataset="exam::getExamPageTable"] .ddf-btn_enter').hide()};
