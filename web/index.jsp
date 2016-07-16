@@ -451,13 +451,8 @@ $.extend({
 						<li class="TabOff" id="资讯公告_tabHeader_1" onmouseover="$.stlTab6('资讯公告', 1);">
 							<a href="javascript:void(0);">贵峰新闻</a>
 						</li>
-<<<<<<< HEAD
-						<li class="TabOff" id="资讯公告_tabHeader_2" onmouseover="$.stlTab6('资讯公告', 2);" style="display: none;">
-							<a href="javascript:void(0);">一乘专稿</a>
-=======
 						<li class="TabOff" id="资讯公告_tabHeader_2" onmouseover="$.stlTab6('资讯公告', 2);">
 							<a href="javascript:void(0);">贵峰专稿</a>
->>>>>>> a4c53c1c22693eabe4afc27e1aa86786cfcd9af5
 						</li>
 					</ul>
 				</div>
