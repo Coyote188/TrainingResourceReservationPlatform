@@ -451,8 +451,13 @@ $.extend({
 						<li class="TabOff" id="资讯公告_tabHeader_1" onmouseover="$.stlTab6('资讯公告', 1);">
 							<a href="javascript:void(0);">贵峰新闻</a>
 						</li>
+<<<<<<< HEAD
 						<li class="TabOff" id="资讯公告_tabHeader_2" onmouseover="$.stlTab6('资讯公告', 2);" style="display: none;">
 							<a href="javascript:void(0);">一乘专稿</a>
+=======
+						<li class="TabOff" id="资讯公告_tabHeader_2" onmouseover="$.stlTab6('资讯公告', 2);">
+							<a href="javascript:void(0);">贵峰专稿</a>
+>>>>>>> a4c53c1c22693eabe4afc27e1aa86786cfcd9af5
 						</li>
 					</ul>
 				</div>
@@ -461,8 +466,8 @@ $.extend({
 						<img src="idx/20155749866.jpg">
 					</a>
 					<ul>
-						<li>&gt; <a href="javascript:void(0);">一乘，敢于担当社会责任的企业</a></li>
-						<li>&gt; <a href="javascript:void(0);">一乘“学员卡”全面升级</a></li>
+						<li>&gt; <a href="javascript:void(0);">贵峰，敢于担当社会责任的企业</a></li>
+						<li>&gt; <a href="javascript:void(0);">贵峰“学员卡”全面升级</a></li>
 						<li>&gt; <a href="javascript:void(0);">省发改委贺晓龙处长领导一行莅临公司调研指导</a></li>
 					</ul>
 				</div>
@@ -471,8 +476,8 @@ $.extend({
 						<img src="idx/2919421913.jpg">
 					</a>
 					<ul>
-						<li>&gt; <a href="javascript:void(0);">一乘开启驾培“新模式”引领驾培行业转型发展</a></li>
-						<li>&gt; <a href="javascript:void(0);">一乘驾校上市啦！一乘驾校上市啦！一乘驾校上市啦！</a></li>
+						<li>&gt; <a href="javascript:void(0);">贵峰开启驾培“新模式”引领驾培行业转型发展</a></li>
+						<li>&gt; <a href="javascript:void(0);">贵峰驾校上市啦！贵峰驾校上市啦！贵峰驾校上市啦！</a></li>
 						<li>&gt; <a href="javascript:void(0);">【特稿】驾驶培训行业的改革之痛（地）</a></li>
 					</ul>
 				</div>
