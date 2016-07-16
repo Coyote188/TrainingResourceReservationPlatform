@@ -465,7 +465,7 @@ $.extend({
 							<a href="javascript:void(0);">贵峰新闻</a>
 						</li>
 						<li class="TabOff" id="资讯公告_tabHeader_2" onmouseover="$.stlTab6('资讯公告', 2);">
-							<a href="javascript:void(0);">一乘专稿</a>
+							<a href="javascript:void(0);">贵峰专稿</a>
 						</li>
 					</ul>
 				</div>
