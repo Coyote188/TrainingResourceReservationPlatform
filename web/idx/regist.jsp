@@ -68,21 +68,9 @@
 }
 </style>
 <script type="text/javascript">
-function stlContentCallback_2(jsonString){
-	var obj = eval('(' + jsonString + ')');
-	if (obj){
-		document.getElementById('contentSuccess_2').style.display = 'none';
-		document.getElementById('contentFailure_2').style.display = 'none';
-		if (obj.isSuccess == 'false'){
-			document.getElementById('contentFailure_2').style.display = '';
-			document.getElementById('contentFailure_2').innerHTML = obj.message;
-		}else{
-			document.getElementById('contentSuccess_2').style.display = '';
-			document.getElementById('contentSuccess_2').innerHTML = obj.message;
-			document.getElementById('contentContainer_2').style.display = 'none';
-		}
-	}
-}
+$.extend({
+	
+});
 </script>
 <script src="/sitefiles/bairong/scripts/independent/validate.js" charset="utf-8" type="text/javascript"></script>
 </head>
@@ -97,10 +85,10 @@ function stlContentCallback_2(jsonString){
 <div id="contentContainer_2">
 <form target="loadContent_2" accept-charset="utf-8" action="/sitefiles/services/cms/action.aspx?publishmentSystemID=1&amp;styleID=2&amp;type=content&amp;channelID=63" enctype="multipart/form-data" method="post" id="frmContent_2">
 
-<table width="98%" cellspacing="2" cellpadding="4" border="0">
+<table id="frmRegInfomation" width="98%" cellspacing="2" cellpadding="4" border="0">
 	<tbody>
 		<tr>
-			<td width="70" valign="top"><nobr>车型:</nobr></td>
+			<td width="70" valign="top"><nobr>驾考类型:</nobr></td>
 			<td>
 				<select errormessage="" regexp="" validatetype="None" maxnum="0" minnum="0" isrequire="true" displayname="班型"  isvalidate="true" class="select" name="Title" id="Title">
 					<option value="C1">C1小型汽车</option>
@@ -186,13 +174,6 @@ function stlContentCallback_2(jsonString){
 				<span class="is_nessesary">*</span>
 			</td>
 		</tr>
-		
-		<tr>
-			<td width="70" valign="top"><nobr>备注:</nobr></td>
-			<td>
-				<textarea style="width: 90%; height: 80px;" class="textarea" name="Content" id="Content"></textarea>
-			</td>
-		</tr>
 		<tr>
 			<td height="30">验证码:</td>
 			<td><input type="text" errormessage="" regexp=""
@@ -217,8 +198,7 @@ function stlContentCallback_2(jsonString){
 		</tr>
 	</tbody>
 </table>
-
-					</form>
+</form>
 <iframe width="0" height="0" frameborder="0" name="loadContent_2" id="loadContent_2"></iframe>
 </div><script src="/sitefiles/bairong/scripts/datepicker/wdatepicker.js" type="text/javascript"></script>
     </div>

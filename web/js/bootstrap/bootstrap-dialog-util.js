@@ -71,16 +71,19 @@ BootstrapDialogUtil.dialog = function(title,id,popWidth,bgColor,isFooter) {
 	if(typeof(isFooter) === 'undefined') {
 		isFooter = false;
 	}
-	 BootstrapDialog.show({
-	 	title:title,draggable: true,width:popWidth,backgroundColor:bgColor,
-	 	message: function(dialog) {
-	 		var html = dialog.getModalFooter();
-	 		if(!isFooter)
-	 			$(html).find(".bootstrap-dialog-footer").parent().addClass("not-modal-footer");
-	 		return $(id).html();
-	 	}
-	 });
-}
+	BootstrapDialog.show({
+		title:title,
+		draggable: true,
+		width:popWidth,
+		backgroundColor:bgColor,
+		message: function(dialog) {
+			var html = dialog.getModalFooter();
+			if(!isFooter)
+				$(html).find(".bootstrap-dialog-footer").parent().addClass("not-modal-footer");
+			return $(id).html();
+		}
+	});
+};
 
 /**
  * 确认对话框

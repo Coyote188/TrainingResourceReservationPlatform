@@ -142,7 +142,17 @@ $.extend({
 		fnRegist: function(){
 			$("#Row1Area").hide();
 			$("#Row2Area").hide();
+			
 			$("#Row3Area").show();
+			$("#Row3Area").find("iframe").attr("src","idx/regist.jsp");
+		}
+		,
+		fnBooking: function(){
+			$("#Row1Area").hide();
+			$("#Row2Area").hide();
+			
+			$("#Row3Area").show();
+			$("#Row3Area").find("iframe").attr("src","idx/resource_booking.jsp");
 		}
 });
 </script>
@@ -174,29 +184,6 @@ $.extend({
 									</li>
 								</ul>
 							</li>
-							<li class="mainlevel" style="display: none;">
-								<a href="javascript:void(0)">学车报名</a>
-								<ul>
-									<li>
-										<a target="_blank">在线注册</a>
-									</li>
-									<li>
-										<a href="javascript:void(0)" target="_blank">场地预约</a>
-									</li>
-									<li>
-										<a href="javascript:void(0)" target="_blank">教练介绍</a>
-									</li>
-									<li>
-										<a href="javascript:void(0)" target="_blank">场地介绍</a>
-									</li>
-									<li>
-										<a href="javascript:void(0)" target="_blank">车型介绍</a>
-									</li>
-									<li>
-										<a href="javascript:void(0)" target="_blank">在线报名新版</a>
-									</li>
-								</ul>
-							</li>
 						</ul>
 					</div>
 				</div>
@@ -221,7 +208,7 @@ $.extend({
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="#" onclick="$.fnBooking();">
 								<img src="idx/images/nav2-search.png">
 								<br>
 								学车预约
@@ -464,7 +451,7 @@ $.extend({
 						<li class="TabOff" id="资讯公告_tabHeader_1" onmouseover="$.stlTab6('资讯公告', 1);">
 							<a href="javascript:void(0);">贵峰新闻</a>
 						</li>
-						<li class="TabOff" id="资讯公告_tabHeader_2" onmouseover="$.stlTab6('资讯公告', 2);">
+						<li class="TabOff" id="资讯公告_tabHeader_2" onmouseover="$.stlTab6('资讯公告', 2);" style="display: none;">
 							<a href="javascript:void(0);">一乘专稿</a>
 						</li>
 					</ul>
@@ -506,7 +493,7 @@ $.extend({
 		</div>
 		<!-- 注册区 -->
 		<div id="Row3Area" style="display: none; ">
-			<iframe scrolling="no" src="idx/regist.jsp" frameborder="0"  height="590px" width="990px">
+			<iframe scrolling="no" src="" frameborder="0"  height="610px" width="990px">
 			</iframe>
 		</div>
 		
@@ -524,8 +511,8 @@ $.extend({
 			</div>
 			<div id="BottomArea">
 				<div class="Link">
-					<a href="http://www.yicjx.com/" onclick="$.SetHomepage();">设为首页</a>
-					<a href="javascript:;" onclick="$.AddFavorite();">加入收藏</a>
+					<a href="javascript:void(0);" onclick="$.SetHomepage();">设为首页</a>
+					<a href="javascript:void(0);" onclick="$.AddFavorite();">加入收藏</a>
 					<a href="javascript:void(0);">联系我们</a>
 				</div>
 				<div class="CopyRight">

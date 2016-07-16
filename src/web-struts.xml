@@ -190,5 +190,15 @@
             <result type="redirect">idx.jsp</result>
        </action>
        
+       <!-- 资源预定 -->
+       <action name = "booking/*" class="cn.com.chinaccs.action.BookingAction" method="{1}"> 
+       <interceptor-ref name="acl" />
+			<interceptor-ref name="defaultStack" />
+			<result name="success" type="json">
+				<param name="includeProperties">
+					output
+				</param>
+			</result>
+		</action>
     </package>
 </struts>
