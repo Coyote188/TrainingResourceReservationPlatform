@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : Local
-Source Server Version : 50626
-Source Host           : 127.0.0.1:3306
+Source Server         : trrp
+Source Server Version : 50173
+Source Host           : localhost:3306
 Source Database       : trrp
 
 Target Server Type    : MYSQL
-Target Server Version : 50626
+Target Server Version : 50173
 File Encoding         : 65001
 
-Date: 2016-07-12 17:32:12
+Date: 2016-07-14 19:37:52
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -30,6 +30,12 @@ CREATE TABLE `driving_license_level` (
 -- ----------------------------
 -- Records of driving_license_level
 -- ----------------------------
+INSERT INTO `driving_license_level` VALUES ('A1', '大型客车', null, '1');
+INSERT INTO `driving_license_level` VALUES ('A3', '城市公交车', null, '2');
+INSERT INTO `driving_license_level` VALUES ('B1', '中型客车', null, '3');
+INSERT INTO `driving_license_level` VALUES ('B2', '大型货车', null, '4');
+INSERT INTO `driving_license_level` VALUES ('C1', '小型汽车', null, '5');
+INSERT INTO `driving_license_level` VALUES ('C2', '小型自动档汽车', null, '6');
 
 -- ----------------------------
 -- Table structure for instruction_vehicle_infomation
@@ -46,7 +52,7 @@ CREATE TABLE `instruction_vehicle_infomation` (
   `calculation_method` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '价格计算方式（预留）',
   `description` varchar(1000) COLLATE utf8_bin DEFAULT NULL COMMENT '描述',
   `vehicle_type` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '车辆类型-关联车辆类型表主键',
-  `belong` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `belong` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '属于什么区域',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_vehicle_1` (`id`),
   KEY `idx_vehicle_2` (`coach`),
@@ -56,6 +62,43 @@ CREATE TABLE `instruction_vehicle_infomation` (
 -- ----------------------------
 -- Records of instruction_vehicle_infomation
 -- ----------------------------
+INSERT INTO `instruction_vehicle_infomation` VALUES ('006', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('009', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('013', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('014', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('015', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('016', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('018', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('019', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('020', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('021', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('026', null, '10A', null, '捷达', null, '100.00', null, '小型汽车自动档', 'C2', 'B');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('027', null, '10A', null, '捷达', null, '100.00', null, '小型汽车自动档', 'C2', 'B');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('51', null, '10A', null, '东风', null, '100.00', null, '大货车', 'B2', 'A');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('52', null, '10A', null, '东风', null, '100.00', null, '大货车', 'B2', 'A');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('53', null, '10A', null, '东风', null, '100.00', null, '大货车', 'B2', 'A');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('54', null, '10A', null, '东风', null, '100.00', null, '大货车', 'B2', 'A');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('55', null, '10A', null, '东风', null, '100.00', null, '大货车', 'B2', 'A');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('56', null, '10A', null, '东风', null, '100.00', null, '大货车', 'B2', 'A');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('61', null, '10A', null, '解放', null, '300.00', null, '大货车', 'B2', 'B');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('62', null, '10A', null, '解放', null, '300.00', null, '大货车', 'B2', 'B');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('63', null, '10A', null, '解放', null, '300.00', null, '大货车', 'B2', 'B');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('64', null, '10A', null, '解放', null, '300.00', null, '大货车', 'B2', 'B');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('65', null, '10A', null, '宇通', null, '200.00', null, '中巴', 'B1', 'B');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('66', null, '10A', null, '金龙', null, '200.00', null, '大客', 'A1|A3', 'B');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('68', null, '10A', null, '解放', null, '300.00', null, '大货车', 'B2', 'B');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('CK001', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('CK002', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('CK003', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('CK004', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('CK005', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('CK008', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('CK010', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('CK011', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('CK022', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('CK023', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('CK024', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('CK025', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A');
 
 -- ----------------------------
 -- Table structure for license_level_vehicle_type_rela
@@ -166,47 +209,25 @@ CREATE TABLE `personnel_infomation` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for train_resource_lock
+-- Table structure for ResourceLock
 -- ----------------------------
-DROP TABLE IF EXISTS `train_resource_lock`;
-CREATE TABLE `train_resource_lock` (
+DROP TABLE IF EXISTS `ResourceLock`;
+CREATE TABLE `ResourceLock` (
   `id` varchar(32) COLLATE utf8_bin NOT NULL,
-  `resource_id` varchar(32) COLLATE utf8_bin DEFAULT NULL,
-  `resource_name` varchar(64) COLLATE utf8_bin DEFAULT NULL,
-  `resource_type` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `lock_time` datetime DEFAULT NULL,
-  `duration` int(11) DEFAULT NULL,
-  `unlock_time` datetime DEFAULT NULL,
-  `who_lock_resource` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `status` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `status_date` datetime DEFAULT NULL,
+  `resource_id` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '资源ID',
+  `resource_name` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '资源名',
+  `resource_type` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '资源类型',
+  `lock_time` datetime DEFAULT NULL COMMENT '加锁时间',
+  `duration` int(11) DEFAULT NULL COMMENT '时间段',
+  `unlock_time` datetime DEFAULT NULL COMMENT '解锁时间（计算得来）',
+  `who_lock_resource` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '加锁用户',
+  `status` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '状态（预锁定、锁定、解锁）',
+  `status_date` datetime DEFAULT NULL COMMENT '状态变更时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- ----------------------------
--- Records of train_resource_lock
--- ----------------------------
-
--- ----------------------------
--- Table structure for traning_field_infomation
--- ----------------------------
-DROP TABLE IF EXISTS `traning_field_infomation`;
-CREATE TABLE `traning_field_infomation` (
-  `id` int(11) NOT NULL,
-  `field_name` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '场地名称',
-  `status` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '场地状态（有效-10A，维护中-10B，作废-10X）',
-  `accendant` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '维护人员（关联人员信息表主键）',
-  `price` decimal(6,2) DEFAULT NULL COMMENT '场地价格-单位元/小时',
-  `calculation_method` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '计算方式，预留',
-  `suit_for` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '适用车辆（关联车辆类别表----限驾照类型c1\\c2\\c3 and so on）',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `idx_field_1` (`id`),
-  KEY `idx_field_2` (`status`),
-  KEY `idx_field_3` (`suit_for`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- ----------------------------
--- Records of traning_field_infomation
+-- Records of ResourceLock
 -- ----------------------------
 
 -- ----------------------------
@@ -3500,6 +3521,49 @@ CREATE TABLE `t_v_vehicle_maintenance` (
 -- ----------------------------
 -- Records of t_v_vehicle_maintenance
 -- ----------------------------
+
+-- ----------------------------
+-- Table structure for train_resource_lock
+-- ----------------------------
+DROP TABLE IF EXISTS `train_resource_lock`;
+CREATE TABLE `train_resource_lock` (
+  `id` varchar(32) COLLATE utf8_bin NOT NULL,
+  `resource_id` varchar(32) COLLATE utf8_bin DEFAULT NULL,
+  `resource_name` varchar(64) COLLATE utf8_bin DEFAULT NULL,
+  `resource_type` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `lock_time` datetime DEFAULT NULL,
+  `duration` int(11) DEFAULT NULL,
+  `unlock_time` datetime DEFAULT NULL,
+  `who_lock_resource` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `status` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `status_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- ----------------------------
+-- Records of train_resource_lock
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for traning_field_infomation
+-- ----------------------------
+DROP TABLE IF EXISTS `traning_field_infomation`;
+CREATE TABLE `traning_field_infomation` (
+  `id` varchar(45) COLLATE utf8_bin NOT NULL,
+  `field_name` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '场地名称',
+  `status` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '场地状态（有效-10A，维护中-10B，作废-10X）',
+  `field_idx` varchar(45) CHARACTER SET utf8 DEFAULT NULL COMMENT '适用车辆（关联车辆类别表----限驾照类型c1\\c2\\c3 and so on）',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `idx_field_1` (`id`),
+  KEY `idx_field_2` (`status`),
+  KEY `idx_field_3` (`field_idx`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- ----------------------------
+-- Records of traning_field_infomation
+-- ----------------------------
+INSERT INTO `traning_field_infomation` VALUES ('F01', 'A区', '10A', 'A');
+INSERT INTO `traning_field_infomation` VALUES ('F02', 'B区', '10A', 'B');
 
 -- ----------------------------
 -- Table structure for vehicle_type

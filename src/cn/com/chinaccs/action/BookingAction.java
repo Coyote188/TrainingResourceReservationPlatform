@@ -1,5 +1,11 @@
 package cn.com.chinaccs.action;
 
+import java.io.IOException;
+
+import cn.com.chinaccs.utils.SystemConstant;
+
+import net.sf.json.JSONObject;
+
 /**
  * 预约流程
  * 1、驾考类型选择
@@ -99,6 +105,26 @@ public class BookingAction extends BaseImplAction {
 	 * @return
 	 */
 	public String timeList(){
+		StringBuffer reqJson = new StringBuffer();
+		try {
+			java.io.InputStream in = getRequest().getInputStream();
+			java.io.BufferedInputStream buf=new java.io.BufferedInputStream(in);
+			byte[] buffer=new byte[1024]; 
+			int iRead;
+			while((iRead=buf.read(buffer))!=-1)   
+			{
+				reqJson.append(new String(buffer,0,iRead,"UTF-8"));
+			}
+			
+		} catch (IOException e) {
+			log.warn(" -- 可用时间列表查询出错 -- ");
+		}
+		JSONObject req = JSONObject.fromObject(reqJson.toString());
+		if(req.getString("query_time_list").equals(SystemConstant.QUERY_TIME_LIST_MONTH)){
+			//后台查询月预定情况，返回每天的情况（分上/下午）
+		}else if(req.getString("query_time_list").equals(SystemConstant.QUERY_TIME_LIST_DAY)){
+			//查询一天内该车的预订情况，返回可用的时间（小时）
+		}
 		return json();
 	}
 	/**
