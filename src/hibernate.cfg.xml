@@ -39,7 +39,8 @@
 		<property name="current_session_context_class">thread</property>
 		<!-- 显示sql语句 -->
 		<property name="show_sql">true</property>
-		<!--自动生成数据库表 <property name="hibernate.hbm2ddl.auto">update</property> -->
+		<!-- 自动生成数据库表 -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
 		<property name="format_sql">true</property>
 		<property name="connection.useUnicode">true</property>
 		<property name="connection.characterEncoding">UTF-8</property>
@@ -56,6 +57,8 @@
 		<mapping class="cn.com.chinaccs.bean.entity.TNUser" />
 		<mapping class="cn.com.chinaccs.bean.entity.TNRoleMenuPermit" />
 		<mapping class="cn.com.chinaccs.bean.entity.TNRoleLink" />
+		<mapping class="cn.com.chinaccs.bean.entity.TNAttachment" />
+		<mapping class="cn.com.chinaccs.bean.entity.TNInfo" />
 		
 		<!-- 新增 -->
 		<mapping class="cn.com.chinaccs.bean.driver.DriverLicenseLevel" />

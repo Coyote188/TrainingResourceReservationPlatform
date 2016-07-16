@@ -85,4 +85,28 @@
 		<querySQL>
 		</querySQL>
 	</bean>
+	<bean name="infoList" url="cn.com.chinaccs.bean.entity.TNInfo" >
+		
+		<deleteIds name="id"></deleteIds>
+		<querySQL>
+			SELECT t.id,t.title,t.content,(SELECT call_name from t_n_user where id = t.creatorId),t.state,"" from t_n_info t where infoType = '1' ORDER BY t.createTime DESC
+		</querySQL>
+		
+	</bean>
+	<bean name="adPicList" url="cn.com.chinaccs.bean.entity.TNInfo" >
+		
+		<deleteIds name="id"></deleteIds>
+		<querySQL>
+			SELECT t.id,t.title,t.imgAttId,(SELECT call_name from t_n_user where id = t.creatorId) from t_n_info t where infoType = '2' ORDER BY t.createTime DESC
+		</querySQL>
+		
+	</bean>
+	<bean name="trainNoticeList" url="cn.com.chinaccs.bean.entity.TNInfo" >
+		<param name="infoType" type="termEqual"></param>
+		<deleteIds name="id"></deleteIds>
+		<querySQL>
+			SELECT t.id,t.title,t.imgAttId,(SELECT call_name from t_n_user where id = t.creatorId) from t_n_info t where infoType =:infoType ORDER BY t.createTime DESC
+		</querySQL>
+		
+	</bean>
 </crud>

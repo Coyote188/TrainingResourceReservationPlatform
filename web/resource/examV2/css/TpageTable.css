@@ -1,0 +1,70 @@
+/*pageTable封装样式*/
+.TpageTable { border-collapse: collapse; margin: 0; padding: 0; border:0px solid #D9D9D9; width:100%;}
+.TpageTable thead .pageTableLoadLock { background-color:transparent; border:0px; padding:0px; margin:0px; height:0px;}    /*分页加载锁*/
+.TpageTable thead .pageTableLoadLock td { position:absolute; z-index:1; border:0px; padding:0px; margin:0px; background-color:transparent;}
+.TpageTable thead .pageTableLoadLock td .pageTableLoadLock{ filter:alpha(opacity=30); opacity:0.3;}
+.TpageTable thead tr{ background: none ;}
+.TpageTable thead th{ font-weight: normal;}
+.TpageTable thead th .sortDefault{ background:url(images/sort_default.gif) right center no-repeat; cursor:pointer; margin-right:5px; padding:0px 15px 0px 0px;}
+.TpageTable thead th .sortAsc{ background-image:url(images/sort_asc.gif);}
+.TpageTable thead th .sortDesc{ background-image:url(images/sort_desc.gif);}
+
+.TpageTable tbody td{color: #444444; font-weight: normal text-align: left;}
+/*.TpageTable tbody .odd_bg { background: none repeat scroll 0 0 #FFFFFF;}
+.TpageTable tbody .even_bg { background: none repeat scroll 0 0 #FAFAFA;}*/
+
+
+.TpageTable tfoot td{
+    width:678px;
+    background:#fff;
+    padding:10px;
+    border: 1px solid #e6e6e6;
+    border-bottom: 1px solid #bfbfbf; 
+    
+}
+.TpageTable tfoot td .custom_nav{ position:absolute; padding-right:10px; width:1px; margin-top:2px;}
+.TpageTable tfoot td .custom_nav .content{ width:100%; height:25px; word-break:keep-all; white-space:nowrap; overflow:hidden; color:#555555;}
+.TpageTable tfoot td .custom_nav .content *{ margin: 0 0 0 5px;}
+.TpageTable tfoot td .custom_nav .content a{ color:#555555; text-decoration: none;}
+.TpageTable tfoot td .custom_nav .content a:hover { color: #3582DA; text-decoration: underline;}
+.TpageTable tfoot td .custom_nav .labelIcon{ position:absolute; right:0px; top:0px; color: #1A5F9B;}
+.TpageTable tfoot td .page_nav {
+    float: right; 
+    margin-top:10px;
+}
+.TpageTable tfoot td .page_nav a {
+    width:23px;
+    overflow:hidden;
+    text-decoration:none;
+    padding:2px 10px !important; _padding:2px 0px !important;
+    margin:0 5px;
+    background:#6699FF;
+    _display:inline-block;
+}
+.TpageTable tfoot td .page_nav .page_num {
+    height:25px;
+    line-height:25px;
+    text-align:center;
+    color:#888;
+    padding:0 5px;
+    display:inline-block;
+    position:static;
+    _top:-3px;
+}
+.TpageTable tfoot td .page_nav .page_first        { background:url(images/page_first_normal.png) no-repeat center center;}
+.TpageTable tfoot td .page_nav .page_first:hover  { background:url(images/page_first_down.png) no-repeat center center;}
+.TpageTable tfoot td .page_nav .page_prev         { background:url(images/page_prev_normal.png) no-repeat center center;}
+.TpageTable tfoot td .page_nav .page_prev:hover   { background:url(images/page_prev_down.png) no-repeat center center;}
+.TpageTable tfoot td .page_nav .page_next         { background:url(images/page_next_normal.png) no-repeat center center;}
+.TpageTable tfoot td .page_nav .page_next:hover   { background:url(images/page_next_down.png) no-repeat center center;}
+.TpageTable tfoot td .page_nav .page_last         { background:url(images/page_last_normal.png) no-repeat center center;}
+.TpageTable tfoot td .page_nav .page_last:hover   { background:url(images/page_last_down.png) no-repeat center center;}
+.TpageTable tfoot td .page_nav .page_submit       { background:url(images/page_submit_normal.png) no-repeat center center; margin:0px;}
+.TpageTable tfoot td .page_nav .page_submit:hover { background:url(images/page_submit_down.png) no-repeat center center;}
+.TpageTable tfoot td .page_nav .input             { border: 0px; height: 24px; position: static; bottom:2px; margin:0 5px; line-height: 23px; width: 32px; padding:1px 0px 1px 25px; background: no-repeat scroll 0px 0px transparent;}
+.TpageTable tfoot td .page_nav .toPage            { background:url(images/page_pageSize_input.jpg) no-repeat 0 -26px;}
+.TpageTable tfoot td .page_nav .pageSize          { background:url(images/page_pageSize_input.jpg) no-repeat 0 0;}
+.TpageTable tfoot td .page_nav .toPage:hover      { background-position:-58px -26px;}
+.TpageTable tfoot td .page_nav .pageSize:hover    { background-position:-58px 0px;}
+/*ddf 20140108 考试列表 考试名称 长度限制*/
+.e_name{ cursor:pointer; display:block; width:120px;  overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}

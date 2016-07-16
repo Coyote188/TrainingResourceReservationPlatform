@@ -33,7 +33,7 @@ $(document).ready(function(){
 				"display" : "block"
 			});
 			$(this).removeClass("zoom-left");
-			$("#main-content").css({
+			$("#cu-content").css({
 				"margin-left" : "212px"
 			});
 		} else {
@@ -41,7 +41,7 @@ $(document).ready(function(){
 				"display" : "none"
 			});
 			$(this).addClass("zoom-left");
-			$("#main-content").css({
+			$("#cu-content").css({
 				"margin-left" : "0px"
 			});
 		}
@@ -60,7 +60,7 @@ function hideMenu(){
 	});
 
 	$(".menu-resizer-toggler").addClass("zoom-left");
-	$("#main-content").css({
+	$("#cu-content").css({
 		"margin-left" : "0px"
 	});
 }
@@ -72,12 +72,16 @@ function initMenuHeight() {
 	var h = $(document).height();
 	
 	var nh = $("#header-ui-div").outerHeight(true);
-	//var vh = $(".header-body-dividing").outerHeight(true);
+	var vh = $(".header-body-dividing").outerHeight(true);
 	h = h - $(".wrap-footer").outerHeight(true)-nh;
 	//h = h - $(".wrap-footer").outerHeight(true) - $(".header").outerHeight(true)-vh;
+	
+	var h = $(window).height();
+	h = $(window).height() - $(".wrap-footer").height() - $(".header").height()-20;
+	
 	$(".menu-resizer").css({"height" : h + "px"});
 	$(".menu-resizer-toggler").css({"margin-top" : (h-50)/2+ "px"});
-	$("#main-content").css({"height" : h + "px"});
+	$("#cu-content").css({"height" : (h-20) + "px"});
 	$("#menu-sub-nav").css({"height" : (h-$(".menu-title").outerHeight(true)) + "px"});
 }
 
@@ -85,8 +89,8 @@ function initMenuHeight() {
  * 自动调整jqGrid插件的宽度
  */
 function autoJqGridWidth() {
-	$("#main-content .cnoj-jq-grid").each(function(){
-		$(this).setGridWidth($("#main-content").width()-5);
+	$("#cu-content .cnoj-jq-grid").each(function(){
+		$(this).setGridWidth($("#cu-content").width()-20);
 	});
 }
 function mIsEmpty(value, allowEmptyString) {
@@ -214,7 +218,7 @@ function contentAutoGrid() {
  * @param uri
  */
 function loadLocation(uri) {
-//	loadUri("#main-content",uri,true);
+//	loadUri("#cu-content",uri,true);
 	loadUri("#cu-content",uri);
 }
 function loadUri(id,uri) {

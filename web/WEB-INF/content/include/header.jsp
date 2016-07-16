@@ -38,10 +38,7 @@
 		      </s:iterator>
           </ul>
       </div>
-      <div class="navbar-nar-right p-r-0"  style="font-size:16px">
-          <div class="navbar-info"><a href="${pageContext.request.contextPath}/navV2/nav.jsp"><span ></span>返回导航</a></div>
-        
-      </div> 
+     
 
       <div class="navbar-nar-right p-r-0" id="user-menu-dropdwon" style="font-size:16px">
           <div class="navbar-info"><a href="javascript:void(0)"><span class="icon icon-home"></span>${userInfo.callName } <span class="caret"></span></a></div>

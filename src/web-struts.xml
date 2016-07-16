@@ -17,7 +17,7 @@
         
        <global-results> 
            <result name="login" type="redirect">login</result>
-           <result name="index" type="redirect">navBarV2</result>
+           <result name="index" type="redirect">index</result>
            <result name="json" type="json">
 		        <!-- 表示是否忽略等级，也就是继承关系 -->
                 <param name="ignoreHierarchy">false</param>
@@ -69,15 +69,33 @@
             <interceptor-ref name="acl" />
             <result name="success">/WEB-INF/content/index.jsp</result>
        </action>
-       <action name="navBar">
-            <result type="redirect">nav/nav.jsp</result>
-       </action>
-       <action name="navBarV2" >
-            <result type="redirect">navV2/nav.jsp</result>
-       </action>
+       
        <action name="index/*" class="cn.com.chinaccs.action.IndexAction">
             <interceptor-ref name="acl" />
             <result name="success">/WEB-INF/content/index.jsp</result>
+       </action>
+       
+       <!-- 信息管理-->
+       <action name="info/*" class="cn.com.chinaccs.action.InfoAction" method="{1}">
+            <interceptor-ref name="acl" />
+            <result name="success">/WEB-INF/content/info/{1}.jsp</result>
+       </action>
+         <action name="info/addInfo" class="cn.com.chinaccs.action.InfoAction" method="addInfo">
+            <interceptor-ref name="acl" />
+            <result name="success">/WEB-INF/content/info/{1}.jsp</result>
+       </action>
+       <!-- 图片上传管理-->
+       <action name="picture/*" class="cn.com.chinaccs.action.PictureUploadAction" method="{1}">
+           <interceptor-ref name="acl" />
+			<interceptor-ref name="defaultStack" />
+			<result name="success" type="json">
+				<param name="includeProperties">
+					output
+				</param>
+			</result>
+       </action>
+       <action name="picture/getImg" class="cn.com.chinaccs.action.PictureUploadAction" method="getImg">
+			
        </action>
        
         <!-- 系统设置 -->

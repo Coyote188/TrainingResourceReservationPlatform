@@ -315,7 +315,19 @@ function regexInteger(num) {
 	}
 	return false;
 }
-
+/**
+ * 验证是否匹配表达式
+ * @param regexp
+ * @param value
+ */
+function checkRegexp(regexp,value) {
+	var is = false;
+	var regex = eval(regexp);
+	if(regex.test(value)) {
+		is = true;
+	}
+	return is;
+} 
 
 /**
  * 
@@ -343,7 +355,27 @@ function checkEmail(value){
 		return false;
 	}
 }
-
+/**
+ * 关闭等待(加载)窗口
+ */
+function closeWaitLoading() {
+	$("#wait-msg").hide();
+	closeShadow();
+}
+/**
+ * 关闭遮盖层
+ * @param msg
+ */
+function closeShadow() {
+	$("#shadow").hide();
+}
+function isEmpty(str) {
+	var is = true;
+	if(typeof(str) !== 'undefined' && null != str && trim(str.toString()) != '') {
+		is = false;
+	}
+	return is;
+}
 /**
  * 
  * @param value
