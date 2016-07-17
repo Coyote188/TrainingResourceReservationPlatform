@@ -17,7 +17,7 @@ import cn.com.chinaccs.utils.IDGen;
  *
  */
 @Entity
-@Table(name="order_payment")
+@Table(name="t_order_payment")
 public class OrderPayment extends BaseBeanImpl {
 
 	/**

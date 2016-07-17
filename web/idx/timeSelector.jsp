@@ -7,13 +7,30 @@ $.extend({
 		BootstrapDialogUtil.close();
 	},
 	fnTimerInit: function(){
-		cache.timeLeft = [7,8,9,10,11,13];
-		var text = " - ";
-		$.each(cache.timeLeft, function(idx, ele){
-			text += ele + "时；";
-			$("#sltTimeStart").append("<option value='" + ele + "'>" + ele + "时</option>");
+		$.ajax({
+			url:'${pageContext.request.contextPath}/booking/timeList',
+			dataType:'json',
+			type:"post",
+			data:{
+				"time": cache.title,
+				"vehicle": getUrlParameter("vehicle"),
+				"query_time_list": "2",
+				"start": cache.currentDate.substr(0, cache.currentDate.indexOf("T"))
+			},
+			success: function(doc) {
+				var data = $.parseJSON(eval(doc).output).data;
+				cache.timeLeft = data;
+				var text = " - ";
+				$.each(cache.timeLeft, function(idx, ele){
+					text += ele + "时；";
+					$("#sltTimeStart").append("<option value='" + ele + "'>" + ele + "时</option>");
+				});
+				$("#timeLeft4Select").text(text);
+				console.log(data);
+			}
 		});
-		$("#timeLeft4Select").text(text);
+		
+		
 		
 	},
 	fnOnSelectorChange: function(slt){
@@ -64,7 +81,7 @@ $.extend({
 	}
 });
 $(
-	$.fnTimerInit()
+	setTimeout($.fnTimerInit(), 500)
 );
 //-->
 </script>

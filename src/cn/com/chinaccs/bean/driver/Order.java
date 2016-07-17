@@ -17,7 +17,7 @@ import cn.com.chinaccs.utils.IDGen;
  *
  */
 @Entity
-@Table(name="order")
+@Table(name="t_order")
 public class Order extends BaseBeanImpl{
 
 	/**

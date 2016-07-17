@@ -99,6 +99,42 @@ $.extend({
 		$("#licenseTypeShow").text("<" + lecenseType + "> ");
 		$("#trainFieldShow").text("<" + trainField + "> ");
 		$("#vehicleTypeShow").text("<" + vehicle + "> ");
+	},
+	fnOnAreaSelectorChange: function(){
+		$.ajax({
+			url:'${pageContext.request.contextPath}/booking/vehiclaList',
+			dataType:'json',
+			type:"post",
+			data:{
+				"area": $("#sltTrainField").val(),
+				"lv": $("#sltLicenseType").val()
+			},
+			success: function(doc) {
+				$($.parseJSON(eval(doc).output).data).each(function() {
+					var li = "<li>";
+					li += '<input type="radio" name="vehicle" value="' + $(this).attr('id') + '">';
+					li += '<img alt="" src="${pageContext.request.contextPath}' + $(this).attr('pic') + '" width="100px" height="80px">';
+					li += '<table>';
+					li += '<tbody>';
+					li += '<tr>';
+					li += '<td>车型：</td>';
+					li += '<td name="vehicleModel">' + $(this).attr('name') + '</td>';
+					li += '</tr>';
+					li += '<tr>';
+					li += '<td>单价：</td>';
+					li += '<td>' + $(this).attr('price') + '元/小时</td>';
+					li += '</tr>';
+					li += '<tr>';
+					li += '<td>车辆简介：</td>';
+					li += '<td>' + $(this).attr('desc') + '</td>';
+					li += '</tr>';
+					li += '</tbody>';
+					li += '</table>';
+					li += '</li>';
+					$("#ulVehicleList").append(li);
+				});
+			}
+		});
 	}
 });
 function fnOnTimeSelectedToShow(time){
@@ -141,7 +177,8 @@ function fnOnTimeSelectedToShow(time){
 						<tr>
 							<td width="70" valign="top"><nobr>场地选择:</nobr></td>
 							<td>
-								<select errormessage="" regexp="" validatetype="None" maxnum="0" minnum="0" isrequire="true" displayname="场地"  isvalidate="true" class="select" name="Title" id="sltTrainField">
+								<select errormessage="" regexp="" validatetype="None" maxnum="0" minnum="0" isrequire="true" displayname="场地"  isvalidate="true" class="select" name="Title" id="sltTrainField" onchange="$.fnOnAreaSelectorChange();">
+									<option value="">--</option>
 									<option value="A">A区</option>
 									<option value="B">B区</option>
 								</select>&nbsp;
@@ -152,107 +189,7 @@ function fnOnTimeSelectedToShow(time){
 							<td width="70" valign="top"><nobr>车辆选择:</nobr></td>
 							<td style="height: 390px">
 								<ul class="ul_vehicle_list" id="ulVehicleList">
-									<li>
-										<input type="radio" name="vehicle" value="car123456">
-										<img alt="" src="../picture/vehicle/117144176.JPG" width="100px" height="80px">
-										<table>
-											<tbody>
-												<tr>
-													<td>车型：</td>
-													<td name="vehicleModel">桑塔纳2000</td>
-												</tr>
-												<tr>
-													<td>单价：</td>
-													<td>210元/小时</td>
-												</tr>
-												<tr>
-													<td>车辆简介：</td>
-													<td>桑塔纳   20 0 0</td>
-												</tr>
-											</tbody>
-										</table>
-									</li>
-									
-									<li>
-										<input type="radio" name="vehicle">
-										<img alt="" src="../picture/vehicle/117144176.JPG" width="100px" height="80px">
-										<table>
-											<tbody>
-												<tr>
-													<td>车型：</td>
-													<td>桑塔纳2000</td>
-												</tr>
-												<tr>
-													<td>单价：</td>
-													<td>210元/小时</td>
-												</tr>
-												<tr>
-													<td>车辆简介：</td>
-													<td>桑塔纳   20 0 0</td>
-												</tr>
-											</tbody>
-										</table>
-									</li>
-									<li>
-										<input type="radio" name="vehicle">
-										<img alt="" src="../picture/vehicle/117144176.JPG" width="100px" height="80px">
-										<table>
-											<tbody>
-												<tr>
-													<td>车型：</td>
-													<td>桑塔纳2000</td>
-												</tr>
-												<tr>
-													<td>单价：</td>
-													<td>210元/小时</td>
-												</tr>
-												<tr>
-													<td>车辆简介：</td>
-													<td>桑塔纳   20 0 0</td>
-												</tr>
-											</tbody>
-										</table>
-									</li>
-									<li>
-										<input type="radio" name="vehicle">
-										<img alt="" src="../picture/vehicle/117144176.JPG" width="100px" height="80px">
-										<table>
-											<tbody>
-												<tr>
-													<td>车型：</td>
-													<td>桑塔纳2000</td>
-												</tr>
-												<tr>
-													<td>单价：</td>
-													<td>210元/小时</td>
-												</tr>
-												<tr>
-													<td>车辆简介：</td>
-													<td>桑塔纳   20 0 0</td>
-												</tr>
-											</tbody>
-										</table>
-									</li>
-									<li>
-										<input type="radio" name="vehicle">
-										<img alt="" src="../picture/vehicle/117144176.JPG" width="100px" height="80px">
-										<table>
-											<tbody>
-												<tr>
-													<td>车型：</td>
-													<td>桑塔纳2000</td>
-												</tr>
-												<tr>
-													<td>单价：</td>
-													<td>210元/小时</td>
-												</tr>
-												<tr>
-													<td>车辆简介：</td>
-													<td>桑塔纳   20 0 0</td>
-												</tr>
-											</tbody>
-										</table>
-									</li>
+								<!-- 车辆列表 -->
 								</ul>
 							</td>
 						</tr>

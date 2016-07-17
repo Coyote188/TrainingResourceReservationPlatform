@@ -2,6 +2,27 @@ package cn.com.chinaccs.utils;
 
 public class SystemConstant {
 	/**
+	 * 资源类型--车
+	 */
+	public static final String RES_TYPE_VEHICLE = "VEHICLE";
+	/**
+	 * 资源类型--教练/人员
+	 */
+	public static final String RES_TYPE_COACH = "COACH";
+	/**
+	 * 资源类型--场地
+	 */
+	public static final String RES_TYPE_FIELD = "FIELD";
+	
+	/**
+	 * 上午
+	 */
+	public static final String TIME_AM = "AM";
+	/**
+	 * 下午
+	 */
+	public static final String TIME_PM = "PM";
+	/**
 	 * 时间列表查询---查询月视图可状态
 	 */
 	public static final String QUERY_TIME_LIST_MONTH = "1";

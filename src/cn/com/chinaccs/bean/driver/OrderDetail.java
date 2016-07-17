@@ -19,7 +19,7 @@ import cn.com.chinaccs.utils.IDGen;
  *
  */
 @Entity
-@Table(name="order_detail")
+@Table(name="t_order_detail")
 public class OrderDetail extends BaseBeanImpl{
 	
 	/**

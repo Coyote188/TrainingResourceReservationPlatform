@@ -29,6 +29,7 @@ public class InstructionVehicle extends BaseBeanImpl {
 	private String description;
 	private String vehicleType;
 	private String belong;
+	private String pic;
 	
 	@Override
 	@Id
@@ -186,6 +187,15 @@ public class InstructionVehicle extends BaseBeanImpl {
 
 	public void setBelong(String belong) {
 		this.belong = belong;
+	}
+
+	@Column(name="pic")
+	public String getPic() {
+		return pic;
+	}
+
+	public void setPic(String pic) {
+		this.pic = pic;
 	}
 
 }

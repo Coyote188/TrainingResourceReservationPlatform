@@ -33,7 +33,7 @@ $(document).ready(function() {
 			center: '',
 			right: 'prev,next today'
 		},
-		defaultDate: '2016-06-12',
+		defaultDate: new Date(),
 		lang:'zh-cn',
 		eventLimit: true,
 		selectable: true,
@@ -43,6 +43,7 @@ $(document).ready(function() {
 		eventClick: function(calEvent, jsEvent, view) {
 			var date = calEvent.start;
 			cache.currentDate = date.format();
+			cache.title = calEvent.title.indexOf("上午") >=0? "AM": "PM";
 			BootstrapDialogUtil.loadUriDialog("选择时间","timeSelector.jsp","400px","#fff",true);
 			//alert('Event: ' + calEvent.title + ' event_id: ' + calEvent.id + ' View: ' + view.name);
 			//alert('弹出当前日期的可选时间，选择开始时间、时长');
@@ -89,7 +90,26 @@ $.extend({
 		var trainDate = cache.currentDate;
 		var trainStart = cache.timeStart;
 		var trainEnd = cache.timeEnd;
-		alert(vehicle);
+		
+		var data = new Object();
+		data.license = license;
+		data.field = field;
+		data.vehicle = vehicle;
+		data.trainDate = trainDate;
+		data.trainStart = trainStart;
+		data.trainEnd = trainEnd;
+		$.ajax({
+			url:'${pageContext.request.contextPath}/booking/orderSave',
+			dataType:'json',
+			type:"post",
+			data:data,
+			success: function(doc) {
+				var events = [];
+				$($.parseJSON(eval(doc).output).data);
+				console.log(events);
+				callback(events);
+			}
+		});
 	}
 });
 </script>
