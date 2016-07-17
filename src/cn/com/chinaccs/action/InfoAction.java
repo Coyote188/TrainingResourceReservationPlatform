@@ -34,7 +34,7 @@ public class InfoAction extends BaseImplAction {
 			InfoDao dao = new InfoDao();
 			objBean.setCreatorId(getUserId());
 			objBean.setState("未发布");
-			objBean.setInfoType("公告");
+			objBean.setInfoType("1");
 			if (dao.save(objBean) != null) {
 				chResponse.setResult(IConstant.OP_SUCCESS);
 				chResponse.setMsg(IConstant.OP_SUCCESS_MSG);

@@ -9,6 +9,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.Serializable;
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
@@ -384,6 +387,12 @@ public class PictureUploadAction extends BaseImplAction {
 						targetFileName = destFileName + "." + extTmp;
 					}
 					String targetFilePath = uploadDir + FileUtil.getFileSeparator() + targetFileName;
+					Timestamp up_time = new Timestamp(System.currentTimeMillis());
+					DateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
+					String relativePath = "/" +"Documents" + "/" + uploadDir + "/" + format.format(up_time) + "/";
+					String path = ServletActionContext.getServletContext().getRealPath(relativePath);
+					targetFilePath = path+ FileUtil.getFileSeparator() + targetFileName;
+					log.info("文件上传path："+path);
 					File targetFile = new File(targetFilePath);
 					boolean is = false;
 					if (obj instanceof InputStream) {
@@ -393,7 +402,7 @@ public class PictureUploadAction extends BaseImplAction {
 					}
 					if (is) {// 保存文件到磁盘
 						targetFilePath = targetFilePath.replace(getRootDir(), "");
-						uploadFileInfo.setFilePath(targetFilePath);
+						uploadFileInfo.setFilePath(relativePath + targetFileName);
 						uploadFileInfo.setCreateTime(DateUtil.dateToStr(new Date(), null));
 						uploadFileInfo.setFileSize(fileSize);
 						uploadFileInfo.setFileType(contentType);

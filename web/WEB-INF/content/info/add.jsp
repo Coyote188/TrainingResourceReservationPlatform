@@ -28,13 +28,14 @@
 			
 			
 			<div class="form-group m-t-10 m-l-20">
-				<label class="control-label">信息主图：</label>
+				<label class="control-label">信息封面图：</label>
 				<div class="form-group">
 					<span class="btn btn-success btn-sm fileinput-button upload-add">
-						<i class="glyphicon glyphicon-plus"></i> <span>添加主图</span>
+						<i class="glyphicon glyphicon-plus"></i> <span>添加封面图</span>
 						<input  id="upload-att-file" type="file" name="upload" />
 						<!-- 返回的图片Id -->
 						<input id="att_picture_value"  type="hidden" name="imageAttId" value="">
+						<input id="att_picture_url_value"  type="hidden" name="imgUrl" value="">
 					</span> 
 					<!-- 必须的  与FileSubmitId对应 -->
 					<input type="button" style="display: none;" id="att-file-submit">
@@ -112,6 +113,7 @@ function fileBackFun(chResponse){
 			console.info(fileId);
 	//		alert(fileId);
 			$("#att_picture_value").val(fileId);
+			$("#att_picture_url_value").val(chResponse.data.filePath);
 			
 			//setTimeout(submitForm(),500);
 			setTimeout(submitData(),500);
@@ -155,12 +157,14 @@ var submitData = function() {
 	var attIds = $("#attId").val();
 	
 	var imageAttId=$("#att_picture_value").val();
+	var imgUrl=$("#att_picture_url_value").val();
 	
 	var url = "info/addInfo";
 	var param = {"objBean.title": title, 
 			"objBean.html": uc_html, 
 			"objBean.content": uc_txt, 
-			"objBean.imgAttId":imageAttId};
+			"objBean.imgAttId":imageAttId,
+			"objBean.imgUrl":imgUrl};
 	$.ajax({
 		type: "POST",
 		url: url,

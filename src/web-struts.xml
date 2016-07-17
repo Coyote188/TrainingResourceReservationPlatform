@@ -110,7 +110,7 @@
 		<action name="reserve/*" class="cn.com.chinaccs.action.ReserveAction"
 			method="{1}">
 			<interceptor-ref name="acl" />
-			<result name="success">/WEB-INF/content/info/{1}.jsp</result>
+			<result name="success">/WEB-INF/content/reserve/{1}.jsp</result>
 		</action>
 
 

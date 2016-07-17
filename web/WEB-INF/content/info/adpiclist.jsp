@@ -27,7 +27,7 @@
 		colNames : [ "信息ID", "标题","图片","发布人"],
 		colModel : [ {name : 'id',index : 'id',key : true,hidden:true}, 
 		             {name : 'title',width:'150px'}, 
-		             {name : 'content',width:'220px'}, 
+		             {name : 'img',width:'220px'}, 
 		             {name : 'creator'}
 		            ],
 		pager : '#pager',
@@ -35,7 +35,7 @@
 		rowNum : 20,
 		viewrecords : true,
 		gridview : true,
-		caption : '信息列表',
+		caption : '轮播图列表',
 		autowidth : true,
 		height:jqGridH,
 		multiselect : true,
@@ -58,19 +58,21 @@
 	function onGridComplete() {
 		var ids = $("#grid-list").jqGrid("getDataIDs");
 		for ( var i = 0; i < ids.length; i++) {
-			var rowData = $("#grid-list").getRowData(ids[i]);
-			var id = rowData["id"];
-			var name = rowData["roleName"];
-			var url = "role/permissionsConfig?id=" + id;
-			var url2 = "role/roleInfo?id=" + id;
-			var url3 = "showPage/role_edit?op=edit&busiName=role&id="+id;
 			
-			var html = '<a href="' + url + '" class="a_btn btn btn-primary  user-role-config">';
-			html += '<span style="color:white ">发布</span></a>';
-			html += '&nbsp;&nbsp;<a href="' + url3 + '"  class="a_btn btn btn-warning permit-role-config">';
-			html += '<span style="color:white ">撤销</span></a>';
+			var rowData = $("#grid-list").getRowData(ids[i]);
+			
+			var id = rowData["id"];
+			var imgUrl = rowData["img"];
+			
+			var baseUrl = "${pageContext.request.contextPath}";
+			
+			imgUrl = baseUrl+imgUrl;
+			
+			console.info(imgUrl);
+			var html ='<img alt="" src='+imgUrl+' width="120px" height="80px">';
+			
 			$("#grid-list").jqGrid('setRowData', ids[i], {
-				
+				img:html
 			});
 		}
 		$(".user-role-config").click(function(){
