@@ -7,11 +7,11 @@ import cn.com.chinaccs.bean.driver.Order;
 import cn.com.chinaccs.bean.driver.OrderDetail;
 import cn.com.chinaccs.bean.driver.Personnel;
 import cn.com.chinaccs.bean.driver.TrainingField;
-import cn.com.chinaccs.bean.driver.TraningSourceLock;
+import cn.com.chinaccs.bean.driver.TrainingSourceLock;
 import cn.com.chinaccs.dao.InstructionVehicleDao;
 import cn.com.chinaccs.dao.PersonnelDao;
 import cn.com.chinaccs.dao.TrainingFieldDao;
-import cn.com.chinaccs.dao.TraningSourceLockDao;
+import cn.com.chinaccs.dao.TrainingSourceLockDao;
 import cn.com.chinaccs.utils.Utils;
 
 public class OrderManager {
@@ -19,14 +19,14 @@ public class OrderManager {
 	//资源预锁定
 	public String resourceHold(String resourceId, String resType, String resName, String userId, java.sql.Timestamp stTime, int duration){
 		
-		TraningSourceLock tsl = new TraningSourceLock(resourceId, resName, resType, userId);
+		TrainingSourceLock tsl = new TrainingSourceLock(resourceId, resName, resType, userId);
 		
 		return tsl.hold(duration,stTime);
 	}
 	//资源锁定
 	public boolean resourceLock(String resId){
-		TraningSourceLockDao dao = new TraningSourceLockDao();
-		TraningSourceLock lock = dao.find(resId);
+		TrainingSourceLockDao dao = new TrainingSourceLockDao();
+		TrainingSourceLock lock = dao.find(resId);
 		return lock.lock();
 	}
 	/**

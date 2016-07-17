@@ -39,20 +39,7 @@ $(document).ready(function() {
 		selectable: true,
 		selectHelper: true,
 		height: 450,
-		timeFormat: 'dd(:hh)t',
-		/* select: function(start, end) {
-			var title = prompt('Event Title:');
-			var eventData;
-			if (title) {
-				eventData = {
-					title: title,
-					start: start,
-					end: end
-				};
-				$('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
-			}
-			$('#calendar').fullCalendar('unselect');
-		}, */
+		timeFormat: 'DD ',
 		eventClick: function(calEvent, jsEvent, view) {
 			var date = calEvent.start;
 			cache.currentDate = date.format();
@@ -64,27 +51,29 @@ $(document).ready(function() {
 			alert('查询当前车辆选定日期的预约情况');
 			$(this).css('background-color', 'red');
 		},
-		events: function(start, end, callback){
-			alert(start);
-			console.log(end);
-			console.log(callback);
+		events: function(start, end, timezone, callback){
+			//console.log(callback);
 			$.ajax({
-				url:'booking/timeList',
+				url:'${pageContext.request.contextPath}/booking/timeList',
 				dataType:'json',
+				type:"post",
 				data:{
-					start: Math.round(start.getTime()/1000),
-					end: Math.round(end.getTime()/1000),
-					vehicle: cache.getUrlParameter("vehicle"),
-					query_time_list: 1
+					"start": start.format(),
+					"end": end.format(),
+					"vehicle": getUrlParameter("vehicle"),
+					"query_time_list": "1"
 				},
 				success: function(doc) {
 					var events = [];
-					$(doc).find('event').each(function() {
-						event.push({
+					$($.parseJSON(eval(doc).output).data).each(function() {
+						events.push({
 							title: $(this).attr('title'),
-							start: $(this).attr('start')
+							start: $(this).attr('start'),
+							color: $(this).attr('color'),
+							end: $(this).attr('end')
 						});
 					});
+					console.log(events);
 					callback(events);
 				}
 			});

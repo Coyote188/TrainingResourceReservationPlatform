@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import cn.com.chinaccs.bean.BaseBeanImpl;
-import cn.com.chinaccs.dao.TraningSourceLockDao;
+import cn.com.chinaccs.dao.TrainingSourceLockDao;
 
 /**
  * 资源占用锁<br>
@@ -19,7 +19,7 @@ import cn.com.chinaccs.dao.TraningSourceLockDao;
  */
 @Entity
 @Table(name="train_resource_lock")
-public class TraningSourceLock extends BaseBeanImpl{
+public class TrainingSourceLock extends BaseBeanImpl{
 	/**
 	 * 预锁定
 	 */
@@ -64,7 +64,7 @@ public class TraningSourceLock extends BaseBeanImpl{
 	 * @param resourceType
 	 * @param whoLocksResource
 	 */
-	public TraningSourceLock(String resourceId, String resourceName, String resourceType, String whoLocksResource) {
+	public TrainingSourceLock(String resourceId, String resourceName, String resourceType, String whoLocksResource) {
 		super();
 		this.resourceId = resourceId;
 		this.resourceName = resourceName;
@@ -75,7 +75,7 @@ public class TraningSourceLock extends BaseBeanImpl{
 	}
 	
 	public boolean lock(){
-		TraningSourceLockDao dao = new TraningSourceLockDao();
+		TrainingSourceLockDao dao = new TrainingSourceLockDao();
 		this.status = LOCK_STATUS_LOCKED;
 		this.setStatusDate(new Timestamp(System.currentTimeMillis()));
 		return dao.update(this);
@@ -86,7 +86,7 @@ public class TraningSourceLock extends BaseBeanImpl{
 	 * @return
 	 */
 	public String hold(int duration, java.sql.Timestamp lockTime){
-		TraningSourceLockDao dao = new TraningSourceLockDao();
+		TrainingSourceLockDao dao = new TrainingSourceLockDao();
 		this.setStatus(LOCK_STATUS_PRE);
 		this.setLockedTime(lockTime);
 		this.setDuration(duration);
@@ -98,7 +98,7 @@ public class TraningSourceLock extends BaseBeanImpl{
 	 * @return
 	 */
 	public boolean unhold(){
-		TraningSourceLockDao dao = new TraningSourceLockDao();
+		TrainingSourceLockDao dao = new TrainingSourceLockDao();
 		
 		return dao.delete(this.id);
 	}

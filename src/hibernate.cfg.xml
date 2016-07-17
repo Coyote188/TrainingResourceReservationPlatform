@@ -68,7 +68,7 @@
 		<mapping class="cn.com.chinaccs.bean.driver.OrderPayment" />
 		<mapping class="cn.com.chinaccs.bean.driver.Personnel" />
 		<mapping class="cn.com.chinaccs.bean.driver.TrainingField" />
-		<mapping class="cn.com.chinaccs.bean.driver.TraningSourceLock" />
-		
+		<mapping class="cn.com.chinaccs.bean.driver.TrainingSourceLock" />
+		<mapping class="cn.com.chinaccs.bean.entity.TNAttachment" />
 	</session-factory>
 </hibernate-configuration>
