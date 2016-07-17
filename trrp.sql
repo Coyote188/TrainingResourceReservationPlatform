@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : trrp
-Source Server Version : 50173
-Source Host           : localhost:3306
+Source Server         : Local
+Source Server Version : 50626
+Source Host           : 127.0.0.1:3306
 Source Database       : trrp
 
 Target Server Type    : MYSQL
-Target Server Version : 50173
+Target Server Version : 50626
 File Encoding         : 65001
 
-Date: 2016-07-14 19:37:52
+Date: 2016-07-17 22:32:18
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -53,6 +53,7 @@ CREATE TABLE `instruction_vehicle_infomation` (
   `description` varchar(1000) COLLATE utf8_bin DEFAULT NULL COMMENT '描述',
   `vehicle_type` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '车辆类型-关联车辆类型表主键',
   `belong` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '属于什么区域',
+  `pic` varchar(255) COLLATE utf8_bin DEFAULT NULL COMMENT '图片路径',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_vehicle_1` (`id`),
   KEY `idx_vehicle_2` (`coach`),
@@ -62,43 +63,44 @@ CREATE TABLE `instruction_vehicle_infomation` (
 -- ----------------------------
 -- Records of instruction_vehicle_infomation
 -- ----------------------------
-INSERT INTO `instruction_vehicle_infomation` VALUES ('006', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('009', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('013', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('014', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('015', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('016', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('018', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('019', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('020', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('021', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('026', null, '10A', null, '捷达', null, '100.00', null, '小型汽车自动档', 'C2', 'B');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('027', null, '10A', null, '捷达', null, '100.00', null, '小型汽车自动档', 'C2', 'B');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('51', null, '10A', null, '东风', null, '100.00', null, '大货车', 'B2', 'A');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('52', null, '10A', null, '东风', null, '100.00', null, '大货车', 'B2', 'A');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('53', null, '10A', null, '东风', null, '100.00', null, '大货车', 'B2', 'A');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('54', null, '10A', null, '东风', null, '100.00', null, '大货车', 'B2', 'A');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('55', null, '10A', null, '东风', null, '100.00', null, '大货车', 'B2', 'A');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('56', null, '10A', null, '东风', null, '100.00', null, '大货车', 'B2', 'A');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('61', null, '10A', null, '解放', null, '300.00', null, '大货车', 'B2', 'B');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('62', null, '10A', null, '解放', null, '300.00', null, '大货车', 'B2', 'B');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('63', null, '10A', null, '解放', null, '300.00', null, '大货车', 'B2', 'B');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('64', null, '10A', null, '解放', null, '300.00', null, '大货车', 'B2', 'B');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('65', null, '10A', null, '宇通', null, '200.00', null, '中巴', 'B1', 'B');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('66', null, '10A', null, '金龙', null, '200.00', null, '大客', 'A1|A3', 'B');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('68', null, '10A', null, '解放', null, '300.00', null, '大货车', 'B2', 'B');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('CK001', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('CK002', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('CK003', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('CK004', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('CK005', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('CK008', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('CK010', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('CK011', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('CK022', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('CK023', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('CK024', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A');
-INSERT INTO `instruction_vehicle_infomation` VALUES ('CK025', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('', null, null, null, null, null, null, null, null, null, null, '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('006', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('009', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('013', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('014', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('015', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('016', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('018', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('019', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('020', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('021', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'B', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('026', null, '10A', null, '捷达', null, '100.00', null, '小型汽车自动档', 'C2', 'B', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('027', null, '10A', null, '捷达', null, '100.00', null, '小型汽车自动档', 'C2', 'B', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('51', null, '10A', null, '东风', null, '100.00', null, '大货车', 'B2', 'A', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('52', null, '10A', null, '东风', null, '100.00', null, '大货车', 'B2', 'A', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('53', null, '10A', null, '东风', null, '100.00', null, '大货车', 'B2', 'A', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('54', null, '10A', null, '东风', null, '100.00', null, '大货车', 'B2', 'A', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('55', null, '10A', null, '东风', null, '100.00', null, '大货车', 'B2', 'A', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('56', null, '10A', null, '东风', null, '100.00', null, '大货车', 'B2', 'A', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('61', null, '10A', null, '解放', null, '300.00', null, '大货车', 'B2', 'B', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('62', null, '10A', null, '解放', null, '300.00', null, '大货车', 'B2', 'B', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('63', null, '10A', null, '解放', null, '300.00', null, '大货车', 'B2', 'B', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('64', null, '10A', null, '解放', null, '300.00', null, '大货车', 'B2', 'B', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('65', null, '10A', null, '宇通', null, '200.00', null, '中巴', 'B1', 'B', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('66', null, '10A', null, '金龙', null, '200.00', null, '大客', 'A1|A3', 'B', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('68', null, '10A', null, '解放', null, '300.00', null, '大货车', 'B2', 'B', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('CK001', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('CK002', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('CK003', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('CK004', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('CK005', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('CK008', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('CK010', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('CK011', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('CK022', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('CK023', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('CK024', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A', '/picture/vehicle/117144176.JPG');
+INSERT INTO `instruction_vehicle_infomation` VALUES ('CK025', null, '10A', null, '捷达', null, '100.00', null, '小型汽车', 'C1', 'A', '/picture/vehicle/117144176.JPG');
 
 -- ----------------------------
 -- Table structure for license_level_vehicle_type_rela
@@ -113,76 +115,6 @@ CREATE TABLE `license_level_vehicle_type_rela` (
 
 -- ----------------------------
 -- Records of license_level_vehicle_type_rela
--- ----------------------------
-
--- ----------------------------
--- Table structure for order
--- ----------------------------
-DROP TABLE IF EXISTS `order`;
-CREATE TABLE `order` (
-  `id` varchar(45) COLLATE utf8_bin NOT NULL,
-  `order_date` datetime DEFAULT NULL,
-  `serial_nbr` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `order_status` varchar(10) COLLATE utf8_bin DEFAULT NULL,
-  `order_amount` decimal(10,0) DEFAULT NULL,
-  `order_user` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `order_payment` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `order_detail` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `status_date` datetime DEFAULT NULL,
-  `pre_status` varchar(10) COLLATE utf8_bin DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- ----------------------------
--- Records of order
--- ----------------------------
-
--- ----------------------------
--- Table structure for order_detail
--- ----------------------------
-DROP TABLE IF EXISTS `order_detail`;
-CREATE TABLE `order_detail` (
-  `id` varchar(32) COLLATE utf8_bin NOT NULL,
-  `license_level` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `license_level_money` decimal(10,0) DEFAULT NULL,
-  `training_field` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `training_field_lock` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `training_field_money` decimal(10,0) DEFAULT NULL,
-  `instruction_vehicle` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `instruction_vehicle_lock` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `instruction_vehicle_money` decimal(10,0) DEFAULT NULL,
-  `coach` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `coach_lock` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `coach_money` decimal(10,0) DEFAULT NULL,
-  `training_start_time` datetime DEFAULT NULL,
-  `duration` int(5) DEFAULT NULL,
-  `training_end_time` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- ----------------------------
--- Records of order_detail
--- ----------------------------
-
--- ----------------------------
--- Table structure for order_payment
--- ----------------------------
-DROP TABLE IF EXISTS `order_payment`;
-CREATE TABLE `order_payment` (
-  `id` varchar(32) COLLATE utf8_bin NOT NULL,
-  `time_received` datetime DEFAULT NULL,
-  `money_received` decimal(10,0) DEFAULT NULL,
-  `payment_method` varchar(128) COLLATE utf8_bin DEFAULT NULL,
-  `pay_status` varchar(10) COLLATE utf8_bin DEFAULT NULL,
-  `status_date` datetime DEFAULT NULL,
-  `pay_serial` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `pay_result` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `pay_request` varchar(2000) COLLATE utf8_bin DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- ----------------------------
--- Records of order_payment
 -- ----------------------------
 
 -- ----------------------------
@@ -201,6 +133,7 @@ CREATE TABLE `personnel_infomation` (
   `license_type` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '关联驾照类型表主建',
   `tech_license_type` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '培训驾照类型-关联驾照类型表主建',
   `tel_nbr` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '联系电话',
+  `drving_experience` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -209,10 +142,10 @@ CREATE TABLE `personnel_infomation` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for ResourceLock
+-- Table structure for resourcelock
 -- ----------------------------
-DROP TABLE IF EXISTS `ResourceLock`;
-CREATE TABLE `ResourceLock` (
+DROP TABLE IF EXISTS `resourcelock`;
+CREATE TABLE `resourcelock` (
   `id` varchar(32) COLLATE utf8_bin NOT NULL,
   `resource_id` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '资源ID',
   `resource_name` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '资源名',
@@ -227,7 +160,75 @@ CREATE TABLE `ResourceLock` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- ----------------------------
--- Records of ResourceLock
+-- Records of resourcelock
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for train_resource_lock
+-- ----------------------------
+DROP TABLE IF EXISTS `train_resource_lock`;
+CREATE TABLE `train_resource_lock` (
+  `id` varchar(32) COLLATE utf8_bin NOT NULL,
+  `resource_id` varchar(32) COLLATE utf8_bin DEFAULT NULL,
+  `resource_name` varchar(64) COLLATE utf8_bin DEFAULT NULL,
+  `resource_type` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `lock_time` datetime DEFAULT NULL,
+  `duration` int(11) DEFAULT NULL,
+  `unlock_time` datetime DEFAULT NULL,
+  `who_lock_resource` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `status` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `status_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- ----------------------------
+-- Records of train_resource_lock
+-- ----------------------------
+INSERT INTO `train_resource_lock` VALUES ('146876499695890371', 'CK001', '捷达', 'VEHICLE', '2016-07-18 15:00:00', '1', null, 'U140176000619665260', '001', '2016-07-17 22:16:36');
+INSERT INTO `train_resource_lock` VALUES ('146876524833157408', 'CK002', '捷达', 'VEHICLE', '2016-07-18 07:00:00', '1', null, 'U140176000619665260', '001', '2016-07-17 22:20:48');
+INSERT INTO `train_resource_lock` VALUES ('146876543248566266', 'CK002', '捷达', 'VEHICLE', '2016-07-21 07:00:00', '1', null, 'U140176000619665260', '001', '2016-07-17 22:23:52');
+
+-- ----------------------------
+-- Table structure for traning_field_infomation
+-- ----------------------------
+DROP TABLE IF EXISTS `traning_field_infomation`;
+CREATE TABLE `traning_field_infomation` (
+  `id` varchar(45) COLLATE utf8_bin NOT NULL,
+  `field_name` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '场地名称',
+  `status` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '场地状态（有效-10A，维护中-10B，作废-10X）',
+  `field_idx` varchar(45) CHARACTER SET utf8 DEFAULT NULL COMMENT '适用车辆（关联车辆类别表----限驾照类型c1\\c2\\c3 and so on）',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `idx_field_1` (`id`),
+  KEY `idx_field_2` (`status`),
+  KEY `idx_field_3` (`field_idx`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- ----------------------------
+-- Records of traning_field_infomation
+-- ----------------------------
+INSERT INTO `traning_field_infomation` VALUES ('F01', 'A区', '10A', 'A');
+INSERT INTO `traning_field_infomation` VALUES ('F02', 'B区', '10A', 'B');
+
+-- ----------------------------
+-- Table structure for t_n_attachment
+-- ----------------------------
+DROP TABLE IF EXISTS `t_n_attachment`;
+CREATE TABLE `t_n_attachment` (
+  `id` varchar(32) COLLATE utf8_bin NOT NULL,
+  `att_type` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
+  `descr` varchar(1000) COLLATE utf8_bin DEFAULT NULL,
+  `down_count` bigint(20) DEFAULT '0',
+  `file_name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `file_path` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `file_size` bigint(20) DEFAULT NULL,
+  `file_type` varchar(1024) COLLATE utf8_bin DEFAULT NULL,
+  `user_id` varchar(32) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- ----------------------------
+-- Records of t_n_attachment
 -- ----------------------------
 
 -- ----------------------------
@@ -282,6 +283,28 @@ INSERT INTO `t_n_dict` VALUES ('D145723946120812553', '2', '武警列兵', 'D145
 INSERT INTO `t_n_dict` VALUES ('D145723964890779820', '2', '武警上等兵', 'D145723943327402441', '2', '1', '2');
 INSERT INTO `t_n_dict` VALUES ('D145723964890779822', '2', '武警下士', 'D145723943327402441', '2', '1', '3');
 INSERT INTO `t_n_dict` VALUES ('D146556606682101088', '2', '数据网络基础', 'D144906234223070186', '9', '1', '数据网络基础');
+
+-- ----------------------------
+-- Table structure for t_n_info
+-- ----------------------------
+DROP TABLE IF EXISTS `t_n_info`;
+CREATE TABLE `t_n_info` (
+  `id` varchar(32) COLLATE utf8_bin NOT NULL,
+  `content` longtext COLLATE utf8_bin,
+  `contentAbstract` varchar(512) COLLATE utf8_bin DEFAULT NULL,
+  `createTime` datetime DEFAULT NULL,
+  `creatorId` varchar(16) COLLATE utf8_bin DEFAULT NULL,
+  `html` longtext COLLATE utf8_bin,
+  `imgAttId` varchar(32) COLLATE utf8_bin DEFAULT NULL,
+  `infoType` varchar(32) COLLATE utf8_bin DEFAULT NULL,
+  `state` varchar(16) COLLATE utf8_bin DEFAULT NULL,
+  `title` varchar(512) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- ----------------------------
+-- Records of t_n_info
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for t_n_login_log
@@ -1211,6 +1234,31 @@ INSERT INTO `t_n_login_log` VALUES ('146717688802263101', '2016-06-29 13:08:08',
 INSERT INTO `t_n_login_log` VALUES ('146725640753400097', '2016-06-30 11:13:27', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
 INSERT INTO `t_n_login_log` VALUES ('146729885334455153', '2016-06-30 23:00:53', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
 INSERT INTO `t_n_login_log` VALUES ('146729948597911133', '2016-06-30 23:11:25', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146870061896333483', '2016-07-17 04:23:38', '0:0:0:0:0:0:0:1', 'web', '用户名或密码错误', '-1', '', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146870062669479651', '2016-07-17 04:23:46', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146870089407904973', '2016-07-17 04:28:14', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146870093823744572', '2016-07-17 04:28:58', '127.0.0.1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146870113753924848', '2016-07-17 04:32:17', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146870127479354360', '2016-07-17 04:34:34', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146870145255870083', '2016-07-17 04:37:32', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146870181906770484', '2016-07-17 04:43:39', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146870329137033872', '2016-07-17 05:08:11', '127.0.0.1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146870359361084086', '2016-07-17 05:13:13', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146870384692716410', '2016-07-17 05:17:26', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146870394120393769', '2016-07-17 05:19:01', '127.0.0.1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146870487917088482', '2016-07-17 05:34:39', '127.0.0.1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146871965424171307', '2016-07-17 09:40:54', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146872246955273917', '2016-07-17 10:27:49', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146872360895736663', '2016-07-17 10:46:48', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146872373034972864', '2016-07-17 10:48:50', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146872403252933810', '2016-07-17 10:53:52', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146872714529986710', '2016-07-17 11:45:45', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146876397446186863', '2016-07-17 21:59:34', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146876453305668347', '2016-07-17 22:08:53', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146876471454046830', '2016-07-17 22:11:54', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146876486972143665', '2016-07-17 22:14:29', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146876520612024539', '2016-07-17 22:20:06', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146876536638143283', '2016-07-17 22:22:46', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
 
 -- ----------------------------
 -- Table structure for t_n_menu
@@ -3460,6 +3508,84 @@ INSERT INTO `t_n_user` VALUES ('U145092798733432755', '管理员', '2015-12-24 1
 INSERT INTO `t_n_user` VALUES ('U146147311664138629', 'stu3', '2016-04-24 12:45:16', null, '13300000000', 'org145009743921113084', 'f6c40d53d7bfcff74287fa4f72d7c97a', null, null, null, '', '1', null, 'stu3', null);
 
 -- ----------------------------
+-- Table structure for t_order
+-- ----------------------------
+DROP TABLE IF EXISTS `t_order`;
+CREATE TABLE `t_order` (
+  `id` varchar(45) COLLATE utf8_bin NOT NULL,
+  `order_date` datetime DEFAULT NULL,
+  `serial_nbr` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `order_status` varchar(10) COLLATE utf8_bin DEFAULT NULL,
+  `order_amount` decimal(10,0) DEFAULT NULL,
+  `order_user` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `order_payment` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `order_detail` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `status_date` datetime DEFAULT NULL,
+  `pre_status` varchar(10) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- ----------------------------
+-- Records of t_order
+-- ----------------------------
+INSERT INTO `t_order` VALUES ('39b2644ce28b44a9a1c57bfeb2f27af4', null, null, '001', '100', 'U140176000619665260', 'ab1a4b2dc0d74ff59de105d378cd4a1a', 'cabbf0b6fb064f47bca028a40fa09ed9', '2016-07-17 22:23:50', null);
+INSERT INTO `t_order` VALUES ('a8fb4a67f7834e858c1ba9f87541ec47', null, null, '001', null, 'U140176000619665260', '861d17acfead47cf815840a531b318ce', 'e09886d4662146e196fb9ce64c821390', '2016-07-17 22:20:39', null);
+
+-- ----------------------------
+-- Table structure for t_order_detail
+-- ----------------------------
+DROP TABLE IF EXISTS `t_order_detail`;
+CREATE TABLE `t_order_detail` (
+  `id` varchar(32) COLLATE utf8_bin NOT NULL,
+  `license_level` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `license_level_money` decimal(10,0) DEFAULT NULL,
+  `training_field` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `training_field_lock` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `training_field_money` decimal(10,0) DEFAULT NULL,
+  `instruction_vehicle` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `instruction_vehicle_lock` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `instruction_vehicle_money` decimal(10,0) DEFAULT NULL,
+  `coach` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `coach_lock` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `coach_money` decimal(10,0) DEFAULT NULL,
+  `training_start_time` datetime DEFAULT NULL,
+  `duration` int(5) DEFAULT NULL,
+  `training_end_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- ----------------------------
+-- Records of t_order_detail
+-- ----------------------------
+INSERT INTO `t_order_detail` VALUES ('2fb80a705a134889b2df384f9bb6ae1f', null, null, null, null, null, null, null, null, null, null, null, null, '0', null);
+INSERT INTO `t_order_detail` VALUES ('cabbf0b6fb064f47bca028a40fa09ed9', 'C1', null, 'A', null, null, 'CK002', '146876543248566266', '100', null, null, null, '2016-07-21 08:00:00', '1', '2016-07-21 07:00:00');
+INSERT INTO `t_order_detail` VALUES ('e09886d4662146e196fb9ce64c821390', null, null, null, null, null, null, null, null, null, null, null, null, '0', null);
+
+-- ----------------------------
+-- Table structure for t_order_payment
+-- ----------------------------
+DROP TABLE IF EXISTS `t_order_payment`;
+CREATE TABLE `t_order_payment` (
+  `id` varchar(32) COLLATE utf8_bin NOT NULL,
+  `time_received` datetime DEFAULT NULL,
+  `money_received` decimal(10,0) DEFAULT NULL,
+  `payment_method` varchar(128) COLLATE utf8_bin DEFAULT NULL,
+  `pay_status` varchar(10) COLLATE utf8_bin DEFAULT NULL,
+  `status_date` datetime DEFAULT NULL,
+  `pay_serial` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `pay_result` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `pay_request` varchar(2000) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- ----------------------------
+-- Records of t_order_payment
+-- ----------------------------
+INSERT INTO `t_order_payment` VALUES ('2f127b50be284c2eb29753b0c749c674', null, null, null, null, null, null, null, null);
+INSERT INTO `t_order_payment` VALUES ('861d17acfead47cf815840a531b318ce', null, null, null, null, null, null, null, null);
+INSERT INTO `t_order_payment` VALUES ('ab1a4b2dc0d74ff59de105d378cd4a1a', null, null, null, null, null, null, null, null);
+
+-- ----------------------------
 -- Table structure for t_v_repair_person
 -- ----------------------------
 DROP TABLE IF EXISTS `t_v_repair_person`;
@@ -3521,49 +3647,6 @@ CREATE TABLE `t_v_vehicle_maintenance` (
 -- ----------------------------
 -- Records of t_v_vehicle_maintenance
 -- ----------------------------
-
--- ----------------------------
--- Table structure for train_resource_lock
--- ----------------------------
-DROP TABLE IF EXISTS `train_resource_lock`;
-CREATE TABLE `train_resource_lock` (
-  `id` varchar(32) COLLATE utf8_bin NOT NULL,
-  `resource_id` varchar(32) COLLATE utf8_bin DEFAULT NULL,
-  `resource_name` varchar(64) COLLATE utf8_bin DEFAULT NULL,
-  `resource_type` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `lock_time` datetime DEFAULT NULL,
-  `duration` int(11) DEFAULT NULL,
-  `unlock_time` datetime DEFAULT NULL,
-  `who_lock_resource` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `status` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `status_date` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- ----------------------------
--- Records of train_resource_lock
--- ----------------------------
-
--- ----------------------------
--- Table structure for traning_field_infomation
--- ----------------------------
-DROP TABLE IF EXISTS `traning_field_infomation`;
-CREATE TABLE `traning_field_infomation` (
-  `id` varchar(45) COLLATE utf8_bin NOT NULL,
-  `field_name` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '场地名称',
-  `status` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '场地状态（有效-10A，维护中-10B，作废-10X）',
-  `field_idx` varchar(45) CHARACTER SET utf8 DEFAULT NULL COMMENT '适用车辆（关联车辆类别表----限驾照类型c1\\c2\\c3 and so on）',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `idx_field_1` (`id`),
-  KEY `idx_field_2` (`status`),
-  KEY `idx_field_3` (`field_idx`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- ----------------------------
--- Records of traning_field_infomation
--- ----------------------------
-INSERT INTO `traning_field_infomation` VALUES ('F01', 'A区', '10A', 'A');
-INSERT INTO `traning_field_infomation` VALUES ('F02', 'B区', '10A', 'B');
 
 -- ----------------------------
 -- Table structure for vehicle_type
