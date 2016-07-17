@@ -33,6 +33,7 @@ public class TNInfo extends BaseBeanImpl implements DateBean {
 	private String contentAbstract;
 	private String html;
 	private String imgAttId;
+	private String imgUrl;	//直接存路径
 	private Date createTime;
 	private String infoType; // 信息类型  数据字典
 	private String creatorId;	//创建用户id
@@ -133,6 +134,16 @@ public class TNInfo extends BaseBeanImpl implements DateBean {
 	public void setCreatorId(String creatorId) {
 		this.creatorId = creatorId;
 	}
+
+	@Column(name = "imgUrl", length=512)
+	public String getImgUrl() {
+		return imgUrl;
+	}
+
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+	}
+	
 	
 
 }

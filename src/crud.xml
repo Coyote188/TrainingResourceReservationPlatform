@@ -97,7 +97,7 @@
 		
 		<deleteIds name="id"></deleteIds>
 		<querySQL>
-			SELECT t.id,t.title,t.imgAttId,(SELECT call_name from t_n_user where id = t.creatorId) from t_n_info t where infoType = '2' ORDER BY t.createTime DESC
+			SELECT t.id,t.title,t.imgUrl,(SELECT call_name from t_n_user where id = t.creatorId) from t_n_info t where infoType = '2' ORDER BY t.createTime DESC
 		</querySQL>
 		
 	</bean>
@@ -105,7 +105,7 @@
 		<param name="infoType" type="termEqual"></param>
 		<deleteIds name="id"></deleteIds>
 		<querySQL>
-			SELECT t.id,t.title,t.imgAttId,(SELECT call_name from t_n_user where id = t.creatorId) from t_n_info t where infoType =:infoType ORDER BY t.createTime DESC
+			SELECT t.id,t.title,t.imgUrl,(SELECT call_name from t_n_user where id = t.creatorId) from t_n_info t where infoType =:infoType ORDER BY t.createTime DESC
 		</querySQL>
 		
 	</bean>
