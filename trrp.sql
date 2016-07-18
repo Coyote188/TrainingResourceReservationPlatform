@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50626
 File Encoding         : 65001
 
-Date: 2016-07-17 22:32:18
+Date: 2016-07-18 21:30:33
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -187,6 +187,7 @@ CREATE TABLE `train_resource_lock` (
 INSERT INTO `train_resource_lock` VALUES ('146876499695890371', 'CK001', '捷达', 'VEHICLE', '2016-07-18 15:00:00', '1', null, 'U140176000619665260', '001', '2016-07-17 22:16:36');
 INSERT INTO `train_resource_lock` VALUES ('146876524833157408', 'CK002', '捷达', 'VEHICLE', '2016-07-18 07:00:00', '1', null, 'U140176000619665260', '001', '2016-07-17 22:20:48');
 INSERT INTO `train_resource_lock` VALUES ('146876543248566266', 'CK002', '捷达', 'VEHICLE', '2016-07-21 07:00:00', '1', null, 'U140176000619665260', '001', '2016-07-17 22:23:52');
+INSERT INTO `train_resource_lock` VALUES ('146883375500479951', 'CK001', '捷达', 'VEHICLE', '2016-07-19 07:00:00', '1', null, 'U146882867205821359', '001', '2016-07-18 17:22:35');
 
 -- ----------------------------
 -- Table structure for traning_field_infomation
@@ -299,6 +300,7 @@ CREATE TABLE `t_n_info` (
   `infoType` varchar(32) COLLATE utf8_bin DEFAULT NULL,
   `state` varchar(16) COLLATE utf8_bin DEFAULT NULL,
   `title` varchar(512) COLLATE utf8_bin DEFAULT NULL,
+  `imgUrl` varchar(512) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -1259,6 +1261,102 @@ INSERT INTO `t_n_login_log` VALUES ('146876471454046830', '2016-07-17 22:11:54',
 INSERT INTO `t_n_login_log` VALUES ('146876486972143665', '2016-07-17 22:14:29', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
 INSERT INTO `t_n_login_log` VALUES ('146876520612024539', '2016-07-17 22:20:06', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
 INSERT INTO `t_n_login_log` VALUES ('146876536638143283', '2016-07-17 22:22:46', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146881278360680088', '2016-07-18 11:33:03', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146881327575103964', '2016-07-18 11:41:15', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146881326843757501', 'publicuser');
+INSERT INTO `t_n_login_log` VALUES ('146881349322114637', '2016-07-18 11:44:53', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146881326843757501', 'publicuser');
+INSERT INTO `t_n_login_log` VALUES ('146882311257162739', '2016-07-18 14:25:12', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146881326843757501', 'publicuser');
+INSERT INTO `t_n_login_log` VALUES ('146882313543094115', '2016-07-18 14:25:35', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146882316963777422', '2016-07-18 14:26:09', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146881326843757501', 'publicuser');
+INSERT INTO `t_n_login_log` VALUES ('146882324060186618', '2016-07-18 14:27:20', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146881326843757501', 'publicuser');
+INSERT INTO `t_n_login_log` VALUES ('146882426612894140', '2016-07-18 14:44:26', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146881326843757501', 'publicuser');
+INSERT INTO `t_n_login_log` VALUES ('146882433415288729', '2016-07-18 14:45:34', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146881326843757501', 'publicuser');
+INSERT INTO `t_n_login_log` VALUES ('146882441090707310', '2016-07-18 14:46:50', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146881326843757501', 'publicuser');
+INSERT INTO `t_n_login_log` VALUES ('146882453291389327', '2016-07-18 14:48:52', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146881326843757501', 'publicuser');
+INSERT INTO `t_n_login_log` VALUES ('146882458399494111', '2016-07-18 14:49:43', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146881326843757501', 'publicuser');
+INSERT INTO `t_n_login_log` VALUES ('146882463568383620', '2016-07-18 14:50:35', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146881326843757501', 'publicuser');
+INSERT INTO `t_n_login_log` VALUES ('146882467323113926', '2016-07-18 14:51:13', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146881326843757501', 'publicuser');
+INSERT INTO `t_n_login_log` VALUES ('146882470535956610', '2016-07-18 14:51:45', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146881326843757501', 'publicuser');
+INSERT INTO `t_n_login_log` VALUES ('146882477662229883', '2016-07-18 14:52:56', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146881326843757501', 'publicuser');
+INSERT INTO `t_n_login_log` VALUES ('146882481945727875', '2016-07-18 14:53:39', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146881326843757501', 'publicuser');
+INSERT INTO `t_n_login_log` VALUES ('146882493996506695', '2016-07-18 14:55:39', '127.0.0.1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146882495820948219', '2016-07-18 14:55:58', '127.0.0.1', 'web', '用户登录成功', '1', 'U146881326843757501', 'publicuser');
+INSERT INTO `t_n_login_log` VALUES ('146882830338782324', '2016-07-18 15:51:43', '127.0.0.1', 'web', '用户名或密码错误', '-1', '', 'public1');
+INSERT INTO `t_n_login_log` VALUES ('146882831766297683', '2016-07-18 15:51:57', '127.0.0.1', 'web', '用户名或密码错误', '-1', '', 'public1');
+INSERT INTO `t_n_login_log` VALUES ('146882832373745460', '2016-07-18 15:52:03', '127.0.0.1', 'web', '用户名或密码错误', '-1', '', 'public1');
+INSERT INTO `t_n_login_log` VALUES ('146882835631857100', '2016-07-18 15:52:36', '127.0.0.1', 'web', '用户名或密码错误', '-1', '', 'public1');
+INSERT INTO `t_n_login_log` VALUES ('146882841756587520', '2016-07-18 15:53:37', '127.0.0.1', 'web', '用户名或密码错误', '-1', '', 'public1');
+INSERT INTO `t_n_login_log` VALUES ('146882843681989151', '2016-07-18 15:53:56', '127.0.0.1', 'web', '用户名或密码错误', '-1', '', 'public1');
+INSERT INTO `t_n_login_log` VALUES ('146882868637820182', '2016-07-18 15:58:06', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146882890488672749', '2016-07-18 16:01:44', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146882891439158440', '2016-07-18 16:01:54', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U140176000619665260', 'admin');
+INSERT INTO `t_n_login_log` VALUES ('146882918720519612', '2016-07-18 16:06:27', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883241531008187', '2016-07-18 17:00:15', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883371172729914', '2016-07-18 17:21:51', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883435185911967', '2016-07-18 17:32:31', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883452073930328', '2016-07-18 17:35:20', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883454039963900', '2016-07-18 17:35:40', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883455263730327', '2016-07-18 17:35:52', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883503091362630', '2016-07-18 17:43:50', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883503744729429', '2016-07-18 17:43:57', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883508132310190', '2016-07-18 17:44:41', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883547660056402', '2016-07-18 17:51:16', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883552404014947', '2016-07-18 17:52:04', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883559272941327', '2016-07-18 17:53:12', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883578684508133', '2016-07-18 17:56:26', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883594012522027', '2016-07-18 17:59:00', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883594893612467', '2016-07-18 17:59:08', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883597755203087', '2016-07-18 17:59:37', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883611580576912', '2016-07-18 18:01:55', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883612093835358', '2016-07-18 18:02:00', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883655118770622', '2016-07-18 18:09:11', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883655837546322', '2016-07-18 18:09:18', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883662468991509', '2016-07-18 18:10:24', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883702260607636', '2016-07-18 18:17:02', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883703069191815', '2016-07-18 18:17:10', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883798408521360', '2016-07-18 18:33:04', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883798880131806', '2016-07-18 18:33:08', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883799115455703', '2016-07-18 18:33:11', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883799244837855', '2016-07-18 18:33:12', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883799336482539', '2016-07-18 18:33:13', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883799803279745', '2016-07-18 18:33:18', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883809706378384', '2016-07-18 18:34:57', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883810122869299', '2016-07-18 18:35:01', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883810237704808', '2016-07-18 18:35:02', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883810292341783', '2016-07-18 18:35:02', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883810334587940', '2016-07-18 18:35:03', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883810431100717', '2016-07-18 18:35:04', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883810511082611', '2016-07-18 18:35:05', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883810595496132', '2016-07-18 18:35:05', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883810691548982', '2016-07-18 18:35:06', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883944684688664', '2016-07-18 18:57:26', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146882867205821359', 'public3');
+INSERT INTO `t_n_login_log` VALUES ('146883947928778756', '2016-07-18 18:57:59', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146883943486039507', 'public4');
+INSERT INTO `t_n_login_log` VALUES ('146884237578247644', '2016-07-18 19:46:15', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146883943486039507', 'public4');
+INSERT INTO `t_n_login_log` VALUES ('146884253938597916', '2016-07-18 19:48:59', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146883943486039507', 'public4');
+INSERT INTO `t_n_login_log` VALUES ('146884254596847357', '2016-07-18 19:49:05', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146883943486039507', 'public4');
+INSERT INTO `t_n_login_log` VALUES ('146884254944139631', '2016-07-18 19:49:09', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146883943486039507', 'public4');
+INSERT INTO `t_n_login_log` VALUES ('146884259919636978', '2016-07-18 19:49:59', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146883943486039507', 'public4');
+INSERT INTO `t_n_login_log` VALUES ('146884266396771337', '2016-07-18 19:51:03', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146883943486039507', 'public4');
+INSERT INTO `t_n_login_log` VALUES ('146884267590289099', '2016-07-18 19:51:15', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146883943486039507', 'public4');
+INSERT INTO `t_n_login_log` VALUES ('146884424755298359', '2016-07-18 20:17:27', '0:0:0:0:0:0:0:1', 'web', '用户名或密码错误', '-1', '', 'public5');
+INSERT INTO `t_n_login_log` VALUES ('146884431628950269', '2016-07-18 20:18:36', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146884431609200769', 'public5');
+INSERT INTO `t_n_login_log` VALUES ('146884434090177046', '2016-07-18 20:19:00', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146884431609200769', 'public5');
+INSERT INTO `t_n_login_log` VALUES ('146884452449689848', '2016-07-18 20:22:04', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146884431609200769', 'public5');
+INSERT INTO `t_n_login_log` VALUES ('146884461153489210', '2016-07-18 20:23:31', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146884431609200769', 'public5');
+INSERT INTO `t_n_login_log` VALUES ('146884466650567952', '2016-07-18 20:24:26', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146884431609200769', 'public5');
+INSERT INTO `t_n_login_log` VALUES ('146884526829387962', '2016-07-18 20:34:28', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146884526817847927', 'public6');
+INSERT INTO `t_n_login_log` VALUES ('146884557795504753', '2016-07-18 20:39:37', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146884557785509913', 'public7');
+INSERT INTO `t_n_login_log` VALUES ('146884564272451511', '2016-07-18 20:40:42', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146884557785509913', 'public7');
+INSERT INTO `t_n_login_log` VALUES ('146884564579549142', '2016-07-18 20:40:45', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146884557785509913', 'public7');
+INSERT INTO `t_n_login_log` VALUES ('146884567451201302', '2016-07-18 20:41:14', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146884567436175554', 'public8');
+INSERT INTO `t_n_login_log` VALUES ('146884631236526446', '2016-07-18 20:51:52', '0:0:0:0:0:0:0:1', 'web', '用户名或密码错误', '-1', '', 'admin10');
+INSERT INTO `t_n_login_log` VALUES ('146884649483987753', '2016-07-18 20:54:54', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146884649469492608', 'pubusr1');
+INSERT INTO `t_n_login_log` VALUES ('146884652095705985', '2016-07-18 20:55:20', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146884649469492608', 'pubusr1');
+INSERT INTO `t_n_login_log` VALUES ('146884653528656827', '2016-07-18 20:55:35', '0:0:0:0:0:0:0:1', 'web', '用户登录成功', '1', 'U146884649469492608', 'pubusr1');
+INSERT INTO `t_n_login_log` VALUES ('146884674103049604', '2016-07-18 20:59:01', '0:0:0:0:0:0:0:1', 'web', '用户名或密码错误', '-1', '', 'admin10');
+INSERT INTO `t_n_login_log` VALUES ('146884675558465790', '2016-07-18 20:59:15', '0:0:0:0:0:0:0:1', 'web', '用户名或密码错误', '-1', '', 'admin10');
+INSERT INTO `t_n_login_log` VALUES ('146884758644651043', '2016-07-18 21:13:06', '0:0:0:0:0:0:0:1', 'web', '用户名或密码错误', '-1', '', 'public40');
+INSERT INTO `t_n_login_log` VALUES ('146884774165921740', '2016-07-18 21:15:41', '0:0:0:0:0:0:0:1', 'web', '用户名或密码错误', '-1', '', 'public41');
+INSERT INTO `t_n_login_log` VALUES ('146884821880232627', '2016-07-18 21:23:38', '0:0:0:0:0:0:0:1', 'web', '用户名或密码错误', '-1', '', 'plicuser');
 
 -- ----------------------------
 -- Table structure for t_n_menu
@@ -1368,6 +1466,7 @@ INSERT INTO `t_n_menu` VALUES ('M146088304377363862', '4', '第二十七章、�
 INSERT INTO `t_n_menu` VALUES ('M146088357366927823', '1', '资源中心', '0', '0', '1', 'index/资源中心', 'b_menu');
 INSERT INTO `t_n_menu` VALUES ('M146088368701313714', '2', '基础知识资源', 'M146088357366927823', '5', '1', 'index/基础知识资源', 'b_menu');
 INSERT INTO `t_n_menu` VALUES ('M146088370736869163', '2', '装备知识资源', 'M146088357366927823', '6', '1', 'resource/resourceViewer?file=all&kl=cdbdt|dbdt|dzj|wxtc|ypzj|satellite&viewer=all', 'b_menu');
+INSERT INTO `t_n_menu` VALUES ('M146881310092346523', '1', '公众网首页', '0', '14', '1', 'portal', 'b_menu');
 
 -- ----------------------------
 -- Table structure for t_n_org
@@ -1401,6 +1500,7 @@ INSERT INTO `t_n_org` VALUES ('org146147398641731598', 'XX总队', '11', '2', 'X
 INSERT INTO `t_n_org` VALUES ('org146147401177009172', 'XX支队', '11', '3', 'XX支队', '0.1.org146147398641731598.org146147401177009172', '11', 'org146147398641731598', '1', 'org', 'XX总队>>XX支队', 'true');
 INSERT INTO `t_n_org` VALUES ('org146147403338633147', 'XX大队', '11', '4', 'XX大队', '0.1.org146147398641731598.org146147401177009172.org146147403338633147', '11', 'org146147401177009172', '1', 'org', 'XX支队>>XX大队', 'true');
 INSERT INTO `t_n_org` VALUES ('org146147405074290572', '基层单位', '1', '5', '基层单位', '0.1.org146147398641731598.org146147401177009172.org146147403338633147.org146147405074290572', '1', 'org146147403338633147', '1', 'org', 'XX大队>>基层单位', 'true');
+INSERT INTO `t_n_org` VALUES ('org146881316216366940', 'None', '133', '2', '公众网', '0.1.org146881316216366940', '13308800013', '1', '2', 'org', 'XXX部队>>公众网', 'true');
 
 -- ----------------------------
 -- Table structure for t_n_permit
@@ -1445,6 +1545,8 @@ INSERT INTO `t_n_role` VALUES ('ROLE145009735598663232', '2015-12-14 20:49:15', 
 INSERT INTO `t_n_role` VALUES ('ROLE145009749723012955', '2015-12-14 20:51:37', '超级管理员', 'org145009743921113084', '在籍学员', '学员', 'base');
 INSERT INTO `t_n_role` VALUES ('ROLE145009758542736371', '2015-12-14 20:53:05', '超级管理员', 'org145009753722921494', '考试管理', '教务管理', 'base');
 INSERT INTO `t_n_role` VALUES ('ROLE145093416064454227', '2015-12-24 13:16:00', '超级管理员', '1', '超级管理员', '超级管理员', 'base');
+INSERT INTO `t_n_role` VALUES ('ROLE146881311960340530', '2016-07-18 11:38:39', '超级管理员', null, '公众用户', '公众用户', 'common');
+INSERT INTO `t_n_role` VALUES ('ROLE146881324287753023', '2016-07-18 11:40:42', '超级管理员', 'org146881316216366940', 'public-user', '公众用户', 'base');
 
 -- ----------------------------
 -- Table structure for t_n_role_link
@@ -1464,6 +1566,7 @@ INSERT INTO `t_n_role_link` VALUES ('ROLE140533788573435774', 'ROLE1405337885239
 INSERT INTO `t_n_role_link` VALUES ('ROLE145092781508798605', 'ROLE144522321875038417', 'ROLE144522301761659074');
 INSERT INTO `t_n_role_link` VALUES ('ROLE145093416068255010', 'ROLE145093416064454227', 'ROLE144522301761659074');
 INSERT INTO `t_n_role_link` VALUES ('ROLE145093416068278902', 'ROLE145093416064454227', 'ROLE141171556165393734');
+INSERT INTO `t_n_role_link` VALUES ('ROLE146881324294758062', 'ROLE146881324287753023', 'ROLE146881311960340530');
 
 -- ----------------------------
 -- Table structure for t_n_role_menu
@@ -3336,6 +3439,15 @@ INSERT INTO `t_n_role_menu` VALUES ('146088370743324718', 'M146088370736869163',
 INSERT INTO `t_n_role_menu` VALUES ('146088370743325581', 'M146088370736869163', 'ROLE141171556165393734');
 INSERT INTO `t_n_role_menu` VALUES ('146088370743361757', 'M146088370736869163', 'ROLE141171556165393734');
 INSERT INTO `t_n_role_menu` VALUES ('146088370743362659', 'M146088370736869163', 'ROLE144522301761659074');
+INSERT INTO `t_n_role_menu` VALUES ('146881310097067015', 'M146881310092346523', 'ROLE145093416064454227');
+INSERT INTO `t_n_role_menu` VALUES ('146881310097082604', 'M146881310092346523', 'ROLE144522301761659074');
+INSERT INTO `t_n_role_menu` VALUES ('146881310097184632', 'M146881310092346523', 'ROLE141171556165393734');
+INSERT INTO `t_n_role_menu` VALUES ('146881310097189754', 'M146881310092346523', 'ROLE144522301761659074');
+INSERT INTO `t_n_role_menu` VALUES ('146881310097267131', 'M146881310092346523', 'ROLE144522301761659074');
+INSERT INTO `t_n_role_menu` VALUES ('146881310097287055', 'M146881310092346523', 'ROLE141171556165393734');
+INSERT INTO `t_n_role_menu` VALUES ('146881310097296905', 'M146881310092346523', 'ROLE141171556165393734');
+INSERT INTO `t_n_role_menu` VALUES ('146881310097335934', 'M146881310092346523', 'ROLE141171556165393734');
+INSERT INTO `t_n_role_menu` VALUES ('146881310097380126', 'M146881310092346523', 'ROLE144522301761659074');
 INSERT INTO `t_n_role_menu` VALUES ('rm144522474088816273', 'M141006628690009172', 'ROLE141171556165393734');
 INSERT INTO `t_n_role_menu` VALUES ('rm144522474088908269', 'M144415416469293961', 'ROLE141171556165393734');
 INSERT INTO `t_n_role_menu` VALUES ('rm144522474088932026', 'M141006637490117545', 'ROLE141171556165393734');
@@ -3433,6 +3545,8 @@ INSERT INTO `t_n_role_menu` VALUES ('rm146147325645485601', 'M146088294291836845
 INSERT INTO `t_n_role_menu` VALUES ('rm146147325645489835', 'M146088297108888435', 'ROLE145009749723012955');
 INSERT INTO `t_n_role_menu` VALUES ('rm146147325645493728', 'M146088291790865341', 'ROLE145009749723012955');
 INSERT INTO `t_n_role_menu` VALUES ('rm146147325645499245', 'M146088293008349672', 'ROLE145009749723012955');
+INSERT INTO `t_n_role_menu` VALUES ('rm146881311968257419', 'M146881310092346523', 'ROLE146881311960340530');
+INSERT INTO `t_n_role_menu` VALUES ('rm146881324297126363', '', 'ROLE146881324287753023');
 
 -- ----------------------------
 -- Table structure for t_n_role_menu_permit
@@ -3472,6 +3586,16 @@ INSERT INTO `t_n_role_user` VALUES ('145092734403465663', 'ROLE14500975854273637
 INSERT INTO `t_n_role_user` VALUES ('145092798735119071', 'ROLE141006730160700652', 'U145092798733432755');
 INSERT INTO `t_n_role_user` VALUES ('145093418723831868', 'ROLE145093416064454227', 'U140176000619665260');
 INSERT INTO `t_n_role_user` VALUES ('146147311708734334', 'ROLE145009749723012955', 'U146147311664138629');
+INSERT INTO `t_n_role_user` VALUES ('146881326849950486', 'ROLE146881324287753023', 'U146881326843757501');
+INSERT INTO `t_n_role_user` VALUES ('146882828635503463', 'ROLE146881324287753023', 'U146882828609160890');
+INSERT INTO `t_n_role_user` VALUES ('146882852303950280', 'ROLE146881324287753023', 'U146882852295456195');
+INSERT INTO `t_n_role_user` VALUES ('146882867221703456', 'ROLE146881324287753023', 'U146882867205821359');
+INSERT INTO `t_n_role_user` VALUES ('146883943494198073', 'ROLE146881324287753023', 'U146883943486039507');
+INSERT INTO `t_n_role_user` VALUES ('146884431618780744', 'ROLE146881324287753023', 'U146884431609200769');
+INSERT INTO `t_n_role_user` VALUES ('146884526825130800', 'ROLE146881324287753023', 'U146884526817847927');
+INSERT INTO `t_n_role_user` VALUES ('146884557789471208', 'ROLE146881324287753023', 'U146884557785509913');
+INSERT INTO `t_n_role_user` VALUES ('146884567442862117', 'ROLE146881324287753023', 'U146884567436175554');
+INSERT INTO `t_n_role_user` VALUES ('146884649475302573', 'ROLE146881324287753023', 'U146884649469492608');
 
 -- ----------------------------
 -- Table structure for t_n_user
@@ -3493,19 +3617,49 @@ CREATE TABLE `t_n_user` (
   `telephone` varchar(32) DEFAULT NULL,
   `user_name` varchar(32) NOT NULL,
   `seq_num` int(11) DEFAULT NULL,
+  `id_type` varchar(32) DEFAULT NULL,
+  `id_no` varchar(64) DEFAULT NULL,
+  `portal` varchar(2) DEFAULT NULL,
+  `license` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=gbk;
 
 -- ----------------------------
 -- Records of t_n_user
 -- ----------------------------
-INSERT INTO `t_n_user` VALUES ('U140176000619665260', '超级管理员', '2014-06-03 09:46:46', 'admin@163.com', '133', '1', '21232f297a57a5a743894a0e4a801fc3', '管理员', '无', '10000', 'Manager', '1', '0871-0000', 'admin', null);
-INSERT INTO `t_n_user` VALUES ('U145054239527900055', '学员1', '2015-12-20 00:26:35', null, '13333333333', 'org145009743921113084', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, '', '1', null, 'stu1', null);
-INSERT INTO `t_n_user` VALUES ('U145092721361277162', '学员1', '2015-12-24 11:20:13', null, '13300000000', 'org145009743921113084', '827ccb0eea8a706c4c34a16891f84e7b', null, null, null, '', '1', null, 'stu2', null);
-INSERT INTO `t_n_user` VALUES ('U145092728714573693', '老师', '2015-12-24 11:21:27', null, '13333333333', 'org141006703765177860', '827ccb0eea8a706c4c34a16891f84e7b', null, null, null, '', '1', null, 'tea1', null);
-INSERT INTO `t_n_user` VALUES ('U145092734400355683', '老师', '2015-12-24 11:22:24', null, '13308888888', 'org145009728462179485', '827ccb0eea8a706c4c34a16891f84e7b', null, null, null, '', '1', null, 'tea2', null);
-INSERT INTO `t_n_user` VALUES ('U145092798733432755', '管理员', '2015-12-24 11:33:07', null, '13333333333', '1', '54b53072540eeeb8f8e9343e71f28176', null, null, null, '', '1', null, 'system', null);
-INSERT INTO `t_n_user` VALUES ('U146147311664138629', 'stu3', '2016-04-24 12:45:16', null, '13300000000', 'org145009743921113084', 'f6c40d53d7bfcff74287fa4f72d7c97a', null, null, null, '', '1', null, 'stu3', null);
+INSERT INTO `t_n_user` VALUES ('U140176000619665260', '超级管理员', '2014-06-03 09:46:46', 'admin@163.com', '133', '1', '21232f297a57a5a743894a0e4a801fc3', '管理员', '无', '10000', 'Manager', '1', '0871-0000', 'admin', null, null, null, '0', null);
+INSERT INTO `t_n_user` VALUES ('U145054239527900055', '学员1', '2015-12-20 00:26:35', null, '13333333333', 'org145009743921113084', 'e10adc3949ba59abbe56e057f20f883e', null, null, null, '', '1', null, 'stu1', null, null, null, null, null);
+INSERT INTO `t_n_user` VALUES ('U145092721361277162', '学员1', '2015-12-24 11:20:13', null, '13300000000', 'org145009743921113084', '827ccb0eea8a706c4c34a16891f84e7b', null, null, null, '', '1', null, 'stu2', null, null, null, null, null);
+INSERT INTO `t_n_user` VALUES ('U145092728714573693', '老师', '2015-12-24 11:21:27', null, '13333333333', 'org141006703765177860', '827ccb0eea8a706c4c34a16891f84e7b', null, null, null, '', '1', null, 'tea1', null, null, null, null, null);
+INSERT INTO `t_n_user` VALUES ('U145092734400355683', '老师', '2015-12-24 11:22:24', null, '13308888888', 'org145009728462179485', '827ccb0eea8a706c4c34a16891f84e7b', null, null, null, '', '1', null, 'tea2', null, null, null, null, null);
+INSERT INTO `t_n_user` VALUES ('U145092798733432755', '管理员', '2015-12-24 11:33:07', null, '13333333333', '1', '54b53072540eeeb8f8e9343e71f28176', null, null, null, '', '1', null, 'system', null, null, null, null, null);
+INSERT INTO `t_n_user` VALUES ('U146147311664138629', 'stu3', '2016-04-24 12:45:16', null, '13300000000', 'org145009743921113084', 'f6c40d53d7bfcff74287fa4f72d7c97a', null, null, null, '', '1', null, 'stu3', null, null, null, null, null);
+INSERT INTO `t_n_user` VALUES ('U146881326843757501', '公众用户', '2016-07-18 11:41:08', null, '13308800013', 'org146881316216366940', '0a0ec7dce5f09e5cf1bc3a5cf8f6fe05', null, null, null, '', '1', null, 'publicuser', null, null, null, '1', null);
+INSERT INTO `t_n_user` VALUES ('U146882828609160890', 'abc', '2016-07-18 15:51:14', null, '13308800013', null, 'c47c74fb41495f88ecaa33c3b6979e78', '公众用户', 'Public Visitor', null, 'Register via page', '1', '-- --', 'public1', null, '身份证', '220', '1', 'C1');
+INSERT INTO `t_n_user` VALUES ('U146882852295456195', 'abc', '2016-07-18 15:54:21', null, '13308800013', null, 'c3686eeff1f1ffaaff941a20f854fb86', '公众用户', 'Public Visitor', null, 'Register via page', '1', '-- --', 'public2', null, '身份证', '220', '1', 'C1');
+INSERT INTO `t_n_user` VALUES ('U146882867205821359', 'abc', '2016-07-18 15:57:52', null, '13308800013', null, '5c1c8362831e766a32e8646796d0c5a5', '公众用户', 'Public Visitor', null, 'Register via page', '1', '-- --', 'public3', null, '身份证', '220', '1', 'C1');
+INSERT INTO `t_n_user` VALUES ('U146883943486039507', '小王', '2016-07-18 18:57:14', null, '13333333333', null, 'e1e3719adf572387c715f982c517e2b0', '公众用户', 'Public Visitor', null, 'Register via page', '1', '-- --', 'public4', null, '身份证', '222', '1', 'C1');
+INSERT INTO `t_n_user` VALUES ('U146884431609200769', '小李', '2016-07-18 20:18:36', null, '13333333333', null, 'fc8ce54607854df8b72e7324c8f6aa24', '公众用户', 'Public Visitor', null, 'Register via page', '1', '-- --', 'public5', null, '身份证', '222', '1', 'C1');
+INSERT INTO `t_n_user` VALUES ('U146884526817847927', '小刘', '2016-07-18 20:34:28', null, '13398898899', null, '1e772b1e4d57560422e07565600aca48', '公众用户', 'Public Visitor', null, 'Register via page', '1', '-- --', 'public6', null, '身份证', '222', '1', 'C1');
+INSERT INTO `t_n_user` VALUES ('U146884557785509913', '小张', '2016-07-18 20:39:37', null, '13333333333', null, '2fb0584d55b205f7aa3b478f6d6126e3', '公众用户', 'Public Visitor', null, 'Register via page', '1', '-- --', 'public7', null, '身份证', '2222', '1', 'C1');
+INSERT INTO `t_n_user` VALUES ('U146884567436175554', 'abc', '2016-07-18 20:41:14', null, '13308800013', null, 'b9459ba0a51d3f013a3510c524c73585', '公众用户', 'Public Visitor', null, 'Register via page', '1', '-- --', 'public8', null, '身份证', '220', '1', 'C1');
+INSERT INTO `t_n_user` VALUES ('U146884649469492608', 'Levi Tsui', '2016-07-18 20:54:54', null, '13333333333', null, '1d6a0ace3e136a56fb2f0f1d3bcae057', '公众用户', 'Public Visitor', null, 'Register via page', '1', '-- --', 'pubusr1', null, '身份证', '222', '1', 'C1');
+
+-- ----------------------------
+-- Table structure for t_n_user_ext
+-- ----------------------------
+DROP TABLE IF EXISTS `t_n_user_ext`;
+CREATE TABLE `t_n_user_ext` (
+  `id` varchar(32) COLLATE utf8_bin NOT NULL,
+  `t_n_user_id` varchar(32) COLLATE utf8_bin NOT NULL,
+  `id_type` varchar(32) COLLATE utf8_bin DEFAULT NULL,
+  `id_card_no` varchar(32) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- ----------------------------
+-- Records of t_n_user_ext
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for t_order
@@ -3529,6 +3683,7 @@ CREATE TABLE `t_order` (
 -- Records of t_order
 -- ----------------------------
 INSERT INTO `t_order` VALUES ('39b2644ce28b44a9a1c57bfeb2f27af4', null, null, '001', '100', 'U140176000619665260', 'ab1a4b2dc0d74ff59de105d378cd4a1a', 'cabbf0b6fb064f47bca028a40fa09ed9', '2016-07-17 22:23:50', null);
+INSERT INTO `t_order` VALUES ('3a05c233d16043838e502b78491cf3d4', null, null, '001', '100', 'U146882867205821359', '718074f870b44b24bd8d330720009fce', '6e56b6dfb0f6473bbca97dfce578c69a', '2016-07-18 17:22:32', null);
 INSERT INTO `t_order` VALUES ('a8fb4a67f7834e858c1ba9f87541ec47', null, null, '001', null, 'U140176000619665260', '861d17acfead47cf815840a531b318ce', 'e09886d4662146e196fb9ce64c821390', '2016-07-17 22:20:39', null);
 
 -- ----------------------------
@@ -3558,6 +3713,7 @@ CREATE TABLE `t_order_detail` (
 -- Records of t_order_detail
 -- ----------------------------
 INSERT INTO `t_order_detail` VALUES ('2fb80a705a134889b2df384f9bb6ae1f', null, null, null, null, null, null, null, null, null, null, null, null, '0', null);
+INSERT INTO `t_order_detail` VALUES ('6e56b6dfb0f6473bbca97dfce578c69a', 'C1', null, 'A', null, null, 'CK001', '146883375500479951', '100', null, null, null, '2016-07-19 08:00:00', '1', '2016-07-19 07:00:00');
 INSERT INTO `t_order_detail` VALUES ('cabbf0b6fb064f47bca028a40fa09ed9', 'C1', null, 'A', null, null, 'CK002', '146876543248566266', '100', null, null, null, '2016-07-21 08:00:00', '1', '2016-07-21 07:00:00');
 INSERT INTO `t_order_detail` VALUES ('e09886d4662146e196fb9ce64c821390', null, null, null, null, null, null, null, null, null, null, null, null, '0', null);
 
@@ -3582,6 +3738,7 @@ CREATE TABLE `t_order_payment` (
 -- Records of t_order_payment
 -- ----------------------------
 INSERT INTO `t_order_payment` VALUES ('2f127b50be284c2eb29753b0c749c674', null, null, null, null, null, null, null, null);
+INSERT INTO `t_order_payment` VALUES ('718074f870b44b24bd8d330720009fce', null, null, null, null, null, null, null, null);
 INSERT INTO `t_order_payment` VALUES ('861d17acfead47cf815840a531b318ce', null, null, null, null, null, null, null, null);
 INSERT INTO `t_order_payment` VALUES ('ab1a4b2dc0d74ff59de105d378cd4a1a', null, null, null, null, null, null, null, null);
 
