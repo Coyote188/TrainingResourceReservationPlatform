@@ -69,7 +69,7 @@ function checkAttributeValueByParam(attributeName, isRequire, value, errorMessag
 				}
 			}
 		}else{
-			var regExpression;
+			var regExpression = '';
 			if (validateType == "Chinese"){
 				regExpression = /^[\u0391-\uFFE5]+$/;
 			}else if (validateType == "English"){
@@ -92,6 +92,10 @@ function checkAttributeValueByParam(attributeName, isRequire, value, errorMessag
 				regExpression = /^\d{15}(\d{2}[A-Za-z0-9])?$/;
 			}else if (validateType == "QQ"){
 				regExpression = /^[1-9]\d{4,11}$/;
+			}else if (validateType == "Password"){
+				regExpression = /^[\@A-Za-z0-9\!\#\$\%\^\&\*\.\~]{6,22}$/;
+			}else if(validateType == "Username"){
+				regExpression = /^[a-zA-z][a-zA-Z0-9_]{2,9}$/;
 			}
 			if (regExpression){
 				var isChecked = regExpression.test(value);

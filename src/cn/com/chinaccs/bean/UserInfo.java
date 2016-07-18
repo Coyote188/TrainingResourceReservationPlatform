@@ -21,6 +21,8 @@ public class UserInfo {
 	
 	private List<String> orgIds;
 	
+	private String isPortal;
+	
 	/*private String email;
 	
 	private String tel;
@@ -111,6 +113,14 @@ public class UserInfo {
 
 	public void setComRoleIds(List<String> comRoleIds) {
 		this.comRoleIds = comRoleIds;
+	}
+
+	public String getIsPortal() {
+		return isPortal;
+	}
+
+	public void setIsPortal(String isPortal) {
+		this.isPortal = isPortal;
 	}
 	
 	

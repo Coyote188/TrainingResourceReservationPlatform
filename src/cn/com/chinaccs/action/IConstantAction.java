@@ -44,6 +44,7 @@ public interface IConstantAction extends IConstant {
 	public final static String  POP_LOGIN = "pop_login";
 	
 	public final static String  INDEX = "index";
+	public final static String  PORTAL = "portal";
 	
 	public final static String ADD = "add";
 	

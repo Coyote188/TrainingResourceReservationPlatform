@@ -6,6 +6,7 @@ import cn.com.chinaccs.bean.entity.TNLoginLog;
 import cn.com.chinaccs.service.LoginService;
 import cn.com.chinaccs.service.UserService;
 import cn.com.chinaccs.utils.StringUtil;
+import cn.com.chinaccs.utils.SystemConstant;
 
 public class LoginAction extends BaseImplAction {
 
@@ -63,7 +64,10 @@ public class LoginAction extends BaseImplAction {
 					userInfo = (UserInfo)chResponse.getData();
 					msg = "用户登录成功";
 					setUserToSession(userInfo);
-					result = INDEX;
+					if(userInfo.getIsPortal().equals(SystemConstant.USER_TYPE_PORTAL)){
+						result = PORTAL;
+					}else
+						result = INDEX;
 				}
 				String ip  = getRequest().getRemoteAddr();
 				String loginMode = TNLoginLog.MODE_WEB;
@@ -98,6 +102,11 @@ public class LoginAction extends BaseImplAction {
 	public String logout() throws Exception {
 		getSession().clear();
 		return LOGIN;
+	}
+	
+	public String logPortalOut() throws Exception {
+		getSession().clear();
+		return PORTAL;
 	}
 	
 	/**

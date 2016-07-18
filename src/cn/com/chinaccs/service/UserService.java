@@ -19,6 +19,7 @@ import cn.com.chinaccs.dao.impl.RoleUserDao;
 import cn.com.chinaccs.dao.impl.UserDao;
 import cn.com.chinaccs.utils.SignMD5;
 import cn.com.chinaccs.utils.StringUtil;
+import cn.com.chinaccs.utils.SystemConstant;
 
 public class UserService extends BaseService {
 
@@ -137,6 +138,10 @@ public class UserService extends BaseService {
 					userInfo.setRoleIds(roleidsList);
 					userInfo.setComRoleIds(userDao.getComRoleIds(user.getId()));
 					userInfo.setOrgIds(userDao.getOrgIds(user.getId()));
+					if(user.getPortal().equals(SystemConstant.USER_TYPE_PORTAL))
+						userInfo.setIsPortal(SystemConstant.USER_TYPE_PORTAL);
+					else
+						userInfo.setIsPortal(SystemConstant.USER_TYPE_SYSTEM);
 					chResponse.setResult(OP_SUCCESS);
 					chResponse.setMsg(OP_SUCCESS_MSG);
 					chResponse.setData(userInfo);

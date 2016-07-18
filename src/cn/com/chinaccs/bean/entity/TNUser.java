@@ -59,6 +59,15 @@ public class TNUser implements DateBean {
 	
 	private String remark;
 	
+	private String idType;
+	private String idNo;
+	private String license;
+	/**
+	 * 
+	 */
+	private String portal;
+	
+	
 	
 	/**
 	 * 是否有效(1--有效;0--无效)
@@ -214,6 +223,57 @@ public class TNUser implements DateBean {
 	public String getPrefix() {
 		return "u";
 	}
-	
+
+	/**
+	 * @return the idType
+	 */
+	@Column(name="id_type")
+	public String getIdType() {
+		return idType;
+	}
+
+	/**
+	 * @return the idNo
+	 */
+	@Column(name="id_no")
+	public String getIdNo() {
+		return idNo;
+	}
+
+	/**
+	 * @return the portal
+	 */
+	@Column(name="portal")
+	public String getPortal() {
+		return portal == null? "0" : portal;
+	}
+
+	/**
+	 * @param idType the idType to set
+	 */
+	public void setIdType(String idType) {
+		this.idType = idType;
+	}
+
+	/**
+	 * @param idNo the idNo to set
+	 */
+	public void setIdNo(String idNo) {
+		this.idNo = idNo;
+	}
+
+	/**
+	 * @param portal the portal to set
+	 */
+	public void setPortal(String portal) {
+		this.portal = portal;
+	}
+	public void setLicense(String license){
+		this.license = license;
+	}
+	@Column(name="license")
+	public String getLicense(){
+		return this.license;
+	}
 	
 }

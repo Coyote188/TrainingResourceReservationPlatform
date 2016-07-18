@@ -189,4 +189,19 @@ public class MenuDao extends BaseDaoImpl<TNMenu>{
 		}
 		return id;
 	}
+	
+	/**
+	 * 判断用户是否为公众用户 
+	 * @param roleId
+	 * @return
+	 */
+	public boolean isPublicPortal(String roleId){
+		String sql = "select a.* from t_n_menu a, t_n_role_menu b where a.id = b.menu_id and b.role_id = '" + roleId + "'";
+		List<TNMenu> menus = this.querySql(sql);
+		if(menus.size()>0){
+			if(menus.get(0).getUri().equals(TNMenu.MENU_URI_PORTAL))
+				return true;
+		}
+		return false;
+	}
 }

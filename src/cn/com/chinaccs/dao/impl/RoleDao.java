@@ -206,5 +206,15 @@ public class RoleDao extends BaseDaoImpl<TNRole>{
 			list = queryObjSql(sql);
 			return list;
 		}
+		
+		
+		public TNRole getPortalRole(){
+			String sql = "select * from t_n_role where role_des = 'public-user'";
+			List<TNRole> roles = querySql(sql);
+			if(roles.size() > 0){
+				return roles.get(0);
+			}
+			return null;
+		}
 
 }

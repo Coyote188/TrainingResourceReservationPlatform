@@ -53,12 +53,15 @@
 		<!-- 登录 -->
 		<action name="login" class="cn.com.chinaccs.action.LoginAction">
 			<result name="fail">/WEB-INF/content/loginV2/login.jsp</result>
+			<result name="portal">index.jsp</result>
 		</action>
-		<action name="systemstart">
-			<result>/progress-bar/system_loading.html</result>
+		<action name="regist" class="cn.com.chinaccs.action.RegistAction">
+			<result>index</result>
 		</action>
 		<action name="logout" class="cn.com.chinaccs.action.LoginAction"
 			method="logout" />
+		<action name="logPortalOut" class="cn.com.chinaccs.action.LoginAction"
+			method="logPortalOut" />
 		<action name="islogin" class="cn.com.chinaccs.action.LoginAction"
 			method="isLogin" />
 
@@ -75,7 +78,11 @@
 			<interceptor-ref name="acl" />
 			<result name="success">/WEB-INF/content/index.jsp</result>
 		</action>
-
+		<action name="portal" class="cn.com.chinaccs.action.IndexAction">
+			<interceptor-ref name="acl" />
+			<result name="success">/WEB-INF/content/portal.jsp</result>
+		</action>
+		
 		<action name="index/*" class="cn.com.chinaccs.action.IndexAction">
 			<interceptor-ref name="acl" />
 			<result name="success">/WEB-INF/content/index.jsp</result>

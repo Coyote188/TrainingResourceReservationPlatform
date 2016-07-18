@@ -85,6 +85,7 @@ public class BookingAction extends BaseImplAction {
 	 * @return
 	 */
 	public String vehiclaList(){
+		
 		chResponse = new CHResponse();
 		String area = getRequest().getParameter("area");
 		String licenseLevel = getRequest().getParameter("lv");

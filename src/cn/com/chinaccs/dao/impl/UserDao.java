@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import cn.com.chinaccs.bean.entity.TNMenu;
 import cn.com.chinaccs.bean.entity.TNUser;
 import cn.com.chinaccs.res.sqlmap.SqlMapping;
 import cn.com.chinaccs.utils.SignMD5;
@@ -33,7 +34,6 @@ public class UserDao extends BaseDaoImpl<TNUser> {
 		}
 		return idSer;
 	}
-	
 	
 	/**
 	 * 用户登录

@@ -30,7 +30,7 @@ public class ACLInterceptor extends AbstractInterceptor implements IConstantActi
 		UserInfo userInfo = baseAction.getUserBySession();
 		log.info("-----访问控制列表拦截------判断是否已登录");
 		String actionName = arg0.getProxy().getActionName();
-		if(actionName.startsWith("public/") || actionName.startsWith("publicJson/") || actionName.startsWith("systemstart")){
+		if(actionName.startsWith("public/") || actionName.startsWith("publicJson/") || actionName.startsWith("systemstart")|| actionName.startsWith("portal")){
 			result = arg0.invoke();
 		}
 		if(userInfo != null) {

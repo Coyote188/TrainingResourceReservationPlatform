@@ -4,26 +4,50 @@
 <!--[if IE 8 ]>    <html lang="zh" class="ie8"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="zh" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
+<%
+String callName = "";
+if(null != request.getSession().getAttribute("edu_user_info")){
+	cn.com.chinaccs.bean.UserInfo info = (cn.com.chinaccs.bean.UserInfo)request.getSession().getAttribute("edu_user_info");
+	callName = info.getCallName();
+}
+%>
 <html lang="zh">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="shortcut icon" href="http://www.yicjx.com/favicon.ico"></link>
 <link rel="stylesheet" type="text/css" href="idx/global.css"></link>
+
 <script type="text/javascript" src="idx/jquery-1.js"></script>
-<script src="idx/lxb.js" charset="utf-8"></script>
-<script src="idx/hm.js"></script>
-<script type="text/javascript" src="idx/api.js"></script>
-<script type="text/javascript" src="idx/getscript.js"></script>
+<script type="text/javascript" src="idx/swfobject.js"></script>
+
 <title>丽江贵峰机动车驾驶人科目二训练考试服务有限公司 </title>
+<style>
+<!--
+.window {
+	width: 400px;
+	background-color: #fff;
+	position: absolute;
+	padding: 2px;
+	margin: 5px;
+	display: none;
+}
+.content {
+	height: 300px;
+	background-color: #FFF;
+	font-size: 14px;
+	overflow: auto;
+}
+-->
+</style>
 <script type="text/javascript">
 var $pageInfo = {
-	publishmentSystemID : 1,
-	channelID : 1,
-	contentID : 0,
-	siteUrl : "",
-	homeUrl : "/center",
-	currentUrl : "http://new.yicjx.com/",
-	rootUrl : "http://new.yicjx.com"
+		publishmentSystemID : 1,
+		channelID : 1,
+		contentID : 0,
+		siteUrl : "",
+		homeUrl : "/center",
+		currentUrl : "http://new.yicjx.com/",
+		rootUrl : "http://new.yicjx.com"
 };
 $(document).ready(function() {
 	$("#nav li").hover(function() {
@@ -31,10 +55,18 @@ $(document).ready(function() {
 	}, function() {
 		$(this).find("ul").slideUp("fast");
 	});
+	if("" != $("#MenuSpaceRight").find("label").text() && null != $("#MenuSpaceRight").find("label")){//
+		$("#MenuSpaceRight").find("a").hide();
+		$("#MenuSpaceRight").find("label").show();
+		$("#MenuSpaceRight").find("label").text("欢迎您 <%=callName%>");
+	}else{
+		$("#MenuSpaceRight").find("label").hide();
+		$("#MenuSpaceRight").find("a").show();
+	}
 });
 $.extend({
-	sltTab2: function(tabName, no){
-		for (var i = 1; i <= 7; i++) {
+	sltTab2 : function(tabName, no) {
+		for ( var i = 1; i <= 7; i++) {
 			var el = jQuery('#vehicle_type_tabContent_' + i);
 			var li = $('#vehicle_type_tabHeader_' + i);
 			if (i == no) {
@@ -54,8 +86,8 @@ $.extend({
 			}
 		}
 	},
-	stlTab4:function(tabName, no){
-		for (var i = 1; i <= 5; i++) {
+	stlTab4 : function(tabName, no) {
+		for ( var i = 1; i <= 5; i++) {
 			var el = jQuery('#服务查询_tabContent_' + i);
 			var li = $('#服务查询_tabHeader_' + i);
 			if (i == no) {
@@ -75,15 +107,17 @@ $.extend({
 			}
 		}
 	},
-	AddFavorite:function(){
+	AddFavorite : function() {
 		if (document.all) {
-			window.external.addFavorite(window.location.href,	document.title);
+			window.external.addFavorite(window.location.href,
+					document.title);
 		} else if (window.sidebar) {
-			window.sidebar.addPanel(document.title, window.location.href,"");
+			window.sidebar.addPanel(document.title,
+					window.location.href, "");
 		}
 	},
-	stlTab6:function(tabName, no){
-		for (var i = 1; i <= 9; i++) {
+	stlTab6 : function(tabName, no) {
+		for ( var i = 1; i <= 9; i++) {
 			var el = jQuery('#资讯公告_tabContent_' + i);
 			var li = $('#资讯公告_tabHeader_' + i);
 			if (i == no) {
@@ -103,62 +137,84 @@ $.extend({
 			}
 		}
 	},
-	 stlTab8:function(tabName, no) {
-			for (var i = 1; i <= 7; i++) {
-				var el = jQuery('#互动版块_tabContent_' + i);
-				var li = $('#互动版块_tabHeader_' + i);
-				if (i == no) {
-					try {
-						el.show();
-					} catch (e) {
-					}
-					li.removeClass('TabOff');
-					li.addClass('TabOn');
-				} else {
-					try {
-						el.hide();
-					} catch (e) {}
-					li.removeClass('TabOn');
-					li.addClass('TabOff');
+	stlTab8 : function(tabName, no) {
+		for ( var i = 1; i <= 7; i++) {
+			var el = jQuery('#互动版块_tabContent_' + i);
+			var li = $('#互动版块_tabHeader_' + i);
+			if (i == no) {
+				try {
+					el.show();
+				} catch (e) {
+				}
+				li.removeClass('TabOff');
+				li.addClass('TabOn');
+			} else {
+				try {
+					el.hide();
+				} catch (e) {
+				}
+				li.removeClass('TabOn');
+				li.addClass('TabOff');
+			}
+		}
+	},
+	SetHomepage : function() {
+		if (document.all) {
+			document.body.style.behavior = 'url(#default#homepage)';
+			document.body.setHomePage("/");
+		} else if (window.sidebar) {
+			if (window.netscape) {
+				try {
+					netscape.security.PrivilegeManager
+							.enablePrivilege("UniversalXPConnect");
+				} catch (e) {
+					alert("该操作被浏览器拒绝，如果想启用该功能，请在地址栏内输入 about:config,然后将项 signed.applets.codebase_principal_support 值该为true");
 				}
 			}
-		},
-		SetHomepage:function() {
-			if (document.all) {
-				document.body.style.behavior = 'url(#default#homepage)';
-				document.body.setHomePage("/");
-			} else if (window.sidebar) {
-				if (window.netscape) {
-					try {
-						netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
-					} catch (e) {
-						alert("该操作被浏览器拒绝，如果想启用该功能，请在地址栏内输入 about:config,然后将项 signed.applets.codebase_principal_support 值该为true");
-					}
-				}
-				var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
-				prefs.setCharPref('browser.startup.homepage', "/");
-			}
-		},
-		fnRegist: function(){
-			$("#Row1Area").hide();
-			$("#Row2Area").hide();
-			
-			$("#Row3Area").show();
-			$("#Row3Area").find("iframe").attr("src","idx/regist.jsp");
+			var prefs = Components.classes['@mozilla.org/preferences-service;1']
+					.getService(Components.interfaces.nsIPrefBranch);
+			prefs.setCharPref('browser.startup.homepage', "/");
 		}
-		,
-		fnBooking: function(){
-			$("#Row1Area").hide();
-			$("#Row2Area").hide();
-			
-			$("#Row3Area").show();
-			$("#Row3Area").find("iframe").attr("src","idx/resource_booking.jsp");
-		}
+	},
+	fnRegist : function() {
+		$("#Row1Area").hide();
+		$("#Row2Area").hide();
+
+		$("#Row3Area").show();
+		$("#Row3Area").find("iframe").attr("src", "idx/regist.jsp");
+	},
+	fnBooking : function() {
+		$("#Row1Area").hide();
+		$("#Row2Area").hide();
+
+		$("#Row3Area").show();
+		$("#Row3Area").find("iframe").attr("src", "idx/resource_booking.jsp");
+	},
+	fnOpenLoginForm: function(event) {
+		
+		$.popRightWindow(event.pageX, event.pageY);
+	},
+	fnOpenLogout: function(){
+		
+	},
+	closeWindow:function() {
+		$("#popupWindow4LoginForm").hide("slow");
+	},
+	popRightWindow:function(x, y) {
+		//计算弹出窗口的左上角Y的偏移量 
+		//var popY = $(window).height() - $(".window").height();
+		//var popX = $(window).width() - $(".window").width();
+		var popY = y + 50;
+		var popX = x - 30;
+		//设定窗口的位置 
+		$("#popupWindow4LoginForm").css("top", popY - 50).css("left", popX - 50).slideToggle("slow");
+		//$.closeWindow();
+		$("#popContentLoginForm").load("portal");
+	}
 });
 </script>
 </head>
 <body>
-	<script type="text/javascript" src="idx/swfobject.js"></script>
 	<div id="page">
 		<h1>丽江贵峰机动车驾驶人科目二训练考试服务有限公司 - 首页</h1>
 		<div id="Header">
@@ -186,6 +242,10 @@ $.extend({
 							</li>
 						</ul>
 					</div>
+				</div>
+				<div id="MenuSpaceRight">
+					<a href="javascript:void(0);" onclick="$.fnOpenLoginForm(event);">登录</a>
+					<label><%=callName%></label>
 				</div>
 			</div>
 		</div>
@@ -289,20 +349,6 @@ $.extend({
 						<li class="TabOff" id="vehicle_type_tabHeader_2" onmouseover="$.sltTab2('vehicle_type', 2);">
 							<a href="#" groupcontent="驾校自带车辆">驾校自带车辆</a>
 						</li>
-						<!-- 
-						<li class="TabOn" id="vehicle_type_tabHeader_1" onmouseover="$.sltTab2('vehicle_type', 1);">
-							<a href="#" groupcontent="小型车">小型汽车</a>
-						</li>
-						<li class="TabOff" id="vehicle_type_tabHeader_2" onmouseover="$.sltTab2('vehicle_type', 2);">
-							<a href="#" groupcontent="小型VIP">大型货车</a>
-						</li>
-						<li class="TabOff" id="vehicle_type_tabHeader_3" onmouseover="$.sltTab2('vehicle_type', 3);">
-							<a href="#" groupcontent="大型车">大型客车</a>
-						</li>
-						<li class="TabOff" id="vehicle_type_tabHeader_3" onmouseover="$.sltTab2('vehicle_type', 3);">
-							<a href="#" groupcontent="大型车">中型客车</a>
-						</li>
-						 -->
 					</ul>
 				</div>
 				<div class="TabOnDiv" id="vehicle_type_tabContent_1">
@@ -569,6 +615,8 @@ $.extend({
 			};
 		});
 	</script>
-	<div id="doyoo_share" style="display: none;"></div>
+<div class="window" id="popupWindow4LoginForm"> 
+	<div class="content" id="popContentLoginForm"></div> 
+</div>
 </body>
 </html>

@@ -18,6 +18,8 @@ public class TNMenu implements BaseTree {
 
 	// Fields
 	
+	public static final String MENU_URI_PORTAL = "portal";
+	
 	/**
 	 * 普通菜单
 	 */

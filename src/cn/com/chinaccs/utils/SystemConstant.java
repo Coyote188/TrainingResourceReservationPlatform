@@ -2,6 +2,24 @@ package cn.com.chinaccs.utils;
 
 public class SystemConstant {
 	/**
+	 * 用户状态--有效
+	 */
+	public static final int USER_STATUS_VAL = 1;
+	/**
+	 * 用户状态--无效
+	 */
+	public static final int USER_STATUS_INV = 0;
+	
+	/**
+	 * 用户类型--公众用户
+	 */
+	public static final String USER_TYPE_PORTAL = "1";
+	/**
+	 * 用户类型--系统用户
+	 */
+	public static final String USER_TYPE_SYSTEM = "0";
+	
+	/**
 	 * 资源类型--车
 	 */
 	public static final String RES_TYPE_VEHICLE = "VEHICLE";
