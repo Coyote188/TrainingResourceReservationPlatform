@@ -3,8 +3,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/idx/global.css"></link>
-<script type="text/javascript" src="${pageContext.request.contextPath}/idx/jquery-1.js"></script>
 <script src="${pageContext.request.contextPath}/idx/validate.js" charset="utf-8" type="text/javascript"></script>
 <style type="text/css">
 .is_nessesary {
@@ -66,14 +64,30 @@
 <script type="text/javascript">
 $.extend({
 	fnOnRegistInfoSubmit: function(){
-		$("#frmContent_2").serialize();
-		console.log($("#frmContent_2").serialize());
+		$.ajax({
+			url:'${pageContext.request.contextPath}/regist?' + $("#frmContent_2").serialize(),
+			dataType:'json',
+			type:"post",
+			success: function(doc) {
+				var res = $.parseJSON(eval(doc).output).result;
+				if(res == "1"){
+					alert("注册成功，请登录！");
+					window.location.href = "portals";
+				}else{
+					alert($.parseJSON(eval(doc).output).msg);
+				}
+				
+			}
+		});
 	},
 	fnOnGenCaptcha: function(){
 		$("#validateCode_Img").click(function(){
 			var num = parseInt(Math.random()*10000);
 			$(this).attr("src","${pageContext.request.contextPath}/captcha?num="+num);
 		});
+	},
+	fnOnLoginLoad: function(){
+		 window.parent.location.reload();
 	}
 });
 $(function(){
@@ -198,9 +212,12 @@ $(function(){
 				<tr height="30">
 					<td>&nbsp;</td>
 					<td>
-						<input type="button" name="submit_2" value=" 提 交 " onclick="if (checkFormValueById('frmContent_2')){document.getElementById('frmContent_2').submit();}" id="submit_2">
+						<input type="button" name="submit_2" value=" 提 交 " onclick="if (checkFormValueById('frmContent_2')){$.fnOnRegistInfoSubmit();}" id="submit_2">
+						<!-- 
+						<input type="button" name="submit_2" value=" 提 交 " onclick="if (checkFormValueById('frmContent_2')){document.getElementById('frmContent_2').submit();window.close();}" id="submit_2">
+						 -->
 						&nbsp;&nbsp;&nbsp;
-						<input type="reset" value=" 重 置 ">
+						<input type="reset" value=" 重 置 " onclick="">
 						&nbsp;&nbsp;[Ctrl+Enter] （带<span class="is_nessesary">*</span>的为必填项）
 					</td>
 				</tr>

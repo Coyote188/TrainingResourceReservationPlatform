@@ -17,8 +17,8 @@ if(null != request.getSession().getAttribute("edu_user_info")){
 <link rel="shortcut icon" href="http://www.yicjx.com/favicon.ico"></link>
 <link rel="stylesheet" type="text/css" href="idx/global.css"></link>
 
-<script type="text/javascript" src="idx/jquery-1.js"></script>
-<script type="text/javascript" src="idx/swfobject.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/idx/jquery-1.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/idx/swfobject.js"></script>
 
 <title>丽江贵峰机动车驾驶人科目二训练考试服务有限公司 </title>
 <style>
@@ -59,6 +59,9 @@ $(document).ready(function() {
 		$("#MenuSpaceRight").find("a").hide();
 		$("#MenuSpaceRight").find("label").show();
 		$("#MenuSpaceRight").find("label").text("欢迎您 <%=callName%>");
+		$("#liRegistorButton").find("font").text($("#MenuSpaceRight").find("label").text());
+		$("#liRegistorButton").find("a").unbind("click");
+		$("#liRegistorButton").find("a").attr("onclick","");
 	}else{
 		$("#MenuSpaceRight").find("label").hide();
 		$("#MenuSpaceRight").find("a").show();
@@ -181,7 +184,8 @@ $.extend({
 		$("#Row2Area").hide();
 
 		$("#Row3Area").show();
-		$("#Row3Area").find("iframe").attr("src", "idx/regist.jsp");
+		$("#Row3Area").load("idx/regist.jsp");
+		//$("#Row3Area").find("iframe").attr("src", "idx/regist.jsp");
 	},
 	fnBooking : function() {
 		$("#Row1Area").hide();
@@ -251,7 +255,7 @@ $.extend({
 		</div>
 		<div id="ADArea">
 			<div id="ADFocusImages" style="overflow: hidden;">
-				<iframe id="frmSlider" src="idx/logo.html" border="0" vspace="0" hspace="0" marginwidth="0" marginheight="0" framespacing="0" scrolling="no" style="overflow: hidden;" frameborder="0" height="100%" width="100%">
+				<iframe id="frmSlider" src="${pageContext.request.contextPath}/idx/logo.html" border="0" vspace="0" hspace="0" marginwidth="0" marginheight="0" framespacing="0" scrolling="no" style="overflow: hidden;" frameborder="0" height="100%" width="100%">
 				</iframe>
 			</div>
 		</div>
@@ -260,43 +264,43 @@ $.extend({
 			<div id="Nav2Link">
 				<div id="Nav2LinkText">
 					<ul>
-						<li>
-							<a href="#" onclick="$.fnRegist();">
-								<img src="idx/images/nav2-user.png">
+						<li id="liRegistorButton">
+							<a href="javascript:void(0);" onclick="$.fnRegist();">
+								<img src="${pageContext.request.contextPath}/idx/images/nav2-user.png">
 								<br>
 								<font style="color: #ec008c;">注册会员</font>
 							</a>
 						</li>
 						<li>
-							<a href="#" onclick="$.fnBooking();">
-								<img src="idx/images/nav2-search.png">
+							<a href="javascript:void(0);" onclick="$.fnBooking();">
+								<img src="${pageContext.request.contextPath}/idx/images/nav2-search.png">
 								<br>
 								学车预约
 							</a>
 						</li>
 						<li>
-							<a href="#">
-								<img src="idx/images/nav2-vehicle.png">
+							<a href="javascript:void(0);">
+								<img src="${pageContext.request.contextPath}/idx/images/nav2-vehicle.png">
 								<br>
 								教练介绍
 							</a>
 						</li>
 						<li>
-							<a href="#">
-								<img src="idx/images/nav2-lines.png">
+							<a href="javascript:void(0);">
+								<img src="${pageContext.request.contextPath}/idx/images/nav2-lines.png">
 								<br>
 								车型介绍
 							</a>
 						</li>
 						<li>
-							<a href="#">
-								<img src="idx/images/nav2-test.png">
+							<a href="javascript:void(0);">
+								<img src="${pageContext.request.contextPath}/idx/images/nav2-test.png">
 								<br>
 								场地介绍
 							</a>
 						</li>
 						<li id="FansNum" style="width:200px;">
-							<img src="idx/images/nav2-users.png">
+							<img src="${pageContext.request.contextPath}/idx/images/nav2-users.png">
 							<br>
 							已有
 							<font style="color: #ec008c;">126143</font>
@@ -307,7 +311,7 @@ $.extend({
 			</div>
 		</div>
 		<div class="SpaceBar">
-			<img src="idx/spacer.html" height="0" border="0" width="0">
+			<img src="${pageContext.request.contextPath}/idx/spacer.html" height="0" border="0" width="0">
 		</div>
 
 		<div id="ProcessArea">
@@ -337,17 +341,17 @@ $.extend({
 			</div>
 		</div>
 		<div class="SpaceBar">
-			<img src="idx/spacer.html" height="0" border="0" width="0">
+			<img src="${pageContext.request.contextPath}/idx/spacer.html" height="0" border="0" width="0">
 		</div>
 		<div id="Row1Area">
 			<div id="Row1Col1">
 				<div class="Tab">
 					<ul>
 						<li class="TabOn" id="vehicle_type_tabHeader_1" onmouseover="$.sltTab2('vehicle_type', 1);">
-							<a href="#" groupcontent="租用车辆">租用车辆</a>
+							<a href="javascript:void(0);" groupcontent="租用车辆">租用车辆</a>
 						</li>
 						<li class="TabOff" id="vehicle_type_tabHeader_2" onmouseover="$.sltTab2('vehicle_type', 2);">
-							<a href="#" groupcontent="驾校自带车辆">驾校自带车辆</a>
+							<a href="javascript:void(0);" groupcontent="驾校自带车辆">驾校自带车辆</a>
 						</li>
 					</ul>
 				</div>
@@ -356,10 +360,10 @@ $.extend({
 						<!-- 小型车 -->
 						<li>
 							<div class="ClassImage">
-								<a href="#"><img src="picture/vehicle/117144176.JPG"></a>
+								<a href="javascript:void(0);"><img src="${pageContext.request.contextPath}/picture/vehicle/117144176.JPG"></a>
 							</div>
 							<div class="ClassTitle">
-								<a href="#">C1/C2 驾照</a>
+								<a href="javascript:void(0);">C1/C2 驾照</a>
 							</div>
 							<div class="ClassPrice">价格：210元/小时</div>
 							<div class="ClassVehicle">车型：捷达/桑塔纳</div>
@@ -368,10 +372,10 @@ $.extend({
 						<!-- 大型货车 -->
 						<li>
 							<div class="ClassImage">
-								<a href="#"><img src="picture/vehicle/1171723862.JPG"></a>
+								<a href="javascript:void(0);"><img src="${pageContext.request.contextPath}/picture/vehicle/1171723862.JPG"></a>
 							</div>
 							<div class="ClassTitle">
-								<a href="#">B2</a>
+								<a href="javascript:void(0);">B2</a>
 							</div>
 							<div class="ClassPrice">价格：290元/小时</div>
 							<div class="ClassVehicle">车型：东风</div>
@@ -380,10 +384,10 @@ $.extend({
 						<!-- 大型客车 -->
 						<li>
 							<div class="ClassImage">
-								<a href="#"><img src="picture/vehicle/117175735.JPG"></a>
+								<a href="javascript:void(0);"><img src="${pageContext.request.contextPath}/picture/vehicle/117175735.JPG"></a>
 							</div>
 							<div class="ClassTitle">
-								<a href="#">A1/A3驾照</a>
+								<a href="javascript:void(0);">A1/A3驾照</a>
 							</div>
 							<div class="ClassPrice">价格：260元/小时</div>
 							<div class="ClassVehicle">车型：金龙</div>
@@ -392,10 +396,10 @@ $.extend({
 						<!-- 中型客车 -->
 						<li>
 							<div class="ClassImage">
-								<a href="#"><img src="picture/vehicle/1171741272.JPG"></a>
+								<a href="javascript:void(0);"><img src="${pageContext.request.contextPath}/picture/vehicle/1171741272.JPG"></a>
 							</div>
 							<div class="ClassTitle">
-								<a href="#">B1 驾照</a>
+								<a href="javascript:void(0);">B1 驾照</a>
 							</div>
 							<div class="ClassPrice">价格：260元/小时</div>
 							<div class="ClassVehicle">车型：金龙</div>
@@ -408,10 +412,10 @@ $.extend({
 						<!-- 小型车 -->
 						<li>
 							<div class="ClassImage">
-								<a href="#"><img src="picture/vehicle/117144176.JPG"></a>
+								<a href="javascript:void(0);"><img src="${pageContext.request.contextPath}/picture/vehicle/117144176.JPG"></a>
 							</div>
 							<div class="ClassTitle">
-								<a href="#">C1/C2 驾照</a>
+								<a href="javascript:void(0);">C1/C2 驾照</a>
 							</div>
 							<div class="ClassPrice">价格：110元/小时</div>
 							<div class="ClassVehicle">车型：捷达/桑塔纳</div>
@@ -420,10 +424,10 @@ $.extend({
 						<!-- 大型货车 -->
 						<li>
 							<div class="ClassImage">
-								<a href="#"><img src="picture/vehicle/1171723862.JPG"></a>
+								<a href="javascript:void(0);"><img src="${pageContext.request.contextPath}/picture/vehicle/1171723862.JPG"></a>
 							</div>
 							<div class="ClassTitle">
-								<a href="#">B2</a>
+								<a href="javascript:void(0);">B2</a>
 							</div>
 							<div class="ClassPrice">价格：130元/小时</div>
 							<div class="ClassVehicle">车型：东风</div>
@@ -432,10 +436,10 @@ $.extend({
 						<!-- 大型客车 -->
 						<li>
 							<div class="ClassImage">
-								<a href="#"><img src="picture/vehicle/117175735.JPG"></a>
+								<a href="javascript:void(0);"><img src="${pageContext.request.contextPath}/picture/vehicle/117175735.JPG"></a>
 							</div>
 							<div class="ClassTitle">
-								<a href="#">A1/A3驾照</a>
+								<a href="javascript:void(0);">A1/A3驾照</a>
 							</div>
 							<div class="ClassPrice">价格：130元/小时</div>
 							<div class="ClassVehicle">车型：金龙</div>
@@ -444,10 +448,10 @@ $.extend({
 						<!-- 中型客车 -->
 						<li>
 							<div class="ClassImage">
-								<a href="#"><img src="picture/vehicle/1171741272.JPG"></a>
+								<a href="javascript:void(0);"><img src="${pageContext.request.contextPath}/picture/vehicle/1171741272.JPG"></a>
 							</div>
 							<div class="ClassTitle">
-								<a href="#">B1 驾照</a>
+								<a href="javascript:void(0);">B1 驾照</a>
 							</div>
 							<div class="ClassPrice">价格：130元/小时</div>
 							<div class="ClassVehicle">车型：金龙</div>
@@ -461,7 +465,7 @@ $.extend({
 				<div class="Tab">
 					<ul>
 						<li class="TabOn" id="服务查询_tabHeader_1" >
-							<a href="#">报名网点</a>
+							<a href="javascript:void(0);">报名网点</a>
 						</li>
 					</ul>
 				</div>
@@ -488,7 +492,7 @@ $.extend({
 			</div>
 		</div>
 		<div class="SpaceBar">
-			<img src="idx/spacer.html" height="0" border="0" width="0">
+			<img src="${pageContext.request.contextPath}/idx/spacer.html" height="0" border="0" width="0">
 		</div>
 		<div id="Row2Area">
 			<div id="Row2Col1">
@@ -504,7 +508,7 @@ $.extend({
 				</div>
 				<div class="TabOnDiv" style="" id="资讯公告_tabContent_1">
 					<a href="javascript:void(0);">
-						<img src="idx/20155749866.jpg">
+						<img src="${pageContext.request.contextPath}/idx/20155749866.jpg">
 					</a>
 					<ul>
 						<li>&gt; <a href="javascript:void(0);">贵峰，敢于担当社会责任的企业</a></li>
@@ -514,7 +518,7 @@ $.extend({
 				</div>
 				<div class="TabOnDiv" style="display: none" id="资讯公告_tabContent_2">
 					<a href="javascript:void(0);">
-						<img src="idx/2919421913.jpg">
+						<img src="${pageContext.request.contextPath}/idx/2919421913.jpg">
 					</a>
 					<ul>
 						<li>&gt; <a href="javascript:void(0);">贵峰开启驾培“新模式”引领驾培行业转型发展</a></li>
@@ -545,7 +549,7 @@ $.extend({
 		
 		
 		<div class="SpaceBar">
-			<img src="idx/spacer.html" height="0" border="0" width="0">
+			<img src="${pageContext.request.contextPath}/idx/spacer.html" height="0" border="0" width="0">
 		</div>
 			<div id="BottomAd">
 				<div class="Text">
@@ -569,7 +573,7 @@ $.extend({
 				</div>
 			</div>
 	</div>
-	<script src="idx/tracker.js" type="text/javascript"></script>
+	<script src="${pageContext.request.contextPath}/idx/tracker.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		AddTrackerCount('/sitefiles/services/cms/PageService.aspx?type=AddTrackerCount&publishmentSystemID=1&channelID=1&contentID=0',1);
 	</script>

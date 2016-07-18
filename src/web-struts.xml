@@ -49,14 +49,21 @@
 			<param name="pagePath">{1}</param>
 			<result name="success">/WEB-INF/${dir}/${jspPage}.jsp</result>
 		</action>
-
+		
 		<!-- 登录 -->
 		<action name="login" class="cn.com.chinaccs.action.LoginAction">
 			<result name="fail">/WEB-INF/content/loginV2/login.jsp</result>
 			<result name="portal">index.jsp</result>
 		</action>
 		<action name="regist" class="cn.com.chinaccs.action.RegistAction">
-			<result>index</result>
+			<result name="portal">index.jsp</result>
+			<interceptor-ref name="acl" />
+			<interceptor-ref name="defaultStack" />
+			<result name="success" type="json">
+				<param name="includeProperties">
+					output
+				</param>
+			</result>
 		</action>
 		<action name="logout" class="cn.com.chinaccs.action.LoginAction"
 			method="logout" />
@@ -81,6 +88,10 @@
 		<action name="portal" class="cn.com.chinaccs.action.IndexAction">
 			<interceptor-ref name="acl" />
 			<result name="success">/WEB-INF/content/portal.jsp</result>
+		</action>
+		
+		<action name="portals">
+			<result>index.jsp</result>
 		</action>
 		
 		<action name="index/*" class="cn.com.chinaccs.action.IndexAction">
