@@ -56,7 +56,9 @@ $("#login-form").submit(function(){
 					<input type="password" name="password" class="password" placeholder="密码" oncontextmenu="return false" onpaste="return false" id="pass-word" value="${password }">
 				</div>
 				<button id="submit" type="submit">登 陆</button>
+				<!-- 
 				<button id="cancel" onclick="$.closeWindow();" style="background-color: #ff7744">取消</button>
+				 -->
 			</form>
 		</div>
 	</div>

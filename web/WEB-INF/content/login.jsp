@@ -87,7 +87,7 @@ jQuery(function($){
 	<div class="full-header" style="height: 150px; width: 100%;">
 	</div>
 	<h1>
-		<strong>XXX部队通信仿真训练平台</strong>
+		<strong>丽江贵峰机动车驾驶人科目二训练考试服务平台</strong>
 	</h1>
 	<div class="login-container">
 		<div class="login-container-background">

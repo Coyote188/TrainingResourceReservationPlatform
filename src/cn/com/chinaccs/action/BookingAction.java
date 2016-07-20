@@ -7,10 +7,16 @@ import java.util.List;
 
 import net.sf.json.JSONObject;
 import cn.com.chinaccs.bean.CHResponse;
+import cn.com.chinaccs.bean.UserInfo;
 import cn.com.chinaccs.bean.driver.InstructionVehicle;
-import cn.com.chinaccs.bean.driver.TrainingSourceLock;
+import cn.com.chinaccs.bean.driver.Order;
+import cn.com.chinaccs.bean.entity.TNUser;
 import cn.com.chinaccs.dao.InstructionVehicleDao;
+import cn.com.chinaccs.dao.OrderDao;
+import cn.com.chinaccs.dao.impl.UserDao;
+import cn.com.chinaccs.service.UserService;
 import cn.com.chinaccs.service.driver.BookingService;
+import cn.com.chinaccs.utils.StringUtil;
 import cn.com.chinaccs.utils.SystemConstant;
 
 /**
@@ -213,6 +219,66 @@ public class BookingAction extends BaseImplAction {
 			chResponse.setResult(OP_FAIL);
 			chResponse.setMsg("OP_FAIL");
 			chResponse.setData(null);
+		}
+		
+		return json();
+	}
+	
+	/**
+	 * 订单管理（返回订单列表）
+	 * 视不同参数，返回
+	 * outdatedOrderShow 是否显示已经完成的订单 任意字符显示，空不显示<br>
+	 * userId 查询指定用户的订单- 空不指定 用户ID则返回该用户的订单<br>
+	 * limitOrderDateStart 订单开始时间--(yyyy/MM/dd)<br>
+	 * limitOrderDateEnd 订单结束时间--(yyyy/MM/dd)<br>
+	 * orderStatus 订单状态，不传则返回全部订单<br>
+	 * @return
+	 */
+	public String orderListQuery(){
+		String outdatedOrderShow = getRequest().getParameter("outdatedOrderShow");
+		String userId = getRequest().getParameter("userId");
+		String limitOrderDateStart = getRequest().getParameter("limitOrderDateStart");
+		String limitOrderDateEnd = getRequest().getParameter("limitOrderDateEnd");
+		String orderStatus = getRequest().getParameter("orderStatus");
+		
+		List<java.util.Map<String,Object>> list = service.findOrdersByArgs(outdatedOrderShow == null, userId, limitOrderDateStart, limitOrderDateEnd, orderStatus);
+		
+		chResponse.setResult(OP_SUCCESS);
+		chResponse.setMsg("OP_SUCCESS");
+		chResponse.setData(list);
+		return json();
+	}
+	
+	public String cancelOrder(){
+		
+		String userId = getUserId();
+		TNUser user = new UserDao().find(userId);
+		String orderId = getRequest().getParameter("orderId");
+		String password = getRequest().getParameter("Password");
+		
+		if(!StringUtil.isEmpty(user.getUserName()) && !StringUtil.isEmpty(password)) {
+			msg = "该用户已经注册，登录用户名或密码错误";
+			UserService userServ = new UserService();
+			chResponse = userServ.login(user.getUserName(), password);
+			if(OP_SUCCESS.equals(chResponse.getResult())) {
+				userInfo = (UserInfo)chResponse.getData();
+				msg = "用户验证成功";
+				chResponse = new CHResponse();
+				Order order = new OrderDao().find(orderId);
+				if(order.cancel()){
+					chResponse.setResult(OP_SUCCESS);
+					chResponse.setMsg("订单取消完成");
+				}else{
+					chResponse.setResult(OP_FAIL);
+					chResponse.setMsg("订单取消异常，请联系客服");
+				}
+			}else{
+				chResponse = new CHResponse();
+				//失败
+				chResponse.setResult(OP_FAIL);
+				chResponse.setMsg("用户验证失败");
+				
+			}
 		}
 		
 		return json();

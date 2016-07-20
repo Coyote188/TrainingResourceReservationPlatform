@@ -110,7 +110,8 @@ $("#login-form").submit(function(){
 </head>
 <body>
 <div class="header">
-  <h1 class="headerLogo"><a title="通信仿真模拟系统" target="_blank" href="#"><img alt="logo" src="${pageContext.request.contextPath}/resource/loginV2/images/ic_logo_head.gif"></a></h1>
+	<h1 class="headerLogo"><a title="丽江贵峰机动车驾驶人科目二训练考试服务平台" target="_blank" href="#">
+	<img alt="logo" src="${pageContext.request.contextPath}/resource/loginV2/images/ic_logo_head.gif"></a></h1>
 	<div class="headerNav">
 		<h4><%=date%>
 	</div>
@@ -157,7 +158,6 @@ $("#login-form").submit(function(){
 	<div class="bd">
 		<ul>
 			<li style="background:url(<%=basePath%>/resource/loginV2/images/ic_slide_1.jpg) #CCE1F3 center 0 no-repeat;"></li>
-			<li style="background:url(<%=basePath%>/resource/loginV2/images/ic_slide_2.png) #BCE0FF center 0 no-repeat;"></li>
 		</ul>
 	</div>
 

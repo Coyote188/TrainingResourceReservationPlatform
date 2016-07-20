@@ -26,9 +26,8 @@ import cn.com.chinaccs.utils.SystemConstant;
  */
 public class RegistAction extends BaseImplAction {
 	/**
-	 * 
+	 * 注册
 	 */
-	
 	private UserService userServ = new UserService();
 	@Override
 	public String execute() throws Exception {
@@ -36,15 +35,15 @@ public class RegistAction extends BaseImplAction {
 		String result_msg = "0";
 		String result = null;
 		// Title=C1&Author=abc&SubTitle=%E8%BA%AB%E4%BB%BD%E8%AF%81&Summary=220&mobil_no=13308800013&username=admin&Password=111111
-		String title = getRequest().getParameter("Title");
-		String author = getRequest().getParameter("Author");
-		String subTitle = getRequest().getParameter("SubTitle");
-		String summary = getRequest().getParameter("Summary");
-		String mobileNo = getRequest().getParameter("mobil_no");
-		String username = getRequest().getParameter("username");
-		String password = getRequest().getParameter("Password");
-		String valCode = getRequest().getParameter("validateCode");
-		String email = getRequest().getParameter("Email");
+		String title = getRequest().getParameter("Title");  //驾照类型
+		String author = getRequest().getParameter("Author");// 姓名
+		String subTitle = getRequest().getParameter("SubTitle"); //证件类型
+		String summary = getRequest().getParameter("Summary"); //证件号码 
+		String mobileNo = getRequest().getParameter("mobil_no");//手机号码 
+		String username = getRequest().getParameter("username");//用户名
+		String password = getRequest().getParameter("Password");//密码 
+		String valCode = getRequest().getParameter("validateCode");//验证码
+		String email = getRequest().getParameter("Email"); //email
 		TNUser user = new TNUser();
 		
 		UserDao dao = new UserDao();

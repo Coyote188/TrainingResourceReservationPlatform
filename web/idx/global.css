@@ -1,4 +1,12 @@
 @charset "utf-8";
+* {
+    margin: 0px ;
+    padding: 0px ;
+    text-decoration: none ;
+    list-style: none;
+    font-size: 12px ;
+    font-family: Arial ;
+}
 /*一乘驾校 CSS Document */
 html {
 	-moz-box-sizing: border-box;

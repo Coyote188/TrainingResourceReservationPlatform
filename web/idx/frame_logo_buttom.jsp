@@ -21,6 +21,24 @@ if(null != request.getSession().getAttribute("edu_user_info")){
 <script src="${pageContext.request.contextPath}/js/layer/layer.js" type="text/javascript"></script>
 
 <title>丽江贵峰机动车驾驶人科目二训练考试服务有限公司 </title>
+<style>
+<!--
+.window {
+	width: 400px;
+	background-color: #fff;
+	position: absolute;
+	padding: 2px;
+	margin: 5px;
+	display: none;
+}
+.content {
+	height: 300px;
+	background-color: #FFF;
+	font-size: 14px;
+	overflow: auto;
+}
+-->
+</style>
 <script type="text/javascript">
 var $pageInfo = {
 		publishmentSystemID : 1,
@@ -194,15 +212,15 @@ $.extend({
 		$("#popupWindow4LoginForm").hide("slow");
 	},
 	popRightWindow:function(x, y) {
+		//计算弹出窗口的左上角Y的偏移量 
+		//var popY = $(window).height() - $(".window").height();
+		//var popX = $(window).width() - $(".window").width();
+		var popY = y + 50;
+		var popX = x - 30;
+		//设定窗口的位置 
+		$("#popupWindow4LoginForm").css("top", popY - 50).css("left", popX - 50).slideToggle("slow");
+		//$.closeWindow();
 		$("#popContentLoginForm").load("portal");
-		layer.open({
-			title: '  登录  ',
-			closeBtn:'2',
-			type: 1,
-			skin: 'layui-layer-rim', //加上边框
-			area: ['420px', '340px'], //宽高
-			content: $("#popContentLoginForm")
-		});
 	}
 });
 </script>
@@ -304,241 +322,9 @@ $.extend({
 		<div class="SpaceBar">
 			<img src="${pageContext.request.contextPath}/idx/spacer.html" height="0" border="0" width="0">
 		</div>
-
-		<div id="ProcessArea">
-			<div id="ProcessTitle"></div>
-			<div id="ProcessLink">
-				<div id="ProcessLinkText">
-					<ul>
-						<li>注册会员</li>
-						<li>&nbsp;&nbsp;→&nbsp;&nbsp;</li>
-						<li>选择场地</li>
-						<li>&nbsp;&nbsp;→&nbsp;&nbsp;</li>
-						<li>选择车辆</li>
-						<li>&nbsp;&nbsp;→&nbsp;&nbsp;</li>
-						<li>确认教练</li>
-						<li>&nbsp;&nbsp;→&nbsp;&nbsp;</li>
-						<li>保存订单</li>
-						<li>&nbsp;&nbsp;→&nbsp;&nbsp;</li>
-						<li>缴费</li>
-						<li>&nbsp;&nbsp;→&nbsp;&nbsp;</li>
-						<li>确认订单信息</li>
-						<li>&nbsp;&nbsp;→&nbsp;&nbsp;</li>
-						<li>提交</li>
-						<li>&nbsp;&nbsp;→&nbsp;&nbsp;</li>
-						<li>到驾校练车喽！</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="SpaceBar">
-			<img src="${pageContext.request.contextPath}/idx/spacer.html" height="0" border="0" width="0">
-		</div>
-		<div id="Row1Area">
-			<div id="Row1Col1">
-				<div class="Tab">
-					<ul>
-						<li class="TabOn" id="vehicle_type_tabHeader_1" onmouseover="$.sltTab2('vehicle_type', 1);">
-							<a href="javascript:void(0);" groupcontent="租用车辆">租用车辆</a>
-						</li>
-						<li class="TabOff" id="vehicle_type_tabHeader_2" onmouseover="$.sltTab2('vehicle_type', 2);">
-							<a href="javascript:void(0);" groupcontent="驾校自带车辆">驾校自带车辆</a>
-						</li>
-					</ul>
-				</div>
-				<div class="TabOnDiv" id="vehicle_type_tabContent_1">
-					<ul>
-						<!-- 小型车 -->
-						<li>
-							<div class="ClassImage">
-								<a href="javascript:void(0);"><img src="${pageContext.request.contextPath}/picture/vehicle/C1_C2.jpg"></a>
-							</div>
-							<div class="ClassTitle">
-								<a href="javascript:void(0);">C1/C2 驾照</a>
-							</div>
-							<div class="ClassPrice">价格：210元/小时</div>
-							<div class="ClassVehicle">车型：捷达/桑塔纳</div>
-							<div class="ClassFeature">训练时间：全周7:00--21:00</div>
-						</li>
-						<!-- 大型货车 -->
-						<li>
-							<div class="ClassImage">
-								<a href="javascript:void(0);"><img src="${pageContext.request.contextPath}/picture/vehicle/B2.jpg"></a>
-							</div>
-							<div class="ClassTitle">
-								<a href="javascript:void(0);">B2</a>
-							</div>
-							<div class="ClassPrice">价格：290元/小时</div>
-							<div class="ClassVehicle">车型：东风</div>
-							<div class="ClassFeature">训练时间：全周7:00--21:00</div>
-						</li>
-						<!-- 大型客车 -->
-						<li>
-							<div class="ClassImage">
-								<a href="javascript:void(0);"><img src="${pageContext.request.contextPath}/picture/vehicle/A1_A3.jpg"></a>
-							</div>
-							<div class="ClassTitle">
-								<a href="javascript:void(0);">A1/A3驾照</a>
-							</div>
-							<div class="ClassPrice">价格：260元/小时</div>
-							<div class="ClassVehicle">车型：金龙</div>
-							<div class="ClassFeature">训练时间：全周7:00--21:00</div>
-						</li>
-						<!-- 中型客车 -->
-						<li>
-							<div class="ClassImage">
-								<a href="javascript:void(0);"><img src="${pageContext.request.contextPath}/picture/vehicle/B1.jpg"></a>
-							</div>
-							<div class="ClassTitle">
-								<a href="javascript:void(0);">B1 驾照</a>
-							</div>
-							<div class="ClassPrice">价格：260元/小时</div>
-							<div class="ClassVehicle">车型：金龙</div>
-							<div class="ClassFeature">训练时间：全周7:00--21:00</div>
-						</li>
-					</ul>
-				</div>
-				<div class="TabOnDiv" style="display: none" id="vehicle_type_tabContent_2">
-					<ul>
-						<!-- 小型车 -->
-						<li>
-							<div class="ClassImage">
-								<a href="javascript:void(0);"><img src="${pageContext.request.contextPath}/picture/vehicle/117144176.JPG"></a>
-							</div>
-							<div class="ClassTitle">
-								<a href="javascript:void(0);">C1/C2 驾照</a>
-							</div>
-							<div class="ClassPrice">价格：110元/小时</div>
-							<div class="ClassVehicle">车型：捷达/桑塔纳</div>
-							<div class="ClassFeature">训练时间：全周7:00--21:00</div>
-						</li>
-						<!-- 大型货车 -->
-						<li>
-							<div class="ClassImage">
-								<a href="javascript:void(0);"><img src="${pageContext.request.contextPath}/picture/vehicle/1171723862.JPG"></a>
-							</div>
-							<div class="ClassTitle">
-								<a href="javascript:void(0);">B2</a>
-							</div>
-							<div class="ClassPrice">价格：130元/小时</div>
-							<div class="ClassVehicle">车型：东风</div>
-							<div class="ClassFeature">训练时间：全周7:00--21:00</div>
-						</li>
-						<!-- 大型客车 -->
-						<li>
-							<div class="ClassImage">
-								<a href="javascript:void(0);"><img src="${pageContext.request.contextPath}/picture/vehicle/117175735.JPG"></a>
-							</div>
-							<div class="ClassTitle">
-								<a href="javascript:void(0);">A1/A3驾照</a>
-							</div>
-							<div class="ClassPrice">价格：130元/小时</div>
-							<div class="ClassVehicle">车型：金龙</div>
-							<div class="ClassFeature">训练时间：全周7:00--21:00</div>
-						</li>
-						<!-- 中型客车 -->
-						<li>
-							<div class="ClassImage">
-								<a href="javascript:void(0);"><img src="${pageContext.request.contextPath}/picture/vehicle/1171741272.JPG"></a>
-							</div>
-							<div class="ClassTitle">
-								<a href="javascript:void(0);">B1 驾照</a>
-							</div>
-							<div class="ClassPrice">价格：130元/小时</div>
-							<div class="ClassVehicle">车型：金龙</div>
-							<div class="ClassFeature">训练时间：全周7:00--21:00</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="AreaBreak"></div>
-			<div id="Row1Col2">
-				<div class="Tab">
-					<ul>
-						<li class="TabOn" id="服务查询_tabHeader_1" >
-							<a href="javascript:void(0);">报名网点</a>
-						</li>
-					</ul>
-				</div>
-				<div class="TabOnDiv" id="服务查询_tabContent_1">
-					<ul>
-						<li>
-							<div class="ClassTitle">
-								<a href="javascript:void(0)">驾校地址</a>
-							</div>
-							<div class="ClassContent">
-								丽江市古城区金山乡贵峰村委会
-							</div>
-						</li>
-						<li style="display: none;">
-							<div class="ClassTitle">
-								<a href="javascript:void(0);">一乘驾校(白塔路店)</a>
-							</div>
-							<div class="ClassContent">
-								昆明市白塔路152号附1号（昆十中斜对面）<br>营业：周一至周日 9:30-21:00 缴费方式：刷卡 
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="SpaceBar">
-			<img src="${pageContext.request.contextPath}/idx/spacer.html" height="0" border="0" width="0">
-		</div>
-		<div id="Row2Area">
-			<div id="Row2Col1">
-				<div class="Tab">
-					<ul>
-						<li class="TabOff" id="资讯公告_tabHeader_1" onmouseover="$.stlTab6('资讯公告', 1);">
-							<a href="javascript:void(0);">贵峰新闻</a>
-						</li>
-						<li class="TabOff" id="资讯公告_tabHeader_2" onmouseover="$.stlTab6('资讯公告', 2);">
-							<a href="javascript:void(0);">贵峰专稿</a>
-						</li>
-					</ul>
-				</div>
-				<div class="TabOnDiv" style="" id="资讯公告_tabContent_1">
-					<a href="javascript:void(0);">
-						<img src="${pageContext.request.contextPath}/picture/ad/02.jpg">
-					</a>
-					<ul>
-						<li>&gt; <a href="javascript:void(0);">贵峰，新闻一</a></li>
-						<li>&gt; <a href="javascript:void(0);">贵峰，新闻二</a></li>
-						<li>&gt; <a href="javascript:void(0);">贵峰，新闻三</a></li>
-					</ul>
-				</div>
-				<div class="TabOnDiv" style="display: none" id="资讯公告_tabContent_2">
-					<a href="javascript:void(0);">
-						<img src="${pageContext.request.contextPath}/picture/ad/04.jpg">
-					</a>
-					<ul>
-						<li>&gt; <a href="javascript:void(0);">内容一</a></li>
-						<li>&gt; <a href="javascript:void(0);">内容二</a></li>
-						<li>&gt; <a href="javascript:void(0);">内容三</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="AreaBreak"></div>
-			<div id="Row2Col2">
-				<div class="Tab">
-					<ul>
-						<li class="TabOn" id="互动版块_tabHeader_1" onmouseover="$.stlTab8('互动版块', 1);">
-							<a href="javascript:void(0);">通知公告</a>
-						</li>
-					</ul>
-				</div>
-				<div class="TabOnDiv" style="" id="互动版块_tabContent_1">
-					<iframe scrolling="no" src="" frameborder="0"  height="348" width="341"></iframe>
-				</div>
-			</div>
-		</div>
-		<!-- 注册区 -->
 		<div id="Row3Area" style="display: none; ">
-			<iframe scrolling="no" src="" frameborder="0"  height="610px" width="990px">
-			</iframe>
+			
 		</div>
-		
-		
 		<div class="SpaceBar">
 			<img src="${pageContext.request.contextPath}/idx/spacer.html" height="0" border="0" width="0">
 		</div>
@@ -564,52 +350,5 @@ $.extend({
 				</div>
 			</div>
 	</div>
-	<script src="${pageContext.request.contextPath}/idx/tracker.js" type="text/javascript"></script>
-	<script type="text/javascript">
-		AddTrackerCount('/sitefiles/services/cms/PageService.aspx?type=AddTrackerCount&publishmentSystemID=1&channelID=1&contentID=0',1);
-	</script>
-	<script type="text/javascript">
-		$.getJSON("/webapi/json/InData_Student.json", function(data) {
-			$("#FansNumLayout").html(data.bynum);
-			$("#FansNum").html(
-					"<img src='/images/nav2-users.png'><br>已毕业<font style='color:#ec008c;'>" + data.bynum + "</font>人");
-			var num = 100;
-			var count = data.student.length;
-			var NameStr = "";
-			if (count >= num) {
-				c = count - num;
-			} else {
-				c = 0;
-			}
-			for (var i = c; i < count; i++) {
-				NameStr += data.student[i].Name + " ";
-			}
-			//判断浏览器开始
-			var browser = {
-				versions : function() {
-					var u = navigator.userAgent, app = navigator.appVersion;
-					return {//移动终端浏览器版本信息
-						trident : u.indexOf('Trident') > -1, //IE内核
-						presto : u.indexOf('Presto') > -1, //opera内核
-						webKit : u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
-						gecko : u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
-						mobile : !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
-						ios : !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
-						android : u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
-						iPhone : u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
-						iPad : u.indexOf('iPad') > -1, //是否iPad
-						webApp : u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
-					};
-				}(),
-				language : (navigator.browserLanguage || navigator.language).toLowerCase()
-			}
-			if (browser.versions.mobile || browser.versions.ios || browser.versions.android || browser.versions.iPhone || browser.versions.iPad) {
-				$("#StudentName").html('');
-			} else {
-				$("#StudentName").html(NameStr);
-			};
-		});
-	</script>
-	<div class="content" style="display: none;" id="popContentLoginForm"></div> 
 </body>
 </html>

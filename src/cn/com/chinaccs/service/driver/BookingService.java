@@ -14,6 +14,7 @@ import cn.com.chinaccs.bean.driver.OrderDetail;
 import cn.com.chinaccs.bean.driver.TrainingSourceLock;
 import cn.com.chinaccs.dao.DriverLicenseLevelDao;
 import cn.com.chinaccs.dao.InstructionVehicleDao;
+import cn.com.chinaccs.dao.OrderDao;
 import cn.com.chinaccs.dao.OrderDetailDao;
 import cn.com.chinaccs.dao.TrainingSourceLockDao;
 import cn.com.chinaccs.utils.IDGen;
@@ -238,7 +239,7 @@ public class BookingService {
 		
 		BigDecimal amount = veh.getPrice().multiply(new BigDecimal(duration));
 		order.setOrderAmount(amount);
-		
+		order.setSerialNbr(IDGen.getSerialNumber(SystemConstant.PLAT_FORM));
 		//getVehicle&Lock
 		//getField&Lock
 		//getCoach&Lock
@@ -262,4 +263,60 @@ public class BookingService {
 		return order.getId();
 	}
 	
+	/**
+	 * 订单查询
+	 * @param isOutdatedOrderShow 是否显示已过时效订单
+	 * @param userId 针对用户订单查询
+	 * @param limitOrderDateStart 查询订单开始时间 (yyyy/MM/dd)
+	 * @param limitOrderDateEnd 查询订单结束时间 (yyyy/MM/dd)
+	 * @param orderStatus 返回订单状态
+	 * @return
+	 */
+	public List<java.util.Map<String, Object>> findOrdersByArgs(boolean isOutdatedOrderShow, String userId, String limitOrderDateStart,String limitOrderDateEnd, String orderStatus){
+		OrderDao oDao = new OrderDao();
+		List<Object> result = oDao.findOrdersByArgs(isOutdatedOrderShow, userId, limitOrderDateStart, limitOrderDateEnd, orderStatus);
+		List<java.util.Map<String, Object>> orderList = new ArrayList<java.util.Map<String, Object>>();
+		for(Object line: result){
+			Object[] item = (Object[])line;
+			java.util.Map<String, Object> order = new java.util.HashMap<String, Object>();
+
+			order.put("order_id", item[0]);
+			order.put("order_date", item[1]);
+			order.put("serial", item[2]);
+			order.put("state", item[3]);
+			order.put("order_money", item[4]);
+			order.put("payment_id", item[5]);
+			order.put("detail_id", item[6]);
+			order.put("state_date", item[7]);
+			order.put("pre_state", item[8]);
+			order.put("cust_id", item[9]);
+			order.put("vehiche_pic", item[10]);
+			order.put("lv", item[11]);
+			order.put("field_id", item[12]);
+			order.put("vehicle_id", item[13]);
+			order.put("vehicle_money", item[14]);
+			order.put("training_st", item[15]);
+			order.put("training_nd", item[16]);
+			order.put("duration", item[17]);
+			order.put("cust_name", item[18]);
+			order.put("mobile", item[19]);
+			order.put("id_no", item[20]);
+			order.put("id_type", item[21]);
+			order.put("reg_license", item[22]);
+			order.put("sys_username", item[23]);
+			order.put("vehicle_bands", item[24]);
+			order.put("vehicle_model", item[25]);
+			order.put("vehicle_price", item[26]);
+			order.put("description", item[27]);
+			order.put("area", item[28]);
+			order.put("pay_serial", item[29]);
+			order.put("pay_method", item[30]);
+			order.put("payment_state_date", item[31]);
+			order.put("payment_recv_time", item[32]);
+			
+			orderList.add(order);
+		}
+		
+		return orderList;
+	}
 }

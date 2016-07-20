@@ -11,6 +11,7 @@ import cn.com.chinaccs.bean.BaseBeanImpl;
 import cn.com.chinaccs.dao.OrderDao;
 import cn.com.chinaccs.dao.OrderDetailDao;
 import cn.com.chinaccs.utils.IDGen;
+import cn.com.chinaccs.utils.SystemConstant;
 /**
  * 订单
  * @author Tsui
@@ -24,26 +25,6 @@ public class Order extends BaseBeanImpl{
 	 * 
 	 */
 	private static final long serialVersionUID = -4982535263865837712L;
-	/**
-	 * 订单已创建
-	 */
-	public static final String STATUS_START = "001";
-	/**
-	 * 订单
-	 */
-	public static final String STATUS_1 = "002";
-	/**
-	 * 
-	 */
-	public static final String STATUS_2 = "003";
-	/**
-	 * 订单已经保存
-	 */
-	public static final String STATUS_SAVED = "004";
-	/**
-	 * 订单已缴费
-	 */
-	public static final String STATUS_PAYED = "004";
 	
 	private String id;
 	//订单时间
@@ -69,7 +50,7 @@ public class Order extends BaseBeanImpl{
 	public Order newOrder(String orderUser){
 		Order order = new Order(IDGen.getId());
 		order.setOrderUser(orderUser);
-		order.setOrderStatus(STATUS_START);
+		order.setOrderStatus(SystemConstant.ORDER_STATUS_START);
 		order.setStatusDate(new java.sql.Timestamp(System.currentTimeMillis()));
 		/*
 		 * 订单详情
@@ -107,6 +88,29 @@ public class Order extends BaseBeanImpl{
 		return dao.find(this.getId());
 	}
 	
+	
+	public boolean cancel(){
+		OrderDetail detail = this.loadDetail();
+		TrainingSourceLock lock = null;
+		if(null != detail.getInstructionVehicleLock()){
+			lock = TrainingSourceLock.load(detail.getInstructionVehicleLock());
+			lock.unhold();
+		}
+		if(null != detail.getTrainingFieldLock()){
+			lock = TrainingSourceLock.load(detail.getTrainingFieldLock());
+			lock.unhold();
+		}
+		if(null != detail.getCoachLock()){
+			lock = TrainingSourceLock.load(detail.getCoachLock());
+			lock.unhold();
+		}
+		this.setOrderStatus(SystemConstant.ORDER_STATUS_CANCELED);
+		return this.update();
+	}
+	
+	public Order() {
+		// TODO Auto-generated constructor stub
+	}
 	public Order(String orderId) {
 		this.id = orderId;
 	}

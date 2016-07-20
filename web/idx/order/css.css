@@ -1,0 +1,60 @@
+.shopping_content {
+	width: 800px;
+	margin: auto;
+	position: relative;
+}
+
+.shopping_table {
+	width: 100%;
+}
+
+.shopping_table img{
+	width: 80px;
+}
+
+.btn_r {
+	/* border-radius: 5px; */
+	background: #03004c;
+	color: white;
+	width: 60px;
+	height: 30px;
+	border: 0px;
+	outline: 0px;
+	font-size: 15px;
+}
+
+.momey_input {
+	border-radius: 5px;
+	outline: 0px;
+	height: 20px;
+	width: 50px;
+	border: 1px solid #CCCCCC;
+	text-align: center;
+}
+
+.btn_closing {
+	height: 40px;
+	width: 130px;
+	border-radius: 5px;
+	background: #31B0D5;
+	outline: 0px;
+	border: 1px solid transparent;
+	color: white;
+}
+
+.div_outMumey {
+	height: 40px;
+	width: 130px;
+	border-radius: 5px;
+	background: #CCCCCC;
+	color: white;
+	text-align: center;
+	line-height: 40px;
+	font-size: 20px;
+}
+
+.shopping_content th {
+	height: 40px;
+	font-size: 15px;
+	font: "微软雅黑";
+}

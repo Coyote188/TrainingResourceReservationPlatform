@@ -12,6 +12,7 @@ import cn.com.chinaccs.dao.InstructionVehicleDao;
 import cn.com.chinaccs.dao.PersonnelDao;
 import cn.com.chinaccs.dao.TrainingFieldDao;
 import cn.com.chinaccs.dao.TrainingSourceLockDao;
+import cn.com.chinaccs.utils.SystemConstant;
 import cn.com.chinaccs.utils.Utils;
 
 public class OrderManager {
@@ -83,7 +84,7 @@ public class OrderManager {
 	public String orderSave(String userId, String orderId){
 		Order order = new Order(orderId).load();
 		order.setPreStatus(order.getOrderStatus());
-		order.setOrderStatus(Order.STATUS_SAVED);
+		order.setOrderStatus(SystemConstant.ORDER_STATUS_SAVED);
 		order.setStatusDate(new java.sql.Timestamp(System.currentTimeMillis()));
 		
 		{
@@ -112,7 +113,7 @@ public class OrderManager {
 	public String orderPay(String userId, String orderId, String paymentId){
 		Order order = new Order(orderId).load();
 		order.setPreStatus(order.getOrderStatus());
-		order.setOrderStatus(Order.STATUS_PAYED);
+		order.setOrderStatus(SystemConstant.ORDER_STATUS_PAYED);
 		order.setStatusDate(new java.sql.Timestamp(System.currentTimeMillis()));
 		if(order.update()){
 			return order.getId();

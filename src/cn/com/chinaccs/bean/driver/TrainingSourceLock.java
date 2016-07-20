@@ -9,6 +9,7 @@ import javax.persistence.Table;
 
 import cn.com.chinaccs.bean.BaseBeanImpl;
 import cn.com.chinaccs.dao.TrainingSourceLockDao;
+import cn.com.chinaccs.utils.SystemConstant;
 
 /**
  * 资源占用锁<br>
@@ -20,18 +21,6 @@ import cn.com.chinaccs.dao.TrainingSourceLockDao;
 @Entity
 @Table(name="train_resource_lock")
 public class TrainingSourceLock extends BaseBeanImpl{
-	/**
-	 * 预锁定
-	 */
-	public static final String LOCK_STATUS_PRE = "001";
-	/**
-	 * 锁定
-	 */
-	public static final String LOCK_STATUS_LOCKED = "000";
-	/**
-	 * 解锁
-	 */
-	public static final String LOCK_STATUS_UNLOCK = "002";
 	/**
 	 * 
 	 */
@@ -70,13 +59,13 @@ public class TrainingSourceLock extends BaseBeanImpl{
 		this.resourceName = resourceName;
 		this.resourceType = resourceType;
 		this.whoLocksResource = whoLocksResource;
-		this.status = LOCK_STATUS_PRE;
+		this.status = SystemConstant.RESOURCE_LOCK_STATUS_PRE;
 		this.statusDate = new Timestamp(System.currentTimeMillis());
 	}
 	
 	public boolean lock(){
 		TrainingSourceLockDao dao = new TrainingSourceLockDao();
-		this.status = LOCK_STATUS_LOCKED;
+		this.status = SystemConstant.RESOURCE_LOCK_STATUS_LOCKED;
 		this.setStatusDate(new Timestamp(System.currentTimeMillis()));
 		return dao.update(this);
 	}
@@ -87,7 +76,7 @@ public class TrainingSourceLock extends BaseBeanImpl{
 	 */
 	public String hold(int duration, java.sql.Timestamp lockTime){
 		TrainingSourceLockDao dao = new TrainingSourceLockDao();
-		this.setStatus(LOCK_STATUS_PRE);
+		this.setStatus(SystemConstant.RESOURCE_LOCK_STATUS_PRE);
 		this.setLockedTime(lockTime);
 		this.setDuration(duration);
 		this.setStatusDate(new Timestamp(System.currentTimeMillis()));
@@ -101,6 +90,15 @@ public class TrainingSourceLock extends BaseBeanImpl{
 		TrainingSourceLockDao dao = new TrainingSourceLockDao();
 		
 		return dao.delete(this.id);
+	}
+	
+	public static TrainingSourceLock load(String resourceId){
+		TrainingSourceLockDao dao = new TrainingSourceLockDao();
+		return dao.find(resourceId);
+	}
+	
+	public TrainingSourceLock() {
+		// TODO Auto-generated constructor stub
 	}
 	/**
 	 * @return the id

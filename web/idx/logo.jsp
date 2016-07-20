@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!--[if lt IE 7 ]> <html lang="zh" class="ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="zh" class="ie7"> <![endif]-->
@@ -16,11 +18,7 @@
 <script src="logo/touch.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-	$("#nav li").hover(function(){
-		$(this).find("ul").slideDown("fast");	
-	},function(){
-		$(this).find("ul").slideUp("fast");	
-	});
+	$.fnQuerySlider();
 });
 var $pageInfo = {
 	publishmentSystemID : 1,
@@ -31,34 +29,40 @@ var $pageInfo = {
 	currentUrl : "http://new.yicjx.com/channels/44.html",
 	rootUrl : "http://new.yicjx.com"
 }
+$.extend({
+	fnQuerySlider: function(){
+		$.ajax({
+			url:'${pageContext.request.contextPath}/portals_json/slider',
+			dataType:'json',
+			type:"post",
+			success: function(doc) {
+				$($.parseJSON(eval(doc).output).data).each(function() {
+					var liImg = "";
+					liImg += '<li style="width: 999px;">';
+					liImg += '<a href="" target="_blank">';
+					liImg += '<img src="${pageContext.request.contextPath}' + $(this).attr("imgUri") + '">';
+					liImg += '</a>';
+					liImg += '</li>';
+					$("#carouselPics").append(liImg);
+					$("#carouselBtns").append('<li class=""></li>');
+				});
+				jQuery.getScript("logo/slider.js");
+			}
+		});
+	}
+});
 </script>
 </head>
-<body id="container">
+<body id="container" onload="">
 <!-- slider -->
-<section style="overflow: hidden;" class="ap oh carouselBox" id="carouselBox" ontouchstart="touchStart(event)" ontouchmove="touchMove(event);" ontouchend="touchEnd(event);">
+<section style="overflow: hidden;" class="ap oh carouselBox" id="carouselBox" >
 	<ul style="width: 500%; position: relative; left: -3587px;" class="oh ab carouselPics" id="carouselPics">
-		<li style="width: 999px;">
-			<a href="" target="_blank">
-				<img src="../picture/logos/1.jpg">
-			</a>
-		</li>
-		<li style="width: 999px;"><a href="" target="_blank"><img src="../picture/logos/2.jpg"></a></li>
-		<li style="width: 999px;"><a href="" target="_blank"><img src="../picture/logos/3.jpg"></a></li>
-		<li style="width: 999px;"><a href="" target="_blank"><img src="../picture/logos/4.jpg"></a></li>
-		<li style="width: 999px;"><a href="" target="_blank"><img src="../picture/logos/5.jpg"></a></li>
 	</ul>
 	<ul class="ab tc carouselBtns" id="carouselBtns">
-		<li class=""></li>
-		<li class=""></li>
-		<li class=""></li>
-		<li class=""></li>
-		<li class=""></li>
 	</ul>
 	<div class="ab carouselBtnsBg"></div>
 </section>
 <!--carouselBox end-->
 <!-- slider JS -->
-<script src="logo/slider.js"></script>
-<script src="tracker.js" type="text/javascript"></script>
 </body>
 </html>
