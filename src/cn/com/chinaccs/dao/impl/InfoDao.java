@@ -27,7 +27,9 @@ public class InfoDao extends BaseDaoImpl<TNInfo> {
 		sql+=" a.infoType,";
 		sql+=" c.call_name,";
 		sql+=" DATE_FORMAT(a.createTime, '%Y年%m月%d日 %H点%i分'),";
-		sql+=" a.imgUrl";
+		sql+=" a.imgUrl,";
+		sql+=" a.id,";
+		sql+=" a.content";
 		sql+=" FROM";
 		sql+=" t_n_info A,";
 		sql+=" t_n_attachment B,";

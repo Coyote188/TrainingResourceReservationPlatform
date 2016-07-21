@@ -10,8 +10,6 @@
 <!--<![endif]-->
 <head>
 <script type="text/javascript" src="jquery-1.js"></script>
-<script src="uaredirect.jsp" type="text/javascript"></script>
-<script type="text/javascript">//uaredirect("/m/");</script>
 <link rel="stylesheet" type="text/css" href="global.css"></link>
 <link rel="stylesheet" href="logo/slider.css"></link>
 <link rel="stylesheet" href="logo/reset.css"></link>

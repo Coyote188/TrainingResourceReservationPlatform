@@ -26,8 +26,33 @@ public class PortalsAction extends BaseImplAction {
 	 * @return
 	 */
 	public String slider(){
+		chResponse = commQry(SystemConstant.INFO_TYPE_SLIDER, 0, 7);
+		return json();
+	}
+	/**
+	 * 消息查询
+	 * @return
+	 */
+	public String infoQuery(){
+		String intoType = getRequest().getParameter("infoType");
+		String limit = getRequest().getParameter("limit");
+		String len = getRequest().getParameter("len");
+		int _limit = (null == limit || limit.isEmpty())? 0: Integer.parseInt(limit);
+		int _len = (null == len || len.isEmpty())? 5: Integer.parseInt(len);
+		chResponse = commQry(intoType, _limit, _len);
+		return json();
+	}
+	
+	/**
+	 * 消息查询
+	 * @param infoType
+	 * @param limit
+	 * @param len
+	 * @return
+	 */
+	private CHResponse commQry(String infoType, int limit, int len){
 		InfoDao infoDao = new InfoDao();
-		List<Object> infos = infoDao.findInfosByArgs(SystemConstant.INFO_TYPE_SLIDER, 0, 7);
+		List<Object> infos = infoDao.findInfosByArgs(infoType, limit, len);
 		List<Map<String, Object>> res = new ArrayList<Map<String, Object>>();
 		for(Object obj: infos){
 			Object[] info = (Object[])obj;
@@ -39,13 +64,16 @@ public class PortalsAction extends BaseImplAction {
 			_info.put("post_user", info[4]);
 			_info.put("time", info[5]);
 			_info.put("imgUri", info[6]);
+			_info.put("infoId", info[7]);
+			_info.put("infor", info[8]);
 			res.add(_info);
 		}
 		chResponse = new CHResponse();
 		chResponse.setData(res);
 		chResponse.setMsg(OP_SUCCESS_MSG);
 		chResponse.setResult(OP_SUCCESS);
-		return json();
+		
+		return chResponse;
 	}
 
 }

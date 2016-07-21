@@ -17,7 +17,6 @@ if(null != request.getSession().getAttribute("edu_user_info")){
 <link rel="shortcut icon" href="http://www.yicjx.com/favicon.ico"></link>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/idx/global.css"></link>
 <script type="text/javascript" src="${pageContext.request.contextPath}/idx/jquery-1.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/idx/swfobject.js"></script>
 <script src="${pageContext.request.contextPath}/js/layer/layer.js" type="text/javascript"></script>
 
 <title>丽江贵峰机动车驾驶人科目二训练考试服务有限公司 </title>
@@ -237,105 +236,147 @@ $.extend({
 							<li class="mainlevel">
 								<a href="javascript:void(0);">首页</a>
 							</li>
-							<li class="mainlevel">
-								<a href="javascript:void(0);">走进贵峰</a>
-							</li>
-							<li class="mainlevel">
-								<a href="javascript:void(0);">贵峰动态</a>
-								<!-- 
-								<ul style="display: none;">
-									<li>
-										<a href="javascript:void(0)" target="_blank">贵峰新闻</a>
-									</li>
-									<li>
-										<a href="javascript:void(0)" target="_blank">贵峰专稿</a>
-									</li>
-								</ul>
-								 -->
-							</li>
 						</ul>
 					</div>
 				</div>
-				<div id="MenuSpaceRight">
-					<a href="javascript:void(0);" onclick="$.fnOpenLoginForm(event);">登录</a>
-					<label><%=callName%></label>
-				</div>
-			</div>
-		</div>
-		<div id="ADArea">
-			<div id="ADFocusImages" style="overflow: hidden;">
-				<iframe id="frmSlider" src="${pageContext.request.contextPath}/idx/logo.jsp" border="0" vspace="0" hspace="0" marginwidth="0" marginheight="0" framespacing="0" scrolling="no" style="overflow: hidden;" frameborder="0" height="100%" width="100%">
-				</iframe>
-			</div>
-		</div>
-		<div id="Nav2Area">
-			<div id="Nav2Title"></div>
-			<div id="Nav2Link">
-				<div id="Nav2LinkText">
-					<ul>
-						<li id="liRegistorButton">
-							<a href="javascript:void(0);" onclick="$.fnRegist();">
-								<img src="${pageContext.request.contextPath}/idx/images/nav2-user.png">
-								<br>
-								<font style="color: #ec008c;">注册会员</font>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:void(0);" onclick="$.fnBooking();">
-								<img src="${pageContext.request.contextPath}/idx/images/nav2-search.png">
-								<br>
-								学车预约
-							</a>
-						</li>
-						<li>
-							<a href="javascript:void(0);">
-								<img src="${pageContext.request.contextPath}/idx/images/nav2-vehicle.png">
-								<br>
-								教练介绍
-							</a>
-						</li>
-						<li>
-							<a href="javascript:void(0);">
-								<img src="${pageContext.request.contextPath}/idx/images/nav2-lines.png">
-								<br>
-								车型介绍
-							</a>
-						</li>
-						<li>
-							<a href="javascript:void(0);">
-								<img src="${pageContext.request.contextPath}/idx/images/nav2-test.png">
-								<br>
-								场地介绍
-							</a>
-						</li>
-						<li id="FansNum" style="width:200px;">
-							<img src="${pageContext.request.contextPath}/idx/images/nav2-users.png">
-							<br>
-							已有
-							<font style="color: #ec008c;">126143</font>
-							人预约训练
-						</li>
-					</ul>
-				</div>
 			</div>
 		</div>
 		<div class="SpaceBar">
 			<img src="${pageContext.request.contextPath}/idx/spacer.html" height="0" border="0" width="0">
 		</div>
-		<div id="Row3Area" style="display: none; ">
+		<div id="Row3Area">
+			<div id="MainArea">
+	<div id="MainAreaLeft">
 			
+				<div id="NavTitle"><a type="title" href="/channels/94.html">一乘动态</a></div>
+				<div id="NavLink">
+				<ul>
+				
+					<li class="level1"><a href="/channels/94.html">一乘新闻</a>
+						
+					</li>
+				
+					<li class="level1"><a href="/channels/38.html">一乘专稿</a>
+						
+					</li>
+				
+					<li class="level1"><a href="/channels/59.html">一乘视觉</a>
+						
+					</li>
+				
+					<li class="level1"><a href="/channels/174.html">活动公告</a>
+						
+					</li>
+				
+					<li class="level1"><a href="/channels/227.html">学员读物</a>
+						
+					</li>
+				
+					<li class="level1"><a href="/contents/60/384.html">期刊投稿</a>
+						
+					</li>
+				
+					<li class="level1"><a href="/channels/39.html">行业资讯</a>
+						
+					</li>
+				
+				</ul>
+				</div>
+			
+<!-- 		<div class="SpaceBar"><img src="/images/spacer.png" width="0" height="0" border="0"></div>
+		<div class="NavTitle">广告位</div>
+		<div class="NavLink">
+        <ul>        
+			<li><a href="/contents/25/257.html" type="title">学车报名</a></li>
+        </ul>
+		</div> -->
+
+	</div>
+	<div class="AreaBreak"><img width="0" height="0" border="0" src="/images/spacer.png"></div>
+	<div id="MainAreaRight">
+		<div class="Location">
+			当前位置：<a href="/">首页</a> &gt; <a href="/channels/94.html">一乘动态</a> &gt; <a href="/channels/94.html">一乘新闻</a>
+		</div>
+		<div id="RightList">
+			<ul>
+			
+				<li>
+				<a title="公司与云南省交通职业技术学院联合办学洽谈会" href="/contents/94/10766.html">
+				公司与云南省交通职业技术学院联合办学洽谈会
+				</a>
+				<span class="SpanGray">[<a href="/channels/94.html">一乘新闻</a>](2016-07-13)</span></li>
+			
+				<li>
+				<a title="调研领导小组莅临公司指导工作" href="/contents/94/10765.html">
+				调研领导小组莅临公司指导工作
+				</a>
+				<span class="SpanGray">[<a href="/channels/94.html">一乘新闻</a>](2016-07-08)</span></li>
+			
+				<li>
+				<a title="云南一乘驾驶培训股份有限公司与云南城投置业股份有限公司举行篮球联谊赛" href="/contents/94/9806.html">
+				云南一乘驾驶培训股份有限公司与云南城投置业股份...
+				</a>
+				<span class="SpanGray">[<a href="/channels/94.html">一乘新闻</a>](2016-05-27)</span></li>
+			
+				<li>
+				<a title="一乘驾校敲响中国驾培”第一股”钟声" href="/contents/94/3924.html">
+				<span class="SpanGray">[图]</span>一乘驾校敲响中国驾培”第一股”钟声
+				</a>
+				<span class="SpanGray">[<a href="/channels/94.html">一乘新闻</a>](2015-12-11)</span></li>
+			
+				<li>
+				<a title="一乘驾校春节放假安排" href="/contents/94/6456.html">
+				一乘驾校春节放假安排
+				</a>
+				<span class="SpanGray">[<a href="/channels/94.html">一乘新闻</a>](2016-02-04)</span></li>
+			
+				<li>
+				<a title="一乘，敢于担当社会责任的企业" href="/contents/94/6416.html">
+				<span class="SpanGray">[图]</span>一乘，敢于担当社会责任的企业
+				</a>
+				<span class="SpanGray">[<a href="/channels/94.html">一乘新闻</a>](2016-01-20)</span></li>
+			
+				<li>
+				<a title="一乘驾校2016年元旦放假安排" href="/contents/94/5199.html">
+				一乘驾校2016年元旦放假安排
+				</a>
+				<span class="SpanGray">[<a href="/channels/94.html">一乘新闻</a>](2015-12-30)</span></li>
+			
+				<li>
+				<a title="昆明求实小学60名少年交警参观昆明市道路交通安全宣传警示教育基地" href="/contents/94/3952.html">
+				昆明求实小学60名少年交警参观昆明市道路交通安全...
+				</a>
+				<span class="SpanGray">[<a href="/channels/94.html">一乘新闻</a>](2015-12-07)</span></li>
+			
+				<li>
+				<a title="一乘驾校上市啦！一乘驾校上市啦！一乘驾校上市啦！" href="/contents/94/3906.html">
+				<span class="SpanGray">[图]</span>一乘驾校上市啦！一乘驾校上市啦！一乘驾校上市...
+				</a>
+				<span class="SpanGray">[<a href="/channels/94.html">一乘新闻</a>](2015-12-10)</span></li>
+			
+				<li>
+				<a title="省政府研究室领导莅临公司调研指导工作" href="/contents/94/2441.html">
+				<span class="SpanGray">[图]</span>省政府研究室领导莅临公司调研指导工作
+				</a>
+				<span class="SpanGray">[<a href="/channels/94.html">一乘新闻</a>](2015-10-13)</span></li>
+			
+			</ul>
+			<div class="Pager">
+				<div class="page_wrap">
+					<div class="paginator">
+					<span class="page-start"><b>〈</b>上一页</span>
+					<span class="page-this">1</span><a href="/channels/94_2.html">2</a><a href="/channels/94_3.html">3</a><a href="/channels/94_4.html">4</a><a href="/channels/94_5.html">5</a><a href="/channels/94_6.html">6</a><a href="/channels/94_7.html">7</a><a href="/channels/94_8.html">8</a><a href="/channels/94_9.html">9</a>
+					<a href="/channels/94_2.html" class="page-next">下一页<b>〉</b></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 		</div>
 		<div class="SpaceBar">
 			<img src="${pageContext.request.contextPath}/idx/spacer.html" height="0" border="0" width="0">
 		</div>
-			<div id="BottomAd">
-				<div class="Text">
-为进一步加强道路交通安全源头管理，促进机动车驾驶人考试工作的规范、公开、公正、高效，按照公安部、公安厅关于进一步加强社会管理创新的要求，在市人民政府的高度重视下，在相关部门的大力支持配合下，丽江贵峰机动车驾驶人科目二考试服务有限公司于2011年2月18日破土动工，于2011年6月16日开始试运行。
-公司位于丽江市古城区金山乡贵峰行政村大来下村，总占地201亩。公司共有员工44人，设有行政办公室、引车部、门禁大厅、机电部、车辆维修组、预约收费处、保安部等部门。
-考场分为A区、B区和A1、B1、B2新增考试项目区。A1考试车1辆，B1考试车1辆，B2考试车11辆，C1考试车22辆，C2考试车2辆，共计37辆，每天可同时容纳300—400人进行考试。2014年度A1、B1、B2类考生达到了60%的合格率，C1类考生达到了80%的合格率。
-公司采用南京多伦科技有限公司提供的考试评判计算机系统和设备，在考试过程实行全程电脑监控，计算机系统自动评判、采集、上传考生成绩，真正做到了考试工作的公平、公正，收到了良好的社会效果。
-				</div>
-			</div>
 			<div id="BottomArea">
 				<div class="Link">
 					<a href="javascript:void(0);" onclick="$.SetHomepage();">设为首页</a>

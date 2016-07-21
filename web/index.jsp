@@ -19,24 +19,16 @@ if(null != request.getSession().getAttribute("edu_user_info")){
 <script type="text/javascript" src="${pageContext.request.contextPath}/idx/jquery-1.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/idx/swfobject.js"></script>
 <script src="${pageContext.request.contextPath}/js/layer/layer.js" type="text/javascript"></script>
-
+<script src="${pageContext.request.contextPath}/js/ToolsObject.js" type="text/javascript"></script>
+<style type="text/css">
+    html,body{margin:0;padding:0;}
+    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
 <title>丽江贵峰机动车驾驶人科目二训练考试服务有限公司 </title>
 <script type="text/javascript">
-var $pageInfo = {
-		publishmentSystemID : 1,
-		channelID : 1,
-		contentID : 0,
-		siteUrl : "",
-		homeUrl : "/center",
-		currentUrl : "http://new.yicjx.com/",
-		rootUrl : "http://new.yicjx.com"
-};
 $(document).ready(function() {
-	$("#nav li").hover(function() {
-		$(this).find("ul").slideDown("fast");
-	}, function() {
-		$(this).find("ul").slideUp("fast");
-	});
 	if("" != $("#MenuSpaceRight").find("label").text() && null != $("#MenuSpaceRight").find("label")){//
 		$("#MenuSpaceRight").find("a").hide();
 		$("#MenuSpaceRight").find("label").show();
@@ -48,7 +40,11 @@ $(document).ready(function() {
 		$("#MenuSpaceRight").find("label").hide();
 		$("#MenuSpaceRight").find("a").show();
 	}
+	$.fnQueryInfor('NEWS', $("#news_tabContent_1"));
+	$.fnQueryInfor('NOTICE', $("#news_tabContent_2"));
+	$.fnQueryInfor('AGREEMENT', null);
 });
+var inforCache = new Map();
 $.extend({
 	fnOnOpenUserManager: function(){
 		$("#Row1Area").hide();
@@ -78,27 +74,6 @@ $.extend({
 			}
 		}
 	},
-	stlTab4 : function(tabName, no) {
-		for ( var i = 1; i <= 5; i++) {
-			var el = jQuery('#服务查询_tabContent_' + i);
-			var li = $('#服务查询_tabHeader_' + i);
-			if (i == no) {
-				try {
-					el.show();
-				} catch (e) {
-				}
-				li.removeClass('TabOff');
-				li.addClass('TabOn');
-			} else {
-				try {
-					el.hide();
-				} catch (e) {
-				}
-				li.removeClass('TabOn');
-				li.addClass('TabOff');
-			}
-		}
-	},
 	AddFavorite : function() {
 		if (document.all) {
 			window.external.addFavorite(window.location.href,
@@ -110,8 +85,8 @@ $.extend({
 	},
 	stlTab6 : function(tabName, no) {
 		for ( var i = 1; i <= 9; i++) {
-			var el = jQuery('#资讯公告_tabContent_' + i);
-			var li = $('#资讯公告_tabHeader_' + i);
+			var el = jQuery('#news_tabContent_' + i);
+			var li = $('#news_tabHeader_' + i);
 			if (i == no) {
 				try {
 					el.show();
@@ -131,8 +106,8 @@ $.extend({
 	},
 	stlTab8 : function(tabName, no) {
 		for ( var i = 1; i <= 7; i++) {
-			var el = jQuery('#互动版块_tabContent_' + i);
-			var li = $('#互动版块_tabHeader_' + i);
+			var el = jQuery('#notice_tabContent_' + i);
+			var li = $('#notice_tabHeader_' + i);
 			if (i == no) {
 				try {
 					el.show();
@@ -190,9 +165,6 @@ $.extend({
 	fnOpenLogout: function(){
 		
 	},
-	closeWindow:function() {
-		$("#popupWindow4LoginForm").hide("slow");
-	},
 	popRightWindow:function(x, y) {
 		$("#popContentLoginForm").load("portal");
 		layer.open({
@@ -203,8 +175,76 @@ $.extend({
 			area: ['420px', '340px'], //宽高
 			content: $("#popContentLoginForm")
 		});
+	},
+	onOpenFullScreenFrame: function(type, html, title){
+		if(type == 1){
+			html = inforCache.get(html);
+		}
+		var index = layer.open({
+			type: type,
+			title:title,
+			content: html,
+			area: ['320px', '195px'],
+			maxmin: true
+		});
+		layer.full(index);
+	},
+	fnFillNewsBox: function(res, box){
+		$.each(res, function(idx, news){
+			var liIndexNewsItem = '<li data="' + news.infoId + '">&gt; <a href="javascript:void(0);" id="a_' + news.infoId + '">' + news.title + '</a><span style="float: right;">'+news.time+'</span></li>';
+			$(box).find("ul").append(liIndexNewsItem);
+			inforCache.put(news.infoId, news.infor);
+			$("#a_" + news.infoId).bind("click", function(){
+				$.onOpenFullScreenFrame(1, news.infoId,'贵峰新闻');
+			});
+		});
+	},
+	fnQueryInfor: function(inforType, frame){
+		$.ajax({
+			url:'${pageContext.request.contextPath}/portals_json/infoQuery',
+			dataType:'json',
+			type:"post",
+			data:{
+				infoType: inforType,
+				limit: 0,
+				len: 3
+			},
+			success: function(doc) {
+				if(inforType == 'AGREEMENT'){
+					$.fnFillBooksBox($.parseJSON(eval(doc).output).data);
+				}else
+					$.fnFillNewsBox($.parseJSON(eval(doc).output).data, frame);
+			}
+		});
+	},
+	fnFillBooksBox: function(books){
+		var frame = null;
+		$.each(books, function(idx, book){
+			var td = '';
+			td += '<td valign="top" align="left">';
+			td += '<li class="eBook tc"><a target="_blank" title="' + book.title + '" href="/contents/227/9157.html">';
+			td += '<div>';
+			if(book.imgUri == ''){
+				td += '<img width="75" height="100" src="${pageContext.request.contextPath}/picture/other/default_book.jpg">';
+			}else{
+				td += '<img width="75" height="100" src="${pageContext.request.contextPath}' + book.imgUri + '">';
+			}
+			td += '</div>';
+			td += '<div class="lineH30">' + book.title + '</div> </a>';
+			td += '</li>';
+			td += '</td>';
+			if(idx%2 == 0){
+				var tr = '<tr id="sc_reading_books_' + idx + '"><td>';
+				frame = $("#tbodyScReadingFiles").append(tr);
+				$(frame).append(td);
+			}else{
+				$(frame).append(td);
+			}
+		});
+		
 	}
 });
+
 </script>
 </head>
 <body>
@@ -270,7 +310,7 @@ $.extend({
 							</a>
 						</li>
 						<li>
-							<a href="javascript:void(0);">
+							<a href="javascript:void(0);" onclick="$.onOpenFullScreenFrame(2,'url');">
 								<img src="${pageContext.request.contextPath}/idx/images/nav2-vehicle.png">
 								<br>
 								教练介绍
@@ -455,12 +495,12 @@ $.extend({
 			<div id="Row1Col2">
 				<div class="Tab">
 					<ul>
-						<li class="TabOn" id="服务查询_tabHeader_1" >
+						<li class="TabOn">
 							<a href="javascript:void(0);">报名网点</a>
 						</li>
 					</ul>
 				</div>
-				<div class="TabOnDiv" id="服务查询_tabContent_1">
+				<div class="TabOnDiv">
 					<ul>
 						<li>
 							<div class="ClassTitle">
@@ -470,13 +510,8 @@ $.extend({
 								丽江市古城区金山乡贵峰村委会
 							</div>
 						</li>
-						<li style="display: none;">
-							<div class="ClassTitle">
-								<a href="javascript:void(0);">一乘驾校(白塔路店)</a>
-							</div>
-							<div class="ClassContent">
-								昆明市白塔路152号附1号（昆十中斜对面）<br>营业：周一至周日 9:30-21:00 缴费方式：刷卡 
-							</div>
+						<li>
+								<div style="width:160px;height:200px;border:#ccc solid 1px;" id="dituContent"></div>
 						</li>
 					</ul>
 				</div>
@@ -489,32 +524,26 @@ $.extend({
 			<div id="Row2Col1">
 				<div class="Tab">
 					<ul>
-						<li class="TabOff" id="资讯公告_tabHeader_1" onmouseover="$.stlTab6('资讯公告', 1);">
+						<li class="TabOff" id="news_tabHeader_1" onmouseover="$.stlTab6('news', 1);">
 							<a href="javascript:void(0);">贵峰新闻</a>
 						</li>
-						<li class="TabOff" id="资讯公告_tabHeader_2" onmouseover="$.stlTab6('资讯公告', 2);">
+						<li class="TabOff" id="news_tabHeader_2" onmouseover="$.stlTab6('news', 2);">
 							<a href="javascript:void(0);">贵峰专稿</a>
 						</li>
 					</ul>
 				</div>
-				<div class="TabOnDiv" style="" id="资讯公告_tabContent_1">
+				<div class="TabOnDiv" style="" id="news_tabContent_1">
 					<a href="javascript:void(0);">
 						<img src="${pageContext.request.contextPath}/picture/ad/02.jpg">
 					</a>
 					<ul>
-						<li>&gt; <a href="javascript:void(0);">贵峰，新闻一</a></li>
-						<li>&gt; <a href="javascript:void(0);">贵峰，新闻二</a></li>
-						<li>&gt; <a href="javascript:void(0);">贵峰，新闻三</a></li>
 					</ul>
 				</div>
-				<div class="TabOnDiv" style="display: none" id="资讯公告_tabContent_2">
+				<div class="TabOnDiv" style="display: none" id="news_tabContent_2">
 					<a href="javascript:void(0);">
 						<img src="${pageContext.request.contextPath}/picture/ad/04.jpg">
 					</a>
 					<ul>
-						<li>&gt; <a href="javascript:void(0);">内容一</a></li>
-						<li>&gt; <a href="javascript:void(0);">内容二</a></li>
-						<li>&gt; <a href="javascript:void(0);">内容三</a></li>
 					</ul>
 				</div>
 			</div>
@@ -522,13 +551,16 @@ $.extend({
 			<div id="Row2Col2">
 				<div class="Tab">
 					<ul>
-						<li class="TabOn" id="互动版块_tabHeader_1" onmouseover="$.stlTab8('互动版块', 1);">
-							<a href="javascript:void(0);">通知公告</a>
+						<li class="TabOn" id="notice_tabHeader_1" onmouseover="$.stlTab8('互动版块', 1);">
+							<a href="javascript:void(0);">驾考读物</a>
 						</li>
 					</ul>
 				</div>
-				<div class="TabOnDiv" style="" id="互动版块_tabContent_1">
-					<iframe scrolling="no" src="" frameborder="0"  height="348" width="341"></iframe>
+				<div class="TabOnDiv" style="" id="notice_tabContent_1">
+					<table cellspacing="0" style="width: 100%; border-collapse: collapse;">
+						<tbody id="tbodyScReadingFiles">
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>
@@ -564,52 +596,93 @@ $.extend({
 				</div>
 			</div>
 	</div>
-	<script src="${pageContext.request.contextPath}/idx/tracker.js" type="text/javascript"></script>
-	<script type="text/javascript">
-		AddTrackerCount('/sitefiles/services/cms/PageService.aspx?type=AddTrackerCount&publishmentSystemID=1&channelID=1&contentID=0',1);
-	</script>
-	<script type="text/javascript">
-		$.getJSON("/webapi/json/InData_Student.json", function(data) {
-			$("#FansNumLayout").html(data.bynum);
-			$("#FansNum").html(
-					"<img src='/images/nav2-users.png'><br>已毕业<font style='color:#ec008c;'>" + data.bynum + "</font>人");
-			var num = 100;
-			var count = data.student.length;
-			var NameStr = "";
-			if (count >= num) {
-				c = count - num;
-			} else {
-				c = 0;
-			}
-			for (var i = c; i < count; i++) {
-				NameStr += data.student[i].Name + " ";
-			}
-			//判断浏览器开始
-			var browser = {
-				versions : function() {
-					var u = navigator.userAgent, app = navigator.appVersion;
-					return {//移动终端浏览器版本信息
-						trident : u.indexOf('Trident') > -1, //IE内核
-						presto : u.indexOf('Presto') > -1, //opera内核
-						webKit : u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
-						gecko : u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
-						mobile : !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
-						ios : !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
-						android : u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
-						iPhone : u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
-						iPad : u.indexOf('iPad') > -1, //是否iPad
-						webApp : u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
-					};
-				}(),
-				language : (navigator.browserLanguage || navigator.language).toLowerCase()
-			}
-			if (browser.versions.mobile || browser.versions.ios || browser.versions.android || browser.versions.iPhone || browser.versions.iPad) {
-				$("#StudentName").html('');
-			} else {
-				$("#StudentName").html(NameStr);
-			};
-		});
-	</script>
 	<div class="content" style="display: none;" id="popContentLoginForm"></div> 
 </body>
+<script type="text/javascript">
+//创建和初始化地图函数：
+function initMap(){
+    createMap();//创建地图
+    setMapEvent();//设置地图事件
+    addMapControl();//向地图添加控件
+    addMarker();//向地图中添加marker
+}
+//创建地图函数：
+function createMap(){
+    var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+    var point = new BMap.Point(100.300194,26.798603);//定义一个中心点坐标
+    map.centerAndZoom(point,17);//设定地图的中心点和坐标并将地图显示在地图容器中
+    window.map = map;//将map变量存储在全局
+}
+//地图事件设置函数：
+function setMapEvent(){
+	map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+	map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+	map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+	map.enableKeyboard();//启用键盘上下左右键移动地图
+}
+//地图控件添加函数：
+function addMapControl(){
+	//向地图中添加缩放控件
+	var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_PAN});
+	map.addControl(ctrl_nav);
+	//向地图中添加缩略图控件
+	var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:0});
+	map.addControl(ctrl_ove);
+}
+//标注点数组
+var markerArr = [{title:"丽江市古城区金山乡贵峰村委会",content:"丽江贵峰机动车驾驶人科目二训练考试服务有限公司",point:"100.299754|26.798603",isOpen:0,icon:{w:21,h:21,l:46,t:46,x:1,lb:10}}];
+//创建marker
+function addMarker(){
+    for(var i=0;i<markerArr.length;i++){
+        var json = markerArr[i];
+        var p0 = json.point.split("|")[0];
+        var p1 = json.point.split("|")[1];
+        var point = new BMap.Point(p0,p1);
+		var iconImg = createIcon(json.icon);
+        var marker = new BMap.Marker(point,{icon:iconImg});
+		var iw = createInfoWindow(i);
+		var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+		marker.setLabel(label);
+        map.addOverlay(marker);
+        label.setStyle({
+                    borderColor:"#808080",
+                    color:"#333",
+                    cursor:"pointer"
+        });
+		(function(){
+			var index = i;
+			var _iw = createInfoWindow(i);
+			var _marker = marker;
+			_marker.addEventListener("click",function(){
+			    this.openInfoWindow(_iw);
+		    });
+		    _iw.addEventListener("open",function(){
+			    _marker.getLabel().hide();
+		    })
+		    _iw.addEventListener("close",function(){
+			    _marker.getLabel().show();
+		    })
+			label.addEventListener("click",function(){
+			    _marker.openInfoWindow(_iw);
+		    })
+			if(!!json.isOpen){
+				label.hide();
+				_marker.openInfoWindow(_iw);
+			}
+		})()
+    }
+}
+//创建InfoWindow
+function createInfoWindow(i){
+    var json = markerArr[i];
+    var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+    return iw;
+}
+//创建一个Icon
+function createIcon(json){
+    var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+    return icon;
+}
+initMap();//创建和初始化地图
+</script>
 </html>
